@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec773ae9e20a4b468f3d8acbc01b8b6, type: 3}
+  m_Name: CookBookIngredients
+  m_EditorClassIdentifier: 
+  recipeName: 
+  dishImage: {fileID: -8053197629789734714, guid: 46112b9472351694db800b4770b84eac, type: 3}
+  ingredients:
+  - ingName: Pork Meat
+    ingImage: {fileID: -6237445509998130909, guid: 959480b3f490d034b8fef2062336e9da, type: 3}
+  - ingName: Garlic
+    ingImage: {fileID: -8944997348610683000, guid: 0a9a7f0ef8a26e442a9e9f267562c2ad, type: 3}

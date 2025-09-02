@@ -47,6 +47,7 @@ public class HDialogManager : MonoBehaviour
         else
         {
             dialogText.text = "";
+            return;
            
         }
     }
