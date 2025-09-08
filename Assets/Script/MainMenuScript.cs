@@ -1,3 +1,4 @@
+using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,8 @@ public class MainMenuScript : MonoBehaviour
     public GameObject CreditsCanvas;
     public GameObject LoadGameCanvas;
 
+    [SerializeField] private string firstGameScene = "Map";
+    [SerializeField] private int totalSlots = 3; //Number of slots
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,7 +50,11 @@ public class MainMenuScript : MonoBehaviour
     //newGame
     public void NewGame()
     {
-        SceneManager.LoadScene("Map");
+        SaveSystem.DeleteAllSlots(totalSlots);
+        PlayerPrefs.SetInt("TutorialDone",0);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene(firstGameScene);
     }
 
     //Close Game

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UITutorialManager : MonoBehaviour
 {
@@ -12,31 +13,32 @@ public class UITutorialManager : MonoBehaviour
     public GameObject settingCanvas;
 
     public TextMeshProUGUI dialogText;
-
     public Button dialogBoxButton;
 
     private int currentLine = 0;
     private bool waitingForClick = false;
     private bool readyToAdvance = false;
 
+   
     void Start()
     {
-        //Count for the tutorial
-        if (PlayerPrefs.GetInt("TutorialDone", 0) == 5)
+        //if Tutorial is already Finish
+        if (PlayerPrefs.GetInt("TutorialDone", 0) == 1)
         {
-            dialogCanvas.SetActive(false);
+            if(dialogCanvas) dialogCanvas.SetActive(false);
             return;
         }
+        if (dialogBoxButton != null)
+            dialogBoxButton.onClick.AddListener(OnDialogBoxClicked);
 
-        dialogBoxButton.onClick.AddListener(OnDialogBoxClicked);
         StartCoroutine(PlayTutorial());
     }
 
     IEnumerator PlayTutorial()
     {
-        dialogCanvas.SetActive(true);
-        mapMainCanvas.SetActive(true);
-        settingCanvas.SetActive(false);
+      if (dialogCanvas) dialogCanvas.SetActive(true);
+       if(mapMainCanvas) mapMainCanvas.SetActive(true);
+        if(settingCanvas) settingCanvas.SetActive(false);
 
         while (currentLine < dialogLines.Length)
         {
@@ -71,8 +73,11 @@ public class UITutorialManager : MonoBehaviour
             currentLine++;
         }
 
-        dialogCanvas.SetActive(false);
+        //EmdTutorial
+       // Finish: mark tutorial done and save flag in PlayerPrefs
+        if (dialogCanvas) dialogCanvas.SetActive(false);
         PlayerPrefs.SetInt("TutorialDone", 1);
+        PlayerPrefs.Save();
     }
 
     void HighlightUI(GameObject ui)
