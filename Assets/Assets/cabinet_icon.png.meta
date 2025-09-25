@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cabinet_icon_0: -8218318794243466592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

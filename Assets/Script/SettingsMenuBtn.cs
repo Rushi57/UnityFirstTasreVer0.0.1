@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenuBtn : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class SettingsMenuBtn : MonoBehaviour
         SettingCanvas.SetActive(false);
         Time.timeScale = 1.0f;
     }
-
+    public void MainMenuScene()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
    
 }
