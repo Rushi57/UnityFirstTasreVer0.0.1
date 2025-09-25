@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e21cf298bb2c148a4c999a7caf1ab9, type: 3}
+  m_Name: PorkAdobo
+  m_EditorClassIdentifier: 
+  recipeName: PorkAdobo
+  recipeImage: {fileID: 0}
+  steps:
+  - {fileID: 11400000, guid: cf4532f0f236b2f40afdefafae5793d7, type: 2}
+  - {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
