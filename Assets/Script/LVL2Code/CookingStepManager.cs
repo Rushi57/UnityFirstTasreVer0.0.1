@@ -6,7 +6,7 @@ public class CookingStepManager : MonoBehaviour
 
     [Header("Current Recipe")]
     public RecipeSO currentRecipe;
-    public int currentStepIndex = 0; // tracks progress in recipe
+    public int currentStepIndex = 0;
 
     private void Awake()
     {
@@ -14,20 +14,38 @@ public class CookingStepManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    /// <summary>
-    /// Checks if the dropped item matches the current recipe step.
-    /// </summary>
+    
+
     public bool IsCorrectItem(ItemSO item)
     {
         if (currentRecipe == null) return false;
         if (currentStepIndex >= currentRecipe.steps.Count) return false;
 
-        return currentRecipe.steps[currentStepIndex].itemID == item.itemID;
+        var step = currentRecipe.steps[currentStepIndex];
+
+        if (step.stepType == StepType.Ingredient)
+        {
+            return step.ingredient != null && step.ingredient.itemID == item.itemID;
+        }
+
+        return false;
     }
 
-    /// <summary>
-    /// Advances to the next step in the recipe.
-    /// </summary>
+    public bool IsCorrectAction(string action)
+    {
+        if (currentRecipe == null) return false;
+        if (currentStepIndex >= currentRecipe.steps.Count) return false;
+
+        var step = currentRecipe.steps[currentStepIndex];
+
+        if (step.stepType == StepType.Action)
+        {
+            return step.actionName == action;
+        }
+
+        return false;
+    }
+
     public void NextStep()
     {
         currentStepIndex++;
@@ -38,15 +56,30 @@ public class CookingStepManager : MonoBehaviour
         }
         else
         {
-            Debug.Log($"✅ Step advanced. Now expecting: {currentRecipe.steps[currentStepIndex].itemName}");
+            Debug.Log($"✅ Step advanced. Now expecting next step: {currentStepIndex}");
         }
     }
 
-    /// <summary>
-    /// Called when the wrong item is dropped.
-    /// </summary>
     public void WrongAttempt()
     {
-        Debug.Log("❌ Wrong item dropped!");
+        DebugMessageManager.Instance.ShowMessage("❌ Wrong item dropped!");
+    }
+
+    public void OnActionPerformed(string actionName)
+    {
+       if(currentRecipe == null) return;
+       if(currentStepIndex >= currentRecipe.steps.Count) return;
+
+       var step = currentRecipe.steps[currentStepIndex];
+
+        if(step.stepType == StepType.Action && step.actionName == actionName)
+        {
+            Debug.Log("Correct action: " + actionName);
+            NextStep();
+        }
+        else
+        {
+            WrongAttempt();
+        }
     }
 }

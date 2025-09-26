@@ -93,8 +93,9 @@ MonoBehaviour:
   stepSprites:
   - {fileID: -8479368559270907547, guid: 7d599a33a2f635e4498f25f73a5343bc, type: 3}
   - {fileID: -4166617166384686503, guid: e156bbd295320524cafb6246f82380ea, type: 3}
-  - {fileID: -8151840367760014900, guid: b0e84ceec4f89234899cbfd26066a797, type: 3}
   - {fileID: 2473399127474018101, guid: 424ab1fd29af59844a0ca18736b503b9, type: 3}
-  - {fileID: 4994844164308023910, guid: dec66a5cd9617904d987ab215dcba4a2, type: 3}
-  - {fileID: -6181489293026228374, guid: 080121af05e239942a1f6e7ff19028ad, type: 3}
-  - {fileID: -201320770681668781, guid: 123d6beb7c1467f4781b4515d5bb7e6e, type: 3}
+  - {fileID: -8151840367760014900, guid: b0e84ceec4f89234899cbfd26066a797, type: 3}
+  - {fileID: -8151840367760014900, guid: b0e84ceec4f89234899cbfd26066a797, type: 3}
+  oilPanSprite: {fileID: 312855514268800688, guid: 8845af9206368b94a97eacc9cc141a6a, type: 3}
+  vinegarPanSprite: {fileID: -947749556987461895, guid: e459ac6a5bed0a644aab25263a8d51db, type: 3}
+  soyPanSprite: {fileID: 6126183905695377157, guid: 9a83cb9002b33544ea6432eaecd68260, type: 3}
