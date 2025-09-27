@@ -14,7 +14,7 @@ public class SpawnToTable : MonoBehaviour
     {
         if (tableArea == null || slotPrefab == null || itemSO == null)
         {
-            Debug.LogError("⚠️ Missing reference in SpawnToTable!");
+            Debug.LogError("Missing reference in SpawnToTable!");
             return;
         }
 
@@ -29,9 +29,9 @@ public class SpawnToTable : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("⚠️ Spawned prefab has no ItemData!");
+            Debug.LogWarning("Spawned prefab has no ItemData!");
         }
 
-        Debug.Log($"✅ Spawned {itemSO.itemName} in TableArea.");
+        Debug.Log($"Spawned {itemSO.itemName} in TableArea.");
     }
 }

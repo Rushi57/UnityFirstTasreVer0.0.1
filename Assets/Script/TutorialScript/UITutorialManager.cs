@@ -73,8 +73,7 @@ public class UITutorialManager : MonoBehaviour
             currentLine++;
         }
 
-        //EmdTutorial
-       // Finish: mark tutorial done and save flag in PlayerPrefs
+       
         if (dialogCanvas) dialogCanvas.SetActive(false);
         PlayerPrefs.SetInt("TutorialDone", 1);
         PlayerPrefs.Save();
@@ -82,13 +81,11 @@ public class UITutorialManager : MonoBehaviour
 
     void HighlightUI(GameObject ui)
     {
-        // Optional: Highlight effect
-        // Example: change color, add outline, or scale
+ 
         var image = ui.GetComponent<Image>();
         if (image != null)
-            image.color = Color.white; // TEMPORARY highlight
+            image.color = Color.white; 
 
-        // Add pulse animation here if you want
     }
 
     void OnUIElementClicked(Button button)
@@ -110,7 +107,7 @@ public class UITutorialManager : MonoBehaviour
         foreach (char c in textToType)
         {
             dialogText.text += c;
-            yield return new WaitForSeconds(0.02f); // Adjust speed here
+            yield return new WaitForSeconds(0.02f); 
         }
 
     }

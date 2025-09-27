@@ -14,8 +14,6 @@ public class CookingStepManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    
-
     public bool IsCorrectItem(ItemSO item)
     {
         if (currentRecipe == null) return false;
@@ -52,17 +50,17 @@ public class CookingStepManager : MonoBehaviour
 
         if (currentStepIndex >= currentRecipe.steps.Count)
         {
-            Debug.Log("🎉 Recipe Completed!");
+            Debug.Log(" Recipe Completed!");
         }
         else
         {
-            Debug.Log($"✅ Step advanced. Now expecting next step: {currentStepIndex}");
+            Debug.Log($"Step advanced. Now expecting next step: {currentStepIndex}");
         }
     }
 
     public void WrongAttempt()
     {
-        DebugMessageManager.Instance.ShowMessage("❌ Wrong item dropped!");
+        DebugMessageManager.Instance.ShowMessage(" Wrong item or Ingredient is dropped!");
     }
 
     public void OnActionPerformed(string actionName)

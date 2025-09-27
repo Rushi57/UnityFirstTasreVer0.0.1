@@ -100,16 +100,16 @@ public class CuttingMechanic : MonoBehaviour
         float halfWidth = colorBar.rect.width / 2;
         float normalizedX = (arrowIndicator.anchoredPosition.x + halfWidth) / colorBar.rect.width; // 0–1
 
-        string result = "❌ Bad Cut!"; // default red
+        string result = "Bad Cut!"; // default red
 
         if (normalizedX >= yellowStart && normalizedX <= yellowEnd)
-            result = "👌 Good Cut!";
+            result = "Good Cut!";
         if (normalizedX >= greenStart && normalizedX <= greenEnd)
-            result = "✅ Very Good Cut!";
+            result = "Very Good Cut!";
 
         Debug.Log(result);
 
-        // ✅ Change ingredient to chopped
+        // Change ingredient to chopped
         if (currentItem != null && currentItem.itemSO != null && currentItem.itemSO.choppedSprite != null)
         {
             Image img = currentItem.GetComponent<Image>();
