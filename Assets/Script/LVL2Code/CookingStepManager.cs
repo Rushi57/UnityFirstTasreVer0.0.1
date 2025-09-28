@@ -80,4 +80,21 @@ public class CookingStepManager : MonoBehaviour
             WrongAttempt();
         }
     }
+    public string GetExpectedStep()
+    {
+        if (currentStepIndex < currentRecipe.steps.Count)
+        {
+            var step = currentRecipe.steps[currentStepIndex];
+
+            if (step.stepType == StepType.Action)
+                return step.actionName;
+
+            if (step.stepType == StepType.Ingredient && step.ingredient != null)
+                return step.ingredient.itemName; // optional, if you want ingredient names too
+        }
+        return null;
+    }
+
+
+
 }

@@ -46,6 +46,13 @@ public class ItemData : MonoBehaviour, IPointerClickHandler
     // 👆 This makes prefab clickable
     public void OnPointerClick(PointerEventData eventData)
     {
+        // Only allow chopping if this is an Ingredient
+        if (itemSO == null || itemSO.itemType != ItemType.Ingredient)
+        {
+            Debug.Log($"⛔ {gameObject.name} is a Utility, skipping cutting.");
+            return;
+        }
+
         CuttingMechanic cuttingMechanic = FindObjectOfType<CuttingMechanic>();
         if (cuttingMechanic != null)
         {
@@ -56,6 +63,7 @@ public class ItemData : MonoBehaviour, IPointerClickHandler
             Debug.LogWarning("⚠️ No CuttingMechanic in scene!");
         }
     }
+
 
     public void EnableDrag()
     {

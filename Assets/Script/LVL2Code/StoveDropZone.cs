@@ -3,8 +3,9 @@ using UnityEngine.EventSystems;
 
 public class StoveDropZone : MonoBehaviour, IDropHandler
 {
-    public GameObject panPrefab;   // Prefab with Image + PanStateHandler
+    public GameObject panPrefab;   // Prefab with PanStateHandler
     private GameObject currentPan; // Reference to the spawned pan
+    public GameObject mixingPanel; // Reference to MixingMechPanel in Canvas
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -18,12 +19,32 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             {
                 currentPan = Instantiate(panPrefab, transform);
                 currentPan.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-
                 Debug.Log("✅ Pan placed on stove");
             }
 
-            Destroy(eventData.pointerDrag); // Remove draggable pan from TableArea
+            Destroy(eventData.pointerDrag);
             CookingStepManager.Instance.NextStep();
+            return;
+        }
+
+        // --- Check if Spatula ---
+        if (droppedItem.itemSO.itemType == ItemType.Utility && droppedItem.itemSO.itemName == "Spatula")
+        {
+            string expected = CookingStepManager.Instance.GetExpectedStep();
+            if (expected == "Utility:Spatula")
+            {
+                Debug.Log("🥄 Spatula dropped! Opening Mixing Panel...");
+                mixingPanel.SetActive(true);
+
+                CookingStepManager.Instance.NextStep();
+                Destroy(eventData.pointerDrag); // Remove from table
+            }
+            else
+            {
+                Debug.Log("❌ Spatula not expected yet");
+                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
+                CookingStepManager.Instance.WrongAttempt();
+            }
             return;
         }
 
@@ -35,19 +56,15 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
                 var panHandler = currentPan.GetComponent<PanStateHandler>();
                 if (panHandler != null)
                 {
-                    panHandler.UpdatePan(droppedItem.itemSO); // Change sprite/state
+                    panHandler.UpdatePan(droppedItem.itemSO);
                 }
 
                 CookingStepManager.Instance.NextStep();
-                Destroy(eventData.pointerDrag); // Ingredient disappears into pan
+                Destroy(eventData.pointerDrag);
             }
             else
             {
-                // Return ingredient to original slot
-                Draggable drag = droppedItem.GetComponent<Draggable>();
-                if (drag != null)
-                    drag.RevertToOriginalPosition();
-
+                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
                 CookingStepManager.Instance.WrongAttempt();
             }
         }

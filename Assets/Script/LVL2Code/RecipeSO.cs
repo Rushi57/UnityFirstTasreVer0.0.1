@@ -25,4 +25,5 @@ public class RecipeSO : ScriptableObject
 
     [Header("Steps")]
     public List<RecipeStep> steps = new List<RecipeStep>();
+
 }
