@@ -13,7 +13,7 @@ public class ItemData : MonoBehaviour, IPointerClickHandler
 
     [Header("Interaction")]
     public bool canDrag = true;   // default true for inventory, set false when spawning on table
-
+    
     private Draggable draggable;
 
     void Awake()
