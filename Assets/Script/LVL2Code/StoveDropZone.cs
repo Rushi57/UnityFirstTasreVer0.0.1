@@ -3,22 +3,47 @@ using UnityEngine.EventSystems;
 
 public class StoveDropZone : MonoBehaviour, IDropHandler
 {
+    [Header("References")]
     public GameObject panPrefab;   // Prefab with PanStateHandler
-    private GameObject currentPan; // Reference to the spawned pan
-    public GameObject mixingPanel; // Reference to MixingMechPanel in Canvas
+    public GameObject mixingPanel; // Scene UI panel to show mixing mini-game
+
+    private GameObject currentPan; // Spawned pan instance
 
     public void OnDrop(PointerEventData eventData)
     {
-        ItemData droppedItem = eventData.pointerDrag.GetComponent<ItemData>();
-        if (droppedItem == null || droppedItem.itemSO == null) return;
-
-        // --- Check if Pan ---
-        if (droppedItem.itemSO.itemType == ItemType.Utility && droppedItem.itemSO.itemName == "Pan")
+        if (eventData.pointerDrag == null)
         {
-            if (currentPan == null) // Spawn only once
+            Debug.LogWarning("[DropZone] pointerDrag is null");
+            return;
+        }
+
+        ItemData draggedData = eventData.pointerDrag.GetComponent<ItemData>();
+        if (draggedData == null || draggedData.itemSO == null)
+        {
+            Debug.LogWarning("[DropZone] No ItemData on dragged object");
+            return;
+        }
+
+        ItemSO item = draggedData.itemSO;
+        Debug.Log($"[DropZone] Dropped item: {item.itemName}, Type: {item.itemType}");
+
+        // === 1️⃣ Place the Pan ===
+        if (item.itemType == ItemType.Utility && item.itemName == "Pan")
+        {
+            if (currentPan == null)
             {
+                // ⬇️ The updated block starts here
                 currentPan = Instantiate(panPrefab, transform);
                 currentPan.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
+                // ✅ Assign the Mixing Panel reference to the spawned PanStateHandler
+                PanStateHandler handler = currentPan.GetComponent<PanStateHandler>();
+                if (handler != null)
+                {
+                    handler.mixingMechPanel = mixingPanel;
+                }
+                // ⬆️ Updated block ends here
+
                 Debug.Log("✅ Pan placed on stove");
             }
 
@@ -27,36 +52,16 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             return;
         }
 
-        // --- Check if Spatula ---
-        if (droppedItem.itemSO.itemType == ItemType.Utility && droppedItem.itemSO.itemName == "Spatula")
+        // === 2️⃣ Ingredient Handling ===
+        if (currentPan != null && item.itemType == ItemType.Ingredient)
         {
-            string expected = CookingStepManager.Instance.GetExpectedStep();
-            if (expected == "Utility:Spatula")
+            bool correct = CookingStepManager.Instance.IsCorrectItem(item);
+            if (correct)
             {
-                Debug.Log("🥄 Spatula dropped! Opening Mixing Panel...");
-                mixingPanel.SetActive(true);
-
-                CookingStepManager.Instance.NextStep();
-                Destroy(eventData.pointerDrag); // Remove from table
-            }
-            else
-            {
-                Debug.Log("❌ Spatula not expected yet");
-                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
-                CookingStepManager.Instance.WrongAttempt();
-            }
-            return;
-        }
-
-        // --- Check if Ingredient ---
-        if (currentPan != null && droppedItem.itemSO.itemType == ItemType.Ingredient)
-        {
-            if (CookingStepManager.Instance.IsCorrectItem(droppedItem.itemSO))
-            {
-                var panHandler = currentPan.GetComponent<PanStateHandler>();
+                PanStateHandler panHandler = currentPan.GetComponent<PanStateHandler>();
                 if (panHandler != null)
                 {
-                    panHandler.UpdatePan(droppedItem.itemSO);
+                    panHandler.UpdatePanIngredient();
                 }
 
                 CookingStepManager.Instance.NextStep();
@@ -64,9 +69,15 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             }
             else
             {
-                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
+                draggedData.GetComponent<Draggable>()?.RevertToOriginalPosition();
                 CookingStepManager.Instance.WrongAttempt();
             }
+            return;
         }
+
+        
+
+        // === Nothing matched ===
+        Debug.Log("[DropZone] Drop ignored (no matching condition).");
     }
 }

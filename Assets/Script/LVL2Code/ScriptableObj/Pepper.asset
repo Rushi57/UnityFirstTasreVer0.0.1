@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
-  m_Name: Spatula
+  m_Name: Pepper
   m_EditorClassIdentifier: 
-  itemID: Spatula001
-  itemName: Spatula
-  itemType: 2
-  itemSprite: {fileID: 7110134370309661697, guid: 74198aed03d2ef64995a28a1d90bbc53, type: 3}
+  itemID: Pepper001
+  itemName: Pepper
+  itemType: 1
+  itemSprite: {fileID: -1118230107652953636, guid: 4f1330e693a828b439a1970fbcb6b80e, type: 3}
   choppedSprite: {fileID: 0}

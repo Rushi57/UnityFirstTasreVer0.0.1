@@ -3,7 +3,8 @@
 public enum ItemType
 {
     Utility,     // Example: Pan, Pot, Knife
-    Ingredient   // Example: Pork, Soy Sauce, Vinegar
+    Ingredient,   // Example: Pork, Soy Sauce, Vinegar
+    Action
 }
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Cooking/Item")]

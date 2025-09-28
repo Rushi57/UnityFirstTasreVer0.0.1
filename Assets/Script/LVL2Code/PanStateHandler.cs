@@ -1,29 +1,83 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PanStateHandler : MonoBehaviour
+public class PanStateHandler : MonoBehaviour, IDropHandler
 {
-    public Image panImage;           // assign in Inspector
+    [Header("UI Reference")]
+    public GameObject mixingMechPanel;   // <-- Must be GameObject
+
+    [Header("Pan Images")]
+    public Image panImage;
     public Sprite defaultPanSprite;
 
-    [Header("Ingredient States (ordered)")]
-    public Sprite[] stepSprites;     // one sprite per ingredient step (in the order ingredients are added)
+    [Header("Ingredient step sprites")]
+    public Sprite[] stepSprites;     // ordered per ingredient step
 
-    [Header("Condiment (pour) Sprites")]
+    [Header("Action sprites")]
     public Sprite oilPanSprite;
     public Sprite vinegarPanSprite;
     public Sprite soyPanSprite;
 
     private int stepIndex = 0;
 
-    // Call when an ingredient is accepted
-    public void UpdatePan(ItemSO itemSO)
+    public void OnDrop(PointerEventData eventData)
     {
-        if (stepSprites == null || stepSprites.Length == 0)
+        var droppedItem = eventData.pointerDrag?.GetComponent<ItemData>();
+        if (droppedItem == null) return;
+
+        // --- Ingredient drop ---
+        if (droppedItem.itemSO.itemType == ItemType.Ingredient)
         {
-            Debug.LogWarning("PanStateHandler: no stepSprites assigned.");
+            if (CookingStepManager.Instance.IsCorrectItem(droppedItem.itemSO))
+            {
+                UpdatePanIngredient();
+                CookingStepManager.Instance.NextStep();
+
+                Debug.Log("Destroying accepted ingredient: " + eventData.pointerDrag.name);
+                Destroy(eventData.pointerDrag.gameObject); // ✅ remove from scene
+            }
+            else
+            {
+                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
+                CookingStepManager.Instance.WrongAttempt();
+            }
+        }
+        // --- Mix/Spatula step ---
+        if (CookingStepManager.Instance.IsCorrectAction("Mix")
+            && droppedItem.itemSO.itemName.Equals("Spatula", System.StringComparison.OrdinalIgnoreCase))
+        {
+            // ✅ Correct action
+            CookingStepManager.Instance.NextStep();
+
+            // open the mixing panel
+            mixingMechPanel.SetActive(true);
+
+            Destroy(eventData.pointerDrag.gameObject);
             return;
         }
+
+
+        // --- Action drop (condiments) ---
+        else if (droppedItem.itemSO.itemType == ItemType.Action)
+        {
+            string actionName = droppedItem.itemSO.itemName;
+            if (CookingStepManager.Instance.OnActionPerformed(actionName))
+            {
+                UpdatePanWithAction(actionName);
+                Debug.Log("Destroying accepted action item: " + eventData.pointerDrag.name);
+                Destroy(eventData.pointerDrag.gameObject); // ✅ remove from scene
+            }
+            else
+            {
+                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
+            }
+        }
+    }
+
+    public void UpdatePanIngredient()
+    {
+        if (stepSprites == null || stepSprites.Length == 0) return;
 
         if (stepIndex < stepSprites.Length)
         {
@@ -32,11 +86,10 @@ public class PanStateHandler : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("PanStateHandler: no more ingredient sprites available.");
+            Debug.LogWarning("No more ingredient sprites available.");
         }
     }
 
-    // Call when a condiment action (Oil/Vinegar/Soy) is accepted
     public void UpdatePanWithAction(string action)
     {
         if (string.IsNullOrEmpty(action)) return;
@@ -44,22 +97,18 @@ public class PanStateHandler : MonoBehaviour
         switch (action.Trim().ToLower())
         {
             case "oil":
-                if (oilPanSprite != null) panImage.sprite = oilPanSprite;
+                if (oilPanSprite) panImage.sprite = oilPanSprite;
                 break;
             case "vinegar":
-                if (vinegarPanSprite != null) panImage.sprite = vinegarPanSprite;
+                if (vinegarPanSprite) panImage.sprite = vinegarPanSprite;
                 break;
             case "soy":
             case "soy sauce":
-                if (soyPanSprite != null) panImage.sprite = soyPanSprite;
-                break;
-            default:
-                Debug.LogWarning("PanStateHandler: unknown action " + action);
+                if (soyPanSprite) panImage.sprite = soyPanSprite;
                 break;
         }
     }
 
-    // Reset to default pan
     public void ResetPan()
     {
         panImage.sprite = defaultPanSprite;

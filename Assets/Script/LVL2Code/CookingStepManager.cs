@@ -14,65 +14,59 @@ public class CookingStepManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private bool HasCurrentStep()
+    {
+        return currentRecipe != null && currentStepIndex < currentRecipe.steps.Count;
+    }
+
     public bool IsCorrectItem(ItemSO item)
     {
-        if (currentRecipe == null) return false;
-        if (currentStepIndex >= currentRecipe.steps.Count) return false;
-
+        if (!HasCurrentStep()) return false;
         var step = currentRecipe.steps[currentStepIndex];
-
-        if (step.stepType == StepType.Ingredient)
-        {
-            return step.ingredient != null && step.ingredient.itemID == item.itemID;
-        }
-
-        return false;
+        return step.stepType == StepType.Ingredient &&
+               step.ingredient != null &&
+               step.ingredient.itemID == item.itemID;
     }
 
     public bool IsCorrectAction(string action)
     {
-        if (currentRecipe == null) return false;
-        if (currentStepIndex >= currentRecipe.steps.Count) return false;
-
+        if (!HasCurrentStep()) return false;
         var step = currentRecipe.steps[currentStepIndex];
-
-        if (step.stepType == StepType.Action)
-        {
-            return step.actionName == action;
-        }
-
-        return false;
+        return step.stepType == StepType.Action &&
+               string.Equals(step.actionName?.Trim(), action?.Trim(), System.StringComparison.OrdinalIgnoreCase);
     }
 
     public void NextStep()
     {
         currentStepIndex++;
-
         if (currentStepIndex >= currentRecipe.steps.Count)
-        {
-            Debug.Log(" Recipe Completed!");
-        }
+            Debug.Log("Recipe Completed!");
         else
-        {
-            Debug.Log($"Step advanced. Now expecting next step: {currentStepIndex}");
-        }
+            Debug.Log($"Step advanced → expecting: {GetExpectedStep()}");
     }
 
     public void WrongAttempt()
     {
-        DebugMessageManager.Instance.ShowMessage(" Wrong item or Ingredient is dropped!");
+        DebugMessageManager.Instance.ShowMessage("Wrong item or action for this step!");
     }
 
-    public void OnActionPerformed(string actionName)
+    public bool OnActionPerformed(string actionName)
     {
-       if(currentRecipe == null) return;
-       if(currentStepIndex >= currentRecipe.steps.Count) return;
-
-       var step = currentRecipe.steps[currentStepIndex];
-
-        if(step.stepType == StepType.Action && step.actionName == actionName)
+        if (IsCorrectAction(actionName))
         {
             Debug.Log("Correct action: " + actionName);
+            NextStep();
+            return true;
+        }
+        WrongAttempt();
+        return false;
+    }
+
+    public void TryMix()
+    {
+        if (IsCorrectAction("Mix"))
+        {
+            Debug.Log("Correct action: Mix");
             NextStep();
         }
         else
@@ -80,21 +74,13 @@ public class CookingStepManager : MonoBehaviour
             WrongAttempt();
         }
     }
+
     public string GetExpectedStep()
     {
-        if (currentStepIndex < currentRecipe.steps.Count)
-        {
-            var step = currentRecipe.steps[currentStepIndex];
-
-            if (step.stepType == StepType.Action)
-                return step.actionName;
-
-            if (step.stepType == StepType.Ingredient && step.ingredient != null)
-                return step.ingredient.itemName; // optional, if you want ingredient names too
-        }
-        return null;
+        if (!HasCurrentStep()) return null;
+        var step = currentRecipe.steps[currentStepIndex];
+        return step.stepType == StepType.Action
+            ? step.actionName
+            : step.ingredient != null ? step.ingredient.itemName : null;
     }
-
-
-
 }

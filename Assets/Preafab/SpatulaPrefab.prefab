@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 6766125643261594341}
   - component: {fileID: 5351457851943976406}
   - component: {fileID: 3344937482280816683}
-  - component: {fileID: 3436994666295342441}
-  - component: {fileID: 1054544970394345411}
   - component: {fileID: -130343286161000504}
   m_Layer: 5
   m_Name: SpatulaPrefab
@@ -108,41 +106,6 @@ MonoBehaviour:
   originalParent: {fileID: 0}
   originalAnchoredPosition: {x: 0, y: 0}
   canDrag: 1
---- !u!95 &3436994666295342441
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790432942333000715}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f689457979286ff49942b763b673532c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1054544970394345411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790432942333000715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f7e5badaddfa847ab909fecdff91be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixingMechPanel: {fileID: 0}
 --- !u!225 &-130343286161000504
 CanvasGroup:
   m_ObjectHideFlags: 0

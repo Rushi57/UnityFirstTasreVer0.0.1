@@ -14,6 +14,7 @@ public class RecipeStep
 
     // Action step (like Oil, Vinegar, Soy)
     public string actionName;
+    public string Action;
 }
 
 [CreateAssetMenu(fileName = "NewRecipe", menuName = "Cooking/Recipe")]
