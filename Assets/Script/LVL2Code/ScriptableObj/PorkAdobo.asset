@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PorkAdobo
   m_EditorClassIdentifier: 
   recipeName: PorkAdobo
-  recipeImage: {fileID: 0}
+  recipeImage: {fileID: -8053197629789734714, guid: 46112b9472351694db800b4770b84eac, type: 3}
   steps:
-  - stepType: 0
+  - stepType: 1
     ingredient: {fileID: 11400000, guid: cf4532f0f236b2f40afdefafae5793d7, type: 2}
     actionName: 
     Action: 
@@ -39,3 +39,7 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
     actionName: Mix
     Action: Mix
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: a8b107d2228e5a54c810ac90b8914061, type: 2}
+    actionName: Simmer
+    Action: Simmer

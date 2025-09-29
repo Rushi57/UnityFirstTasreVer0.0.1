@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CuttingMechanic : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class CuttingMechanic : MonoBehaviour
     public Button tapToCutBtn;
     public RectTransform arrowIndicator;
     public RectTransform colorBar; // the single white bar
+
+    [Header("Completion Panel UI")]
+    public GameObject completeshowtPanel;
+    public Image cutVersionImg;
+    public TextMeshProUGUI resultText;
+    public Button closeButton;
 
     [Header("Knife Settings")]
     public float knifeSpeed = 600f;
@@ -24,6 +31,9 @@ public class CuttingMechanic : MonoBehaviour
     private float yellowStart, yellowEnd;
     private float greenStart, greenEnd;
 
+    // ✅ New flag to prevent multiple cuts
+    private bool hasCut = false;
+
     void Start()
     {
         if (cuttingPanel != null)
@@ -31,14 +41,17 @@ public class CuttingMechanic : MonoBehaviour
 
         if (tapToCutBtn != null)
             tapToCutBtn.onClick.AddListener(EvaluateCut);
+
+        if (closeButton != null)
+            closeButton.onClick.AddListener(CloseResultPanel);
     }
 
     void Update()
     {
         if (cuttingPanel == null || !cuttingPanel.activeSelf) return;
+        if (hasCut) return; // ✅ stop movement after cutting
 
         float halfWidth = colorBar.rect.width / 2;
-
         float move = knifeSpeed * Time.deltaTime * (goingRight ? 1 : -1);
         arrowIndicator.anchoredPosition += new Vector2(move, 0);
 
@@ -51,6 +64,7 @@ public class CuttingMechanic : MonoBehaviour
     public void StartCutting(Sprite ingredientSprite, ItemData item)
     {
         currentItem = item;
+        hasCut = false; // ✅ reset when new item starts
         cuttingPanel.SetActive(true);
         ingredientDisplayImg.sprite = ingredientSprite;
 
@@ -65,19 +79,16 @@ public class CuttingMechanic : MonoBehaviour
     {
         float totalWidth = colorBar.rect.width;
 
-        // Yellow = 70%
         float yellowWidth = 0.5f;
         yellowStart = Random.Range(0f, 1f - yellowWidth);
         yellowEnd = yellowStart + yellowWidth;
 
-        // Green = 30% inside yellow
         float greenWidth = 0.1f;
         greenStart = Random.Range(yellowStart, yellowEnd - greenWidth);
         greenEnd = greenStart + greenWidth;
 
         Debug.Log($"Zones → Yellow: {yellowStart:P0}-{yellowEnd:P0}, Green: {greenStart:P0}-{greenEnd:P0}");
 
-        // --- Debug overlays ---
         if (yellowOverlay != null)
         {
             float yStartPos = (yellowStart * totalWidth) - totalWidth / 2f;
@@ -97,19 +108,37 @@ public class CuttingMechanic : MonoBehaviour
 
     private void EvaluateCut()
     {
-        float halfWidth = colorBar.rect.width / 2;
-        float normalizedX = (arrowIndicator.anchoredPosition.x + halfWidth) / colorBar.rect.width; // 0–1
+        if (hasCut) return; // ✅ Prevent multiple cuts on same item
+        hasCut = true;
 
-        string result = "Bad Cut!"; // default red
+        float halfWidth = colorBar.rect.width / 2;
+        float normalizedX = (arrowIndicator.anchoredPosition.x + halfWidth) / colorBar.rect.width;
+
+        string result = "Bad Cut!";
+        int scoreChopped = 1;
 
         if (normalizedX >= yellowStart && normalizedX <= yellowEnd)
+        {
             result = "Good Cut!";
+            scoreChopped = 2;
+        }
         if (normalizedX >= greenStart && normalizedX <= greenEnd)
+        {
             result = "Very Good Cut!";
+            scoreChopped = 3;
+        }
 
-        Debug.Log(result);
+        // Send Score
+        CutScoreManager.Instance.AddCutScore(scoreChopped);
 
-        // Change ingredient to chopped
+        // Show result panel
+        Sprite choppedSprite = null;
+        if (currentItem != null && currentItem.itemSO != null)
+            choppedSprite = currentItem.itemSO.choppedSprite;
+
+        ShowResultPanel(result, choppedSprite);
+
+        // ✅ Change ingredient to chopped but still draggable
         if (currentItem != null && currentItem.itemSO != null && currentItem.itemSO.choppedSprite != null)
         {
             Image img = currentItem.GetComponent<Image>();
@@ -118,8 +147,31 @@ public class CuttingMechanic : MonoBehaviour
             currentItem.SetCutVersion();
             currentItem.EnableDrag();
         }
+    }
 
-        cuttingPanel.SetActive(false);
+    private void ShowResultPanel(string result, Sprite choppedSprite)
+    {
+        if (completeshowtPanel == null || resultText == null) return;
+
+        completeshowtPanel.SetActive(true);
+        resultText.text = result;
+
+        if (cutVersionImg != null && choppedSprite != null)
+            cutVersionImg.sprite = choppedSprite;
+    }
+
+    private void CloseResultPanel()
+    {
+        if (completeshowtPanel != null) completeshowtPanel.SetActive(false);
+        if (cuttingPanel != null) cuttingPanel.SetActive(false);
+
+        // ✅ Move recipe forward when player closes cutting panel
+        if (CookingStepManager.Instance != null)
+        {
+            CookingStepManager.Instance.NextStep();
+        }
+
         currentItem = null;
     }
+
 }

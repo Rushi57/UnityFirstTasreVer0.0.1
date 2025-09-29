@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class PanStateHandler : MonoBehaviour, IDropHandler
 {
     [Header("UI Reference")]
-    public GameObject mixingMechPanel;   // <-- Must be GameObject
+    public GameObject mixingMechPanel;   //MixingPanel
+    public GameObject simmerClockPanel;
 
     [Header("Pan Images")]
     public Image panImage;
@@ -56,7 +57,19 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
             Destroy(eventData.pointerDrag.gameObject);
             return;
         }
+        // --- Simmer/PanLid step ---
+        if (CookingStepManager.Instance.IsCorrectAction("Simmer")
+            && droppedItem.itemSO.itemName.Equals("PanLid", System.StringComparison.OrdinalIgnoreCase))
+        {
+            // ✅ Correct action
+            CookingStepManager.Instance.NextStep();
 
+            // open the simmer panel
+            simmerClockPanel.SetActive(true);
+
+            Destroy(eventData.pointerDrag.gameObject);
+            return;
+        }
 
         // --- Action drop (condiments) ---
         else if (droppedItem.itemSO.itemType == ItemType.Action)
