@@ -71,7 +71,7 @@ public class NeedleTimer : MonoBehaviour
         }
 
         // Add score
-        SimmerScoreManager.Instance.AddSimmerScore(simmerscore);
+        SimmerScoreManager.Instance.SimmerAddScore(simmerscore);
 
         // Show result panel
         if (completeShowPanel != null)
@@ -98,7 +98,7 @@ public class NeedleTimer : MonoBehaviour
         rotationTime = 0f;
 
         // ✅ Always Bad if time runs out
-        SimmerScoreManager.Instance.AddSimmerScore(3);
+        SimmerScoreManager.Instance.SimmerAddScore(3);
 
         if (completeShowPanel != null)
         {

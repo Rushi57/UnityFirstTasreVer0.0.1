@@ -1,11 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CutScoreManager : MonoBehaviour
 {
     public static CutScoreManager Instance;
 
-    [Header("Scores")]
-    public int choppedTotalscore = 0;
+    public int choppedTotalscore { get; private set; }
 
     void Awake()
     {
@@ -13,13 +12,15 @@ public class CutScoreManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public void AddCutScore(int amount)
+    public void CutAddScore(int cutAmount)
     {
-        choppedTotalscore += amount;
-    }
+        choppedTotalscore += cutAmount;
+        Debug.Log($"Total Cut Score: {choppedTotalscore}");
 
-    public void ResetCutScore()
-    {
-        choppedTotalscore = 0;
+        // ✅ Check if recipe is finished, then finalize
+        if (CookingStepManager.Instance != null && CookingStepManager.Instance.IsRecipeCompleted())
+        {
+            TotalScoreManager.Instance.CalculateFinalScore();
+        }
     }
 }

@@ -86,7 +86,7 @@ public class MixingMechanicManager : MonoBehaviour
             Debug.Log($"Final Score: {result.Value.label} ({result.Value.score} pts)");
 
             if (MixingScoreManager.Instance != null)
-                MixingScoreManager.Instance.AddMixScore(result.Value.score);
+                MixingScoreManager.Instance.AddMixingScore(result.Value.score);
 
             if (completeShowPanel != null)
             {
@@ -156,16 +156,10 @@ public class MixingMechanicManager : MonoBehaviour
 
     private void CloseAllPanels()
     {
-        if (completeShowPanel != null)
-            completeShowPanel.SetActive(false);
-
         if (mixingPanel != null)
             mixingPanel.SetActive(false);
 
-        // ✅ Advance recipe when closing simmer panel
-        if (CookingStepManager.Instance != null)
-        {
-            CookingStepManager.Instance.NextStep();
-        }
+        if (completeShowPanel != null)
+            completeShowPanel.SetActive(false);
     }
 }

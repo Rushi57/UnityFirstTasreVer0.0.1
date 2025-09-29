@@ -4,12 +4,9 @@ public class CookingStepManager : MonoBehaviour
 {
     public static CookingStepManager Instance;
 
-    [Header("Recipe")]
-    public RecipeSO currentRecipe;        // Assign in Inspector or set dynamically
-    private int currentStepIndex = 0;
-
-    [Header("UI Panels")]
-    public GameObject completionPanel;    // Drag your CompletionPanel prefab/UI here
+    [Header("Current Recipe")]
+    public RecipeSO currentRecipe;
+    public int currentStepIndex = 0;
 
     private void Awake()
     {
@@ -36,28 +33,21 @@ public class CookingStepManager : MonoBehaviour
         if (!HasCurrentStep()) return false;
         var step = currentRecipe.steps[currentStepIndex];
         return step.stepType == StepType.Action &&
-               string.Equals(step.actionName?.Trim(), action?.Trim(),
-                   System.StringComparison.OrdinalIgnoreCase);
+               string.Equals(step.actionName?.Trim(), action?.Trim(), System.StringComparison.OrdinalIgnoreCase);
     }
 
     public void NextStep()
     {
         currentStepIndex++;
-
         if (currentRecipe != null && currentStepIndex >= currentRecipe.steps.Count)
         {
             Debug.Log($"✅ Recipe {currentRecipe.recipeName} Completed!");
-
-            // 🔥 Pass the recipe so stars, scores, and image can display
-            TotalScoreManager.Instance.CalculateFinalScore(currentRecipe);
-
-            if (completionPanel != null)
-                completionPanel.SetActive(true);
-
-            return;
+            TotalScoreManager.Instance.CalculateFinalScore(); // ✅ pass recipe CalculateFinalScore()
         }
-
-        Debug.Log($"➡️ Next step: {GetExpectedStep()}");
+        else
+        {
+            Debug.Log($"➡️ Next step: {GetExpectedStep()}");
+        }
     }
 
     public void WrongAttempt()
@@ -119,13 +109,5 @@ public class CookingStepManager : MonoBehaviour
     public bool IsRecipeCompleted()
     {
         return currentRecipe != null && currentStepIndex >= currentRecipe.steps.Count;
-    }
-
-    // 👉 Call this to assign recipe dynamically from a recipe selection button/menu
-    public void SetRecipe(RecipeSO recipe)
-    {
-        currentRecipe = recipe;
-        currentStepIndex = 0;
-        Debug.Log($"📖 Recipe loaded: {currentRecipe.recipeName}");
     }
 }

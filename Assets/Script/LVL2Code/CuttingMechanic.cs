@@ -129,7 +129,7 @@ public class CuttingMechanic : MonoBehaviour
         }
 
         // Send Score
-        CutScoreManager.Instance.AddCutScore(scoreChopped);
+        CutScoreManager.Instance.CutAddScore(scoreChopped);
 
         // Show result panel
         Sprite choppedSprite = null;
@@ -164,14 +164,6 @@ public class CuttingMechanic : MonoBehaviour
     {
         if (completeshowtPanel != null) completeshowtPanel.SetActive(false);
         if (cuttingPanel != null) cuttingPanel.SetActive(false);
-
-        // ✅ Move recipe forward when player closes cutting panel
-        if (CookingStepManager.Instance != null)
-        {
-            CookingStepManager.Instance.NextStep();
-        }
-
         currentItem = null;
     }
-
 }

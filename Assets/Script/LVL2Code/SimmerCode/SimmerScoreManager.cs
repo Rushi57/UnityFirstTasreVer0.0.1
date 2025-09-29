@@ -1,11 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SimmerScoreManager : MonoBehaviour
 {
-    public static SimmerScoreManager Instance;
+    public static SimmerScoreManager Instance { get; private set; }
 
-    [Header("Scores")]
-    public int simmerTotalScore = 0;
+    public int simmerTotalScore { get; private set; }
 
     void Awake()
     {
@@ -13,13 +12,15 @@ public class SimmerScoreManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public void AddSimmerScore(int amount)
+    public void SimmerAddScore(int simmerAmount)
     {
-        simmerTotalScore += amount;
-    }
+        simmerTotalScore += simmerAmount;
+        Debug.Log($"Total Simmer Score: {simmerTotalScore}");
 
-    public void ResetSimmerScore()
-    {
-        simmerTotalScore = 0;
+        // ✅ Check if recipe is finished, then finalize
+        if (CookingStepManager.Instance != null && CookingStepManager.Instance.IsRecipeCompleted())
+        {
+            TotalScoreManager.Instance.CalculateFinalScore();
+        }
     }
 }

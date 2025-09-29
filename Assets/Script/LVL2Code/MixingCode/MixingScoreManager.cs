@@ -1,11 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MixingScoreManager : MonoBehaviour
 {
     public static MixingScoreManager Instance;
 
-    [Header("Scores")]
-    public int totalMixScore = 0;
+    public int totalMixScore { get; private set; }
 
     void Awake()
     {
@@ -13,13 +12,15 @@ public class MixingScoreManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public void AddMixScore(int amount)
+    public void AddMixingScore(int mixAmount)
     {
-        totalMixScore += amount;
-    }
+        totalMixScore += mixAmount;
+        Debug.Log($"Total Mixing Score: {totalMixScore}");
 
-    public void ResetMixScore()
-    {
-        totalMixScore = 0;
+        // ✅ Check if recipe is finished, then finalize
+        if (CookingStepManager.Instance != null && CookingStepManager.Instance.IsRecipeCompleted())
+        {
+            TotalScoreManager.Instance.CalculateFinalScore();
+        }
     }
 }

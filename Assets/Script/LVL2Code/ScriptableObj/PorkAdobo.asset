@@ -21,8 +21,8 @@ MonoBehaviour:
     Action: 
   - stepType: 1
     ingredient: {fileID: 0}
-    actionName: Oil
-    Action: 
+    actionName: oil
+    Action: oil
   - stepType: 0
     ingredient: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
     actionName: 
