@@ -42,12 +42,7 @@ public class CookingStepManager : MonoBehaviour
         if (currentStepIndex >= currentRecipe.steps.Count)
         {
             TotalScoreManager.Instance.CalculateFinalScore(currentRecipe.recipeName);
-            Debug.Log($"✅ Recipe {currentRecipe.recipeName} Completed!");
-<<<<<<< Updated upstream
             
-=======
-            OnRecipeComplete();
->>>>>>> Stashed changes
         }
         else
         {
@@ -79,7 +74,10 @@ public class CookingStepManager : MonoBehaviour
             Debug.Log("Correct action: Mix");
             NextStep();
         }
-        else WrongAttempt();
+        else
+        {
+            WrongAttempt();
+        }
     }
 
     public void TrySimmer()
@@ -89,7 +87,10 @@ public class CookingStepManager : MonoBehaviour
             Debug.Log("Correct action: Simmer");
             NextStep();
         }
-        else WrongAttempt();
+        else
+        {
+            WrongAttempt();
+        }
     }
 
     public void TryCut()
@@ -99,7 +100,10 @@ public class CookingStepManager : MonoBehaviour
             Debug.Log("Correct action: Cut");
             NextStep();
         }
-        else WrongAttempt();
+        else
+        {
+            WrongAttempt();
+        }
     }
 
     public string GetExpectedStep()
@@ -111,30 +115,10 @@ public class CookingStepManager : MonoBehaviour
             : step.ingredient != null ? step.ingredient.itemName : null;
     }
 
+
     public bool IsRecipeCompleted()
     {
         return currentRecipe != null && currentStepIndex >= currentRecipe.steps.Count;
-    }
-
-    public void OnRecipeComplete()
-    {
-        Debug.Log($"🎉 Recipe {currentRecipe.recipeName} Completed!");
-
-        // Optional: still notify TotalScoreManager if you want it to do logging
-        if (TotalScoreManager.Instance != null)
-        {
-            TotalScoreManager.Instance.CheckIfAllFinished();
-        }
-
-        // ✅ Directly show Final Score Panel when recipe is finished
-        if (TotalScoreManager.Instance != null && TotalScoreManager.Instance.finalScorePanel != null)
-        {
-            TotalScoreManager.Instance.finalScorePanel.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("⚠️ FinalScorePanel not assigned in TotalScoreManager!");
-        }
     }
 
 }
