@@ -39,10 +39,11 @@ public class CookingStepManager : MonoBehaviour
     public void NextStep()
     {
         currentStepIndex++;
-        if (currentRecipe != null && currentStepIndex >= currentRecipe.steps.Count)
+        if (currentStepIndex >= currentRecipe.steps.Count)
         {
+            TotalScoreManager.Instance.CalculateFinalScore(currentRecipe.recipeName);
             Debug.Log($"✅ Recipe {currentRecipe.recipeName} Completed!");
-            TotalScoreManager.Instance.CalculateFinalScore(); // ✅ pass recipe CalculateFinalScore()
+            
         }
         else
         {
@@ -74,7 +75,10 @@ public class CookingStepManager : MonoBehaviour
             Debug.Log("Correct action: Mix");
             NextStep();
         }
-        else WrongAttempt();
+        else
+        {
+            WrongAttempt();
+        }
     }
 
     public void TrySimmer()
@@ -84,7 +88,10 @@ public class CookingStepManager : MonoBehaviour
             Debug.Log("Correct action: Simmer");
             NextStep();
         }
-        else WrongAttempt();
+        else
+        {
+            WrongAttempt();
+        }
     }
 
     public void TryCut()
@@ -94,7 +101,10 @@ public class CookingStepManager : MonoBehaviour
             Debug.Log("Correct action: Cut");
             NextStep();
         }
-        else WrongAttempt();
+        else
+        {
+            WrongAttempt();
+        }
     }
 
     public string GetExpectedStep()
@@ -106,8 +116,10 @@ public class CookingStepManager : MonoBehaviour
             : step.ingredient != null ? step.ingredient.itemName : null;
     }
 
+
     public bool IsRecipeCompleted()
     {
         return currentRecipe != null && currentStepIndex >= currentRecipe.steps.Count;
     }
+
 }

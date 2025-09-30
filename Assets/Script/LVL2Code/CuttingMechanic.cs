@@ -12,7 +12,7 @@ public class CuttingMechanic : MonoBehaviour
     public RectTransform colorBar; // the single white bar
 
     [Header("Completion Panel UI")]
-    public GameObject completeshowtPanel;
+    public GameObject completeshowPanel;
     public Image cutVersionImg;
     public TextMeshProUGUI resultText;
     public Button closeButton;
@@ -129,7 +129,8 @@ public class CuttingMechanic : MonoBehaviour
         }
 
         // Send Score
-        CutScoreManager.Instance.CutAddScore(scoreChopped);
+      
+        TotalScoreManager.Instance.AddCutScore(scoreChopped);
 
         // Show result panel
         Sprite choppedSprite = null;
@@ -151,9 +152,9 @@ public class CuttingMechanic : MonoBehaviour
 
     private void ShowResultPanel(string result, Sprite choppedSprite)
     {
-        if (completeshowtPanel == null || resultText == null) return;
+        if (completeshowPanel == null || resultText == null) return;
 
-        completeshowtPanel.SetActive(true);
+        completeshowPanel.SetActive(true);
         resultText.text = result;
 
         if (cutVersionImg != null && choppedSprite != null)
@@ -162,7 +163,7 @@ public class CuttingMechanic : MonoBehaviour
 
     private void CloseResultPanel()
     {
-        if (completeshowtPanel != null) completeshowtPanel.SetActive(false);
+        if (completeshowPanel != null) completeshowPanel.SetActive(false);
         if (cuttingPanel != null) cuttingPanel.SetActive(false);
         currentItem = null;
     }

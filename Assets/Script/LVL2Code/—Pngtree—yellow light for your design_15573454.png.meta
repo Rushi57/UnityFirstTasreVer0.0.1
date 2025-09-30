@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 2f81aad79d4cc0240ae60f2391772e98
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4778214038146290734
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_0"
+  - first:
+      213: -1938733875680732845
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_1"
+  - first:
+      213: 5871022115990148983
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_2"
+  - first:
+      213: 2138868658921218311
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_3"
+  - first:
+      213: -1271481362585049644
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_4"
+  - first:
+      213: -950538107214216331
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_5"
+  - first:
+      213: -7343220804796997004
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_6"
+  - first:
+      213: -1916663041273394029
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_7"
+  - first:
+      213: -4513694581990426865
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_8"
+  - first:
+      213: -4204439643326634702
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_9"
+  - first:
+      213: -8849698139869541079
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_10"
+  - first:
+      213: 204483263459189675
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_11"
+  - first:
+      213: -1736869071015713998
+    second: "\u2014Pngtree\u2014yellow light for your design_15573454_12"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_0"
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 4974
+        height: 4972
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e249e740a50af4240800000000000000
+      internalID: 4778214038146290734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_1"
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 2492
+        width: 1915
+        height: 1988
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 359980adfcb3815e0800000000000000
+      internalID: -1938733875680732845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_2"
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 2488
+        width: 1767
+        height: 954
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7771e0c228f0a7150800000000000000
+      internalID: 5871022115990148983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_3"
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 2492
+        width: 904
+        height: 1783
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701273c86b9cead10800000000000000
+      internalID: 2138868658921218311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_4"
+      rect:
+        serializedVersion: 2
+        x: 2191
+        y: 2492
+        width: 1171
+        height: 2472
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d5a694ff6aca5ee0800000000000000
+      internalID: -1271481362585049644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_5"
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 2488
+        width: 1756
+        height: 988
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 573460ea0a20fc2f0800000000000000
+      internalID: -950538107214216331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_6"
+      rect:
+        serializedVersion: 2
+        x: 2497
+        y: 2492
+        width: 1909
+        height: 1996
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47221d68593a71a90800000000000000
+      internalID: -7343220804796997004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_7"
+      rect:
+        serializedVersion: 2
+        x: 2501
+        y: 2315
+        width: 2473
+        height: 601
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c87ce6e15a665e0800000000000000
+      internalID: -1916663041273394029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_8"
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 487
+        width: 1910
+        height: 1995
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f07fad731b22c51c0800000000000000
+      internalID: -4513694581990426865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_9"
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 1667
+        width: 1805
+        height: 819
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23522f3ab64d6a5c0800000000000000
+      internalID: -4204439643326634702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_10"
+      rect:
+        serializedVersion: 2
+        x: 2190
+        y: 8
+        width: 1206
+        height: 2480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d04a3fd6e8f2580800000000000000
+      internalID: -8849698139869541079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_11"
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 1702
+        width: 1815
+        height: 784
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba36ff8d17876d200800000000000000
+      internalID: 204483263459189675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014yellow light for your design_15573454_12"
+      rect:
+        serializedVersion: 2
+        x: 2498
+        y: 658
+        width: 2069
+        height: 1823
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 233eeb048c665e7e0800000000000000
+      internalID: -1736869071015713998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6c7c78750db420f4baf357d0e1ca7d31
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "\u2014Pngtree\u2014yellow light for your design_15573454_0": 4778214038146290734
+      "\u2014Pngtree\u2014yellow light for your design_15573454_1": -1938733875680732845
+      "\u2014Pngtree\u2014yellow light for your design_15573454_10": -8849698139869541079
+      "\u2014Pngtree\u2014yellow light for your design_15573454_11": 204483263459189675
+      "\u2014Pngtree\u2014yellow light for your design_15573454_12": -1736869071015713998
+      "\u2014Pngtree\u2014yellow light for your design_15573454_2": 5871022115990148983
+      "\u2014Pngtree\u2014yellow light for your design_15573454_3": 2138868658921218311
+      "\u2014Pngtree\u2014yellow light for your design_15573454_4": -1271481362585049644
+      "\u2014Pngtree\u2014yellow light for your design_15573454_5": -950538107214216331
+      "\u2014Pngtree\u2014yellow light for your design_15573454_6": -7343220804796997004
+      "\u2014Pngtree\u2014yellow light for your design_15573454_7": -1916663041273394029
+      "\u2014Pngtree\u2014yellow light for your design_15573454_8": -4513694581990426865
+      "\u2014Pngtree\u2014yellow light for your design_15573454_9": -4204439643326634702
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

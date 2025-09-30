@@ -71,7 +71,9 @@ public class NeedleTimer : MonoBehaviour
         }
 
         // Add score
-        SimmerScoreManager.Instance.SimmerAddScore(simmerscore);
+        TotalScoreManager.Instance.AddSimmerScore(simmerscore);
+        CookingStepManager.Instance.NextStep();
+
 
         // Show result panel
         if (completeShowPanel != null)
@@ -98,7 +100,7 @@ public class NeedleTimer : MonoBehaviour
         rotationTime = 0f;
 
         // ✅ Always Bad if time runs out
-        SimmerScoreManager.Instance.SimmerAddScore(3);
+        TotalScoreManager.Instance.AddMixScore(3);
 
         if (completeShowPanel != null)
         {
@@ -117,11 +119,5 @@ public class NeedleTimer : MonoBehaviour
 
         if (simmerPanel != null)
             simmerPanel.SetActive(false);
-
-        // ✅ Advance recipe when closing simmer panel
-        if (CookingStepManager.Instance != null)
-        {
-            CookingStepManager.Instance.NextStep();
-        }
     }
 }
