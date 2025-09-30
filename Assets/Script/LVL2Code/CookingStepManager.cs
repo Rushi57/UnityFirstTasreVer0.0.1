@@ -42,7 +42,7 @@ public class CookingStepManager : MonoBehaviour
         if (currentStepIndex >= currentRecipe.steps.Count)
         {
 
-            TotalScoreManager.Instance.CalculateFinalScore(currentRecipe.recipeName);
+            TotalScoreManager.Instance.CalculateFinalScore(currentRecipe.recipeName, currentRecipe);
         }
         else
         {
@@ -120,5 +120,7 @@ public class CookingStepManager : MonoBehaviour
     {
         return currentRecipe != null && currentStepIndex >= currentRecipe.steps.Count;
     }
+    
+
 
 }

@@ -72,6 +72,7 @@ public class NeedleTimer : MonoBehaviour
 
         // Add score
         TotalScoreManager.Instance.AddSimmerScore(simmerscore);
+        CookingStepManager.Instance.NextStep();
 
         // Show result panel
         if (completeShowPanel != null)

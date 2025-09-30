@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+using TMPro;
+using UnityEngine.UI;
+using System.Collections; 
 public class TotalScoreManager : MonoBehaviour
 {
     public static TotalScoreManager Instance;
@@ -7,6 +9,9 @@ public class TotalScoreManager : MonoBehaviour
     private int mixScore;
     private int cutScore;
     private int simmerScore;
+
+    public DishDisplayUI dishDisplayUI; // drag into inspector
+
 
     public int FinalScore { get; private set; }
 
@@ -36,14 +41,31 @@ public class TotalScoreManager : MonoBehaviour
     }
 
     // 🔹 Called once when recipe is done
-    public void CalculateFinalScore(string recipeName)
+    public void CalculateFinalScore(string recipeName, RecipeSO recipe)
     {
+        // Prevent early execution
+        if (!CookingStepManager.Instance.IsRecipeCompleted()) return;
+
         FinalScore = mixScore + cutScore + simmerScore;
 
         Debug.Log($"📊 Final Breakdown → Mix:{mixScore}, Cut:{cutScore}, Simmer:{simmerScore}");
         Debug.Log($"🏆 Total Score: {FinalScore}");
         Debug.Log($"✅ Recipe {recipeName} Completed!");
+
+        // ✅ Show final dish panel with 1 second delay
+        if (dishDisplayUI != null && recipe != null)
+        {
+            dishDisplayUI.ShowDishWithDelay(recipe, 1f);
+        }
     }
+
+    private IEnumerator ShowDishAfterDelay(RecipeSO recipe, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        dishDisplayUI.ShowDish(recipe); // now safe
+    }
+
+
 
     // 🔹 Optional reset between recipes
     public void ResetScores()
@@ -53,4 +75,5 @@ public class TotalScoreManager : MonoBehaviour
         simmerScore = 0;
         FinalScore = 0;
     }
+
 }
