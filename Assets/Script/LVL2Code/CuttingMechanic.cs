@@ -129,7 +129,7 @@ public class CuttingMechanic : MonoBehaviour
         }
 
         // Send Score
-        CutScoreManager.Instance.CutAddScore(scoreChopped);
+        TotalScoreManager.Instance.AddCutScore(scoreChopped);
 
         // Show result panel
         Sprite choppedSprite = null;

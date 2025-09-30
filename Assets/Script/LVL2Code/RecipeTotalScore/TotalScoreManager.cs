@@ -4,7 +4,11 @@ public class TotalScoreManager : MonoBehaviour
 {
     public static TotalScoreManager Instance;
 
-    public int finalScore { get; private set; }
+    private int mixScore;
+    private int cutScore;
+    private int simmerScore;
+
+    public int FinalScore { get; private set; }
 
     private void Awake()
     {
@@ -12,14 +16,41 @@ public class TotalScoreManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public void CalculateFinalScore()
+    // 🔹 Register scores instead of having separate managers
+    public void AddMixScore(int amount)
     {
-        int mix = MixingScoreManager.Instance != null ? MixingScoreManager.Instance.totalMixScore : 0;
-        int cut = CutScoreManager.Instance != null ? CutScoreManager.Instance.choppedTotalscore : 0;
-        int simmer = SimmerScoreManager.Instance != null ? SimmerScoreManager.Instance.simmerTotalScore : 0;
+        mixScore += amount;
+        Debug.Log($"Mix Score Added: {amount} | Current Total Mix: {mixScore}");
+    }
 
-        finalScore = mix + cut + simmer;
+    public void AddCutScore(int amount)
+    {
+        cutScore += amount;
+        Debug.Log($"Cut Score Added: {amount} | Current Total Cut: {cutScore}");
+    }
 
-        Debug.Log($"🍲 Final Score for Recipe: {finalScore} (Mix:{mix}, Cut:{cut}, Simmer:{simmer})");
+    public void AddSimmerScore(int amount)
+    {
+        simmerScore += amount;
+        Debug.Log($"Simmer Score Added: {amount} | Current Total Simmer: {simmerScore}");
+    }
+
+    // 🔹 Called once when recipe is done
+    public void CalculateFinalScore(string recipeName)
+    {
+        FinalScore = mixScore + cutScore + simmerScore;
+
+        Debug.Log($"📊 Final Breakdown → Mix:{mixScore}, Cut:{cutScore}, Simmer:{simmerScore}");
+        Debug.Log($"🏆 Total Score: {FinalScore}");
+        Debug.Log($"✅ Recipe {recipeName} Completed!");
+    }
+
+    // 🔹 Optional reset between recipes
+    public void ResetScores()
+    {
+        mixScore = 0;
+        cutScore = 0;
+        simmerScore = 0;
+        FinalScore = 0;
     }
 }

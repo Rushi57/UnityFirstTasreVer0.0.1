@@ -85,8 +85,8 @@ public class MixingMechanicManager : MonoBehaviour
         {
             Debug.Log($"Final Score: {result.Value.label} ({result.Value.score} pts)");
 
-            if (MixingScoreManager.Instance != null)
-                MixingScoreManager.Instance.AddMixingScore(result.Value.score);
+            if (TotalScoreManager.Instance != null)
+                TotalScoreManager.Instance.AddMixScore(result.Value.score);
 
             if (completeShowPanel != null)
             {
