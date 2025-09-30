@@ -42,8 +42,6 @@ public class CuttingMechanic : MonoBehaviour
         if (tapToCutBtn != null)
             tapToCutBtn.onClick.AddListener(EvaluateCut);
 
-        if (closeButton != null)
-            closeButton.onClick.AddListener(CloseResultPanel);
     }
 
     void Update()
@@ -161,10 +159,5 @@ public class CuttingMechanic : MonoBehaviour
             cutVersionImg.sprite = choppedSprite;
     }
 
-    private void CloseResultPanel()
-    {
-        if (completeshowPanel != null) completeshowPanel.SetActive(false);
-        if (cuttingPanel != null) cuttingPanel.SetActive(false);
-        currentItem = null;
-    }
+   
 }

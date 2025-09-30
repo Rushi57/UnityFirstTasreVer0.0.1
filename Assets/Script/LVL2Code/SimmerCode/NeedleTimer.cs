@@ -119,5 +119,10 @@ public class NeedleTimer : MonoBehaviour
 
         if (simmerPanel != null)
             simmerPanel.SetActive(false);
+        //Go to CookingStepManager
+        if (CookingStepManager.Instance != null)
+        {
+            CookingStepManager.Instance.NextStep();
+        }
     }
 }

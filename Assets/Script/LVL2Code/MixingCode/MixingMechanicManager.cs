@@ -161,5 +161,6 @@ public class MixingMechanicManager : MonoBehaviour
 
         if (completeShowPanel != null)
             completeShowPanel.SetActive(false);
+       
     }
 }
