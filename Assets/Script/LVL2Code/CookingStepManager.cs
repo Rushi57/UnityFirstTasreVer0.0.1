@@ -41,8 +41,8 @@ public class CookingStepManager : MonoBehaviour
         currentStepIndex++;
         if (currentStepIndex >= currentRecipe.steps.Count)
         {
-            Debug.Log($"✅ Recipe {currentRecipe.recipeName} Completed!");
-            //TotalScoreManager.Instance.CalculateFinalScore();
+
+            TotalScoreManager.Instance.CalculateFinalScore(currentRecipe.recipeName);
         }
         else
         {
