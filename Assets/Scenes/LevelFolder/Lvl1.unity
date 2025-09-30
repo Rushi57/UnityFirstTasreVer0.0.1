@@ -6268,8 +6268,8 @@ GameObject:
   - component: {fileID: 741314531}
   - component: {fileID: 741314530}
   - component: {fileID: 741314532}
-  - component: {fileID: 741314533}
   - component: {fileID: 741314534}
+  - component: {fileID: 741314535}
   m_Layer: 0
   m_Name: HistoryDialogManager
   m_TagString: Untagged
@@ -6322,20 +6322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb2d6332cf059f47a1855754e1f7622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choppedTotalscore: 0
---- !u!114 &741314533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741314529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75a0d85c5d4d6244a6bd2f7784cfe9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  simmerTotalScore: 0
 --- !u!114 &741314534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6348,7 +6334,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2128507ce456659429068c8148b1cde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalMixScore: 0
+--- !u!114 &741314535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741314529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75a0d85c5d4d6244a6bd2f7784cfe9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &766375293
 GameObject:
   m_ObjectHideFlags: 0
@@ -7649,7 +7646,7 @@ MonoBehaviour:
   tapToCutBtn: {fileID: 129959188}
   arrowIndicator: {fileID: 1526890738}
   colorBar: {fileID: 1942706856}
-  completeshowtPanel: {fileID: 1847907009}
+  completeshowPanel: {fileID: 1847907009}
   cutVersionImg: {fileID: 1842948636}
   resultText: {fileID: 1979647169}
   closeButton: {fileID: 1141735592}
@@ -7683,7 +7680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRecipe: {fileID: 11400000, guid: 515f43d0e9f88174a8d891f952eb950a, type: 2}
-  completionPanel: {fileID: 1740555350}
+  currentStepIndex: 0
 --- !u!1 &971822115
 GameObject:
   m_ObjectHideFlags: 0
@@ -10704,6 +10701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1388714550}
   - component: {fileID: 1388714549}
+  - component: {fileID: 1388714551}
   m_Layer: 0
   m_Name: DebugManager
   m_TagString: Untagged
@@ -10741,6 +10739,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1388714551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388714548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab85666f8d54bdc439253b295373d30e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1406703164
 GameObject:
   m_ObjectHideFlags: 0
@@ -12988,18 +12998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab85666f8d54bdc439253b295373d30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixingScoreText: {fileID: 1438309375}
-  choppingScoreText: {fileID: 1239310687}
-  simmerScoreText: {fileID: 94319508}
-  totalScoreText: {fileID: 344367331}
-  recipeNameText: {fileID: 0}
-  recipeImage: {fileID: 28683638}
-  stars:
-  - {fileID: 837634792}
-  - {fileID: 847972987}
-  - {fileID: 149247667}
-  filledStarColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  emptyStarColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &1741284634
 GameObject:
   m_ObjectHideFlags: 0

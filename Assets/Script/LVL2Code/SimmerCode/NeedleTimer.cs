@@ -117,11 +117,5 @@ public class NeedleTimer : MonoBehaviour
 
         if (simmerPanel != null)
             simmerPanel.SetActive(false);
-
-        // ✅ Advance recipe when closing simmer panel
-        if (CookingStepManager.Instance != null)
-        {
-            CookingStepManager.Instance.NextStep();
-        }
     }
 }
