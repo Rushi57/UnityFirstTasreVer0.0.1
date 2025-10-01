@@ -1,77 +1,92 @@
-﻿using UnityEngine;
+﻿// IndicatorController.cs
+using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class IndicatorController : MonoBehaviour
 {
-    public DishData dishData;
-    public int levelIndex; // 0 = first level
+    [Header("Recipe")]
+    public RecipeSO recipe; // assign the RecipeSO for this indicator
 
-    [Header("Info Panel Reference")]
-    public GameObject infoPanel;
-    public Image dishImageDisplay;
-    public TextMeshProUGUI dishTitleDisplay;
+    [Header("UI")]
+    public Image dishImage;
+    public TextMeshProUGUI dishTitle;
+    public Image[] starIcons; // 3 star images
+    public Color starFilledColor = Color.yellow;
+    public Color starEmptyColor = Color.gray;
 
-    [Header("Button and Visual")]
-    public Image buttonImage;
-    public Color lockedColor = Color.gray;
-    public Color unlockedColor = Color.white;
+    [Header("Buttons")]
+    public Button playButton; // assign
+    public Button infoButton; // assign
 
-    [Header("Play Button")]
-    public Button playButton;  // Assign in Inspector
-
-    private Button button;
-
-    // 👇 Your level scene names (must match scenes in Build Settings)
-    private string[] levelScenes = new string[]
-    {
-        "Level1", "Level2", "Level3", "Level4", "Level5",
-        "Level6", "Level7", "Level8", "Level9", "Level10"
-    };
+    [Header("Info Panel")]
+    public GameObject infoPanelPrefab; // assign your InfoPanel prefab
 
     private void Start()
     {
-        button = GetComponent<Button>();
-        SetupIndicator();
+        UpdateVisuals();
+        if (playButton != null) playButton.onClick.AddListener(OnPlayClicked);
+        if (infoButton != null) infoButton.onClick.AddListener(OnInfoClicked);
+    }
 
-        if (playButton != null)
+    private void UpdateVisuals()
+    {
+        if (recipe == null) return;
+
+        if (dishImage != null && recipe.recipeImage != null) dishImage.sprite = recipe.recipeImage;
+        if (dishTitle != null) dishTitle.text = recipe.recipeName;
+
+        UpdateStarsFromSave();
+    }
+
+    private string GetRecipeKey()
+    {
+        return "Stars_" + (string.IsNullOrEmpty(recipe.recipeID) ? recipe.recipeName : recipe.recipeID);
+    }
+
+    public void UpdateStarsFromSave()
+    {
+        if (recipe == null || starIcons == null) return;
+
+        int saved = PlayerPrefs.GetInt(GetRecipeKey(), 0);
+        for (int i = 0; i < starIcons.Length; i++)
         {
-            playButton.onClick.AddListener(LoadLevelScene);
+            if (starIcons[i] == null) continue;
+            starIcons[i].color = (i < saved) ? starFilledColor : starEmptyColor;
         }
     }
 
-    void SetupIndicator()
+    private void OnPlayClicked()
     {
-        int previousScore = PlayerPrefs.GetInt($"Level{levelIndex - 1}_Score", 0);
+        if (recipe == null) return;
 
-        bool isUnlocked = (levelIndex == 0) || (previousScore >= 75);
+        // store selected recipe for the gameplay scene
+        GameSession.SelectedRecipe = recipe;
 
-        if (buttonImage != null)
-            buttonImage.color = isUnlocked ? unlockedColor : lockedColor;
-        if (button != null)
-            button.interactable = isUnlocked;
+        // reset runtime scores in TotalScoreManager (if present and persistent)
+        if (TotalScoreManager.Instance != null) TotalScoreManager.Instance.ResetScores();
+
+        // load the gameplay scene (set GameSession.GameplaySceneName or change below)
+        SceneManager.LoadScene(GameSession.GameplaySceneName);
     }
 
-    public void ShowDishInfo()
+    private void OnInfoClicked()
     {
-        if (dishData == null || infoPanel == null) return;
+        if (infoPanelPrefab == null || recipe == null) return;
 
-        infoPanel.SetActive(true);
-        dishImageDisplay.sprite = dishData.dishImage;
-        dishTitleDisplay.text = dishData.dishTitle;
-    }
-
-    void LoadLevelScene()
-    {
-        if (levelIndex >= 0 && levelIndex < levelScenes.Length)
+        var canvas = FindObjectOfType<Canvas>();
+        if (canvas == null)
         {
-            string sceneToLoad = levelScenes[levelIndex];
-            SceneManager.LoadScene(sceneToLoad);
+            Debug.LogWarning("No Canvas found in scene to parent InfoPanel to.");
+            return;
         }
-        else
+
+        var panel = Instantiate(infoPanelPrefab, canvas.transform);
+        var ctrl = panel.GetComponent<InfoPanelController>();
+        if (ctrl != null)
         {
-            Debug.LogWarning("⚠ Invalid Level Index: " + levelIndex);
+            ctrl.Setup(recipe, OnPlayClicked); // Play button in info panel calls same OnPlay
         }
     }
 }

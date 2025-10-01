@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TotalScoreManager : MonoBehaviour
 {
@@ -156,5 +157,9 @@ public class TotalScoreManager : MonoBehaviour
     {
         string key = GetRecipeKey(recipe);
         return PlayerPrefs.GetInt(key, 0);
+    }
+    public void OnContinueToMap()
+    {
+        SceneManager.LoadScene(GameSession.MapSceneName);
     }
 }
