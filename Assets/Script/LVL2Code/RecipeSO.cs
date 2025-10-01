@@ -21,9 +21,11 @@ public class RecipeStep
 public class RecipeSO : ScriptableObject
 {
     [Header("Recipe Info")]
+    public string recipeID;     // Unique identifier (e.g. "adobo_001")
     public string recipeName;
     public Sprite recipeImage;
-
+    [Header("Scoring")]
+    public int targetScore = 100;
     [Header("Steps")]
     public List<RecipeStep> steps = new List<RecipeStep>();
 

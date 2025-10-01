@@ -41,8 +41,8 @@ public class CookingStepManager : MonoBehaviour
         currentStepIndex++;
         if (currentStepIndex >= currentRecipe.steps.Count)
         {
-
-            TotalScoreManager.Instance.CalculateFinalScore(currentRecipe.recipeName, currentRecipe);
+            // pass the RecipeSO — TotalScoreManager will read targetScore from it
+            TotalScoreManager.Instance.CalculateFinalScore(currentRecipe);
         }
         else
         {

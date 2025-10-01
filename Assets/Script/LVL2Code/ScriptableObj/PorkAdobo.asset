@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e21cf298bb2c148a4c999a7caf1ab9, type: 3}
   m_Name: PorkAdobo
   m_EditorClassIdentifier: 
-  recipeName: PorkAdobo
+  recipeID: PorkAdobo01
+  recipeName: Pork Adobo
   recipeImage: {fileID: -8053197629789734714, guid: 46112b9472351694db800b4770b84eac, type: 3}
+  targetScore: 25
   steps:
   - stepType: 1
     ingredient: {fileID: 11400000, guid: cf4532f0f236b2f40afdefafae5793d7, type: 2}

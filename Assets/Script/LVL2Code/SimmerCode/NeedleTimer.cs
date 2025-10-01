@@ -4,12 +4,12 @@ using TMPro;
 
 public class NeedleTimer : MonoBehaviour
 {
-    public RectTransform needle;   // drag your needle here
-    public float speed = 180f;     // degrees per second
+    public RectTransform needle;
+    public float speed = 180f;
     public bool rotating = true;
 
-    private float rotationTime;    // tracks how long it's been rotating
-    private float fullRotationTime; // time to complete one full circle
+    private float rotationTime;
+    private float fullRotationTime;
 
     [Header("Sectors (degrees)")]
     public float yellowStart = 330f;
@@ -23,12 +23,15 @@ public class NeedleTimer : MonoBehaviour
     public TextMeshProUGUI resultText;
     public Button closeButton;
 
+    // 🔹 Temp storage for score & result
+    private int pendingScore = 0;
+    private string pendingResult = "Bad";
+
     void Start()
     {
         if (closeButton != null)
             closeButton.onClick.AddListener(ClosePanels);
 
-        // how many seconds for a full 360 rotation
         fullRotationTime = 360f / speed;
     }
 
@@ -39,7 +42,6 @@ public class NeedleTimer : MonoBehaviour
             needle.Rotate(0f, 0f, -speed * Time.deltaTime);
             rotationTime += Time.deltaTime;
 
-            // ✅ auto stop after one full rotation
             if (rotationTime >= fullRotationTime)
             {
                 AutoFail();
@@ -56,33 +58,29 @@ public class NeedleTimer : MonoBehaviour
         float angle = needle.eulerAngles.z;
         angle = (360f - angle + 90f) % 360f;
 
-        string result = "Bad";
-        int simmerscore = 3; // default Bad
+        pendingResult = "Bad";
+        pendingScore = 3; // default
 
         if (IsAngleInSector(angle, greenStart, greenEnd))
         {
-            result = "Very Good";
-            simmerscore = 10;
+            pendingResult = "Very Good";
+            pendingScore = 10;
         }
         else if (IsAngleInSector(angle, yellowStart, yellowEnd))
         {
-            result = "Good";
-            simmerscore = 8;
+            pendingResult = "Good";
+            pendingScore = 8;
         }
 
-        // Add score
-        TotalScoreManager.Instance.AddSimmerScore(simmerscore);
-        CookingStepManager.Instance.NextStep();
-
-        // Show result panel
+        // Show result panel (but no score yet)
         if (completeShowPanel != null)
         {
             completeShowPanel.SetActive(true);
             if (resultText != null)
-                resultText.text = result;
+                resultText.text = pendingResult;
         }
 
-        Debug.Log($"Angle {angle:F1}° → {result}");
+        Debug.Log($"Angle {angle:F1}° → {pendingResult}");
     }
 
     bool IsAngleInSector(float angle, float start, float end)
@@ -98,8 +96,9 @@ public class NeedleTimer : MonoBehaviour
         rotating = false;
         rotationTime = 0f;
 
-        // ✅ Always Bad if time runs out
-        TotalScoreManager.Instance.AddSimmerScore(3);
+        // Always Bad
+        pendingScore = 3;
+        pendingResult = "Bad";
 
         if (completeShowPanel != null)
         {
@@ -113,6 +112,10 @@ public class NeedleTimer : MonoBehaviour
 
     private void ClosePanels()
     {
+        // ✅ Apply score only here
+        TotalScoreManager.Instance.AddSimmerScore(pendingScore);
+        CookingStepManager.Instance.NextStep();
+
         if (completeShowPanel != null)
             completeShowPanel.SetActive(false);
 
