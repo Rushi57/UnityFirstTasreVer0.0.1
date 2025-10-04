@@ -133,9 +133,9 @@ MonoBehaviour:
           m_StringArgument: Opened
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7128054193354419334}
+      - m_Target: {fileID: 7106654414090436211}
         m_TargetAssemblyTypeName: IndicatorController, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ShowDishInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -158,14 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipe: {fileID: 11400000, guid: 515f43d0e9f88174a8d891f952eb950a, type: 2}
-  dishImage: {fileID: 0}
-  dishTitle: {fileID: 0}
-  starIcons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  starFilledColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  starEmptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  playButton: {fileID: 0}
-  infoButton: {fileID: 5067720249077613614}
+  levelIndex: 0
   infoPanelPrefab: {fileID: 0}
+  buttonImage: {fileID: 2955475022786769049}
+  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  unlockedColor: {r: 1, g: 1, b: 1, a: 1}

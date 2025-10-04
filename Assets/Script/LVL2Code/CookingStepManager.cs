@@ -10,8 +10,22 @@ public class CookingStepManager : MonoBehaviour
 
     private void Awake()
     {
+
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        if(GameSession.SelectedRecipe != null)
+        {
+            currentRecipe = GameSession.SelectedRecipe;
+            Debug.Log("Load recipe form GameSession: " + currentRecipe.recipeName);
+        }
+        else
+        {
+            Debug.Log("NO recipe selected via GameSession  using inspector currentRecipe");
+        }
     }
 
     private bool HasCurrentStep()
@@ -42,7 +56,8 @@ public class CookingStepManager : MonoBehaviour
         if (currentStepIndex >= currentRecipe.steps.Count)
         {
             // pass the RecipeSO — TotalScoreManager will read targetScore from it
-            TotalScoreManager.Instance.CalculateFinalScore(currentRecipe);
+            TotalScoreManager.Instance.CalculateFinalScore("Level1", currentRecipe);
+
         }
         else
         {

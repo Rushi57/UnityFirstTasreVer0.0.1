@@ -455,9 +455,12 @@ MonoBehaviour:
   zoneRed: {fileID: 351736666}
   zoneYellow: {fileID: 971822116}
   zoneGreen: {fileID: 213164560}
-  riseSpeed: 125
+  riseSpeed: 100
   fallSpeed: 180
   totalTime: 10
+  autoDropEnabled: 1
+  autoDropSpeed: 150
+  holdTimeAtTop: 0.3
   mixingPanel: {fileID: 16387587}
   completeShowPanel: {fileID: 1158947560}
   resultText: {fileID: 706392152}
@@ -587,6 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123815f550a099b4ea2ea26c3a727288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothSpeed: 10
   mixingManager: {fileID: 16387591}
 --- !u!1 &28683636
 GameObject:
@@ -6006,7 +6010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &568406344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6811,6 +6815,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684867037}
   m_CullTransparentMesh: 1
+--- !u!1 &693385014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693385016}
+  - component: {fileID: 693385015}
+  m_Layer: 0
+  m_Name: GameDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &693385015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693385014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a59e9172b97f944a3cae203ceb5903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastScore: 0
+  lasStars: 0
+--- !u!4 &693385016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693385014}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1404151, y: 0.399202, z: 191.22328}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &706392150
 GameObject:
   m_ObjectHideFlags: 0
@@ -8988,7 +9038,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 985661033}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1388714551}
+        m_TargetAssemblyTypeName: TotalScoreManager, Assembly-CSharp
+        m_MethodName: OnContinueAndReturnToMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &985661033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12685,6 +12747,8 @@ MonoBehaviour:
   starFilledColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   starEmptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   targetScore: 25
+  mapSceneName: Map
+  currentLevelIndex: 0
 --- !u!1 &1406703164
 GameObject:
   m_ObjectHideFlags: 0
@@ -13102,6 +13166,7 @@ GameObject:
   - component: {fileID: 1416921951}
   - component: {fileID: 1416921950}
   - component: {fileID: 1416921949}
+  - component: {fileID: 1416921953}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -13205,6 +13270,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1416921953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416921948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776ad320d2531724b85b59ec6ead6b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapSceneName: Map
+  currentRecipe: {fileID: 11400000, guid: 515f43d0e9f88174a8d891f952eb950a, type: 2}
 --- !u!1 &1438309373
 GameObject:
   m_ObjectHideFlags: 0
@@ -15610,6 +15689,8 @@ MonoBehaviour:
   starFilledColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   starEmptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   targetScore: 300
+  mapSceneName: Map
+  currentLevelIndex: 0
 --- !u!1 &1741284634
 GameObject:
   m_ObjectHideFlags: 0
@@ -19442,3 +19523,4 @@ SceneRoots:
   - {fileID: 741314531}
   - {fileID: 568406347}
   - {fileID: 1388714550}
+  - {fileID: 693385016}

@@ -19,6 +19,14 @@ public class MixingMechanicManager : MonoBehaviour
     public float fallSpeed = 20f;
     public float totalTime = 10f;
 
+    [Header("Auto Drop Settings")]
+    [Tooltip("If true, the indicator will drop when reaching the top (green zone).")]
+    public bool autoDropEnabled = true;
+    [Tooltip("How fast the indicator drops down after reaching the top.")]
+    public float autoDropSpeed = 150f;
+    [Tooltip("How long the indicator stays at the top before dropping.")]
+    public float holdTimeAtTop = 0.3f;
+
     [Header("Panels")]
     public GameObject mixingPanel;
     public GameObject completeShowPanel;
@@ -27,7 +35,8 @@ public class MixingMechanicManager : MonoBehaviour
 
     private float timer;
     private bool isRotating = false;
-    private bool hasEnded = false;   // ✅ prevents scoring multiple times
+    private bool hasEnded = false;
+    private bool isDropping = false;
 
     private void Start()
     {
@@ -44,7 +53,7 @@ public class MixingMechanicManager : MonoBehaviour
 
     private void Update()
     {
-        if (hasEnded) return;   // ✅ stop everything after mixing ends
+        if (hasEnded) return;
 
         if (timer > 0f)
         {
@@ -60,23 +69,58 @@ public class MixingMechanicManager : MonoBehaviour
             return;
         }
 
-        // Indicator movement
+        HandleIndicatorMovement();
+    }
+
+    private void HandleIndicatorMovement()
+    {
+        if (isDropping) return; // ⛔ Pause updates while dropping
+
         Vector2 pos = indicator.anchoredPosition;
-        if (isRotating) pos.y += riseSpeed * Time.deltaTime;
-        else pos.y -= fallSpeed * Time.deltaTime;
+
+        if (isRotating)
+            pos.y += riseSpeed * Time.deltaTime;
+        else
+            pos.y -= fallSpeed * Time.deltaTime;
 
         float halfHeight = colorBar.rect.height / 2f;
         pos.y = Mathf.Clamp(pos.y, -halfHeight, halfHeight);
         indicator.anchoredPosition = pos;
 
+        // ✅ Auto drop when reaching the top
+        if (autoDropEnabled && Mathf.Approximately(pos.y, halfHeight))
+        {
+            StartCoroutine(AutoDropRoutine());
+        }
+
         isRotating = false;
+    }
+
+    private System.Collections.IEnumerator AutoDropRoutine()
+    {
+        isDropping = true;
+        yield return new WaitForSeconds(holdTimeAtTop);
+
+        Vector2 pos = indicator.anchoredPosition;
+        float halfHeight = colorBar.rect.height / 2f;
+        float targetY = -halfHeight;
+
+        while (pos.y > targetY)
+        {
+            pos.y -= autoDropSpeed * Time.deltaTime;
+            indicator.anchoredPosition = pos;
+            yield return null;
+        }
+
+        indicator.anchoredPosition = new Vector2(pos.x, targetY);
+        isDropping = false;
     }
 
     public void OnRotate() => isRotating = true;
 
     private void EndMixing()
     {
-        if (hasEnded) return; // ✅ safeguard
+        if (hasEnded) return;
         hasEnded = true;
 
         var result = GetCurrentZone();

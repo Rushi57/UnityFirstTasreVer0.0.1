@@ -15,14 +15,14 @@ public class TotalScoreManager : MonoBehaviour
     [SerializeField] private GameObject completeDishPanel;   // Congrats Panel
     [SerializeField] private GameObject scoreDashBoardPanel; // Score Panel
 
-    [Header("UI References")]
+    [Header("UI References (Score Panel)")]
     [SerializeField] private TextMeshProUGUI mixingText;
     [SerializeField] private TextMeshProUGUI cuttingText;
     [SerializeField] private TextMeshProUGUI simmerText;
     [SerializeField] private TextMeshProUGUI totalScoreText;
 
-    [Header("Dish UI Reference")]
-    [SerializeField] private Image dishImageDisplay;
+    [Header("Dish UI Reference (Score Panel)")]
+    [SerializeField] private Image dishImageDisplay;   // assign ScorePanel's dish image
     [SerializeField] private TextMeshProUGUI dishNameText;
 
     [Header("Star References")]
@@ -30,64 +30,56 @@ public class TotalScoreManager : MonoBehaviour
     [SerializeField] private Color starFilledColor = Color.yellow;
     [SerializeField] private Color starEmptyColor = Color.gray;
 
-    public int starsEarned = 0;
-    public int FinalScore { get; private set; }
+    [Header("Target Scores (tweak per-level in inspector or code)")]
+    [SerializeField] private int targetScore = 300; // 3★ threshold
 
-    private RecipeSO lastRecipe; // keep track of completed recipe
+    [Header("Map/Level Settings")]
+    [SerializeField] private string mapSceneName = "Map"; // change to your map scene name
+    [SerializeField] private int currentLevelIndex = 0; // set to 0 for Lvl1, 1 for Lvl2...
+
+    public int FinalScore { get; private set; }
+    private RecipeSO lastRecipe; // store recipe used (so scoreboard shows image/title)
+    private int lastStarCount = 0;
 
     private void Awake()
     {
-        if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
+        if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
-    // ---------------------- SCORING ----------------------
+    // ------------- Score registration -------------
     public void AddMixScore(int amount) => mixScore += amount;
     public void AddCutScore(int amount) => cutScore += amount;
     public void AddSimmerScore(int amount) => simmerScore += amount;
 
-    // Called once when recipe is done
-    // NOTE: now accepts only the RecipeSO; targetScore is read from the RecipeSO
-    public void CalculateFinalScore(RecipeSO recipe)
+    // Called once when recipe is done - pass the RecipeSO so we can show dish image/title later
+    public void CalculateFinalScore(string recipeName, RecipeSO recipe)
     {
-        if (!CookingStepManager.Instance.IsRecipeCompleted()) return;
+        // Optional: ensure recipe finished check (if you have CookingStepManager)
+        // if (!CookingStepManager.Instance.IsRecipeCompleted()) return;
 
         FinalScore = mixScore + cutScore + simmerScore;
         lastRecipe = recipe;
 
-        Debug.Log($"📊 Mix:{mixScore}, Cut:{cutScore}, Simmer:{simmerScore}");
-        Debug.Log($"🏆 Total Score: {FinalScore}");
-        Debug.Log($"✅ Recipe {recipe.recipeName} Completed!");
+        // Set the per-level targetScore from the recipe
+        if (recipe != null)
+            targetScore = recipe.targetScore;
 
-        // compute stars using recipe.targetScore (fallback if <=0)
-        int t = Mathf.Max(1, recipe.targetScore);
-        starsEarned = CalculateStars(FinalScore, t);
-
-        // save best stars for this recipe (persisted)
-        SaveStarsForRecipe(recipe, starsEarned);
+        Debug.Log($"[TotalScoreManager] Final Score for {recipe.recipeName}: {FinalScore} / Target {targetScore}");
 
         if (completeDishPanel != null)
             completeDishPanel.SetActive(true);
-        else
-            Debug.LogWarning("⚠️ CompleteDishPanel not assigned!");
     }
 
-    private int CalculateStars(int score, int targetScore)
-    {
-        if (score >= targetScore) return 3;              // Perfect
-        else if (score >= Mathf.CeilToInt(targetScore * 0.7f)) return 2;  // Good
-        else if (score >= Mathf.CeilToInt(targetScore * 0.4f)) return 1;  // Basic
-        return 0;                                        // Fail
-    }
-
-    // ---------------------- PANEL FLOW ----------------------
+    // Show scoreboard (called when tap/click on Congrats panel)
     public void ShowScoreBoard()
     {
         if (completeDishPanel != null) completeDishPanel.SetActive(false);
         if (scoreDashBoardPanel != null) scoreDashBoardPanel.SetActive(true);
 
         UpdateScoreUI();
-        UpdateStars();
+        lastStarCount = CalculateStarCount();
+        UpdateStars(lastStarCount);
         UpdateDishInfo();
     }
 
@@ -99,67 +91,55 @@ public class TotalScoreManager : MonoBehaviour
         if (totalScoreText != null) totalScoreText.text = FinalScore.ToString();
     }
 
-    private void UpdateStars()
+    private int CalculateStarCount()
+    {
+        int middleScore = targetScore / 2;
+        if (FinalScore >= targetScore) return 3;
+        if (FinalScore >= middleScore) return 2;
+        if (FinalScore > 0) return 1;
+        return 0;
+    }
+
+    private void UpdateStars(int starCount)
     {
         for (int i = 0; i < stars.Length; i++)
-        {
-            if (stars[i] != null)
-                stars[i].color = (i < starsEarned) ? starFilledColor : starEmptyColor;
-        }
+            stars[i].color = (i < starCount) ? starFilledColor : starEmptyColor;
     }
 
     private void UpdateDishInfo()
     {
         if (lastRecipe != null)
         {
+            if (dishNameText != null) dishNameText.text = lastRecipe.recipeName;
             if (dishImageDisplay != null && lastRecipe.recipeImage != null)
                 dishImageDisplay.sprite = lastRecipe.recipeImage;
-
-            if (dishNameText != null)
-                dishNameText.text = lastRecipe.recipeName;
         }
     }
 
-    // ---------------------- RESET ----------------------
+    // Called by Continue button on the Score Dashboard
+    public void OnContinueAndReturnToMap()
+    {
+        int stars = CalculateStarCount();
+        LevelResultSaver.SaveResult(currentLevelIndex, FinalScore, stars);
+
+        Debug.Log($"Saved Level {currentLevelIndex} → Score: {FinalScore}, Stars: {stars}");
+
+        ResetScores();
+        SceneManager.LoadScene(mapSceneName);
+    }
+
+    // Reset gameplay scores (call this in Start of level to ensure fresh run)
     public void ResetScores()
     {
         mixScore = 0;
         cutScore = 0;
         simmerScore = 0;
         FinalScore = 0;
-        starsEarned = 0;
         lastRecipe = null;
+        lastStarCount = 0;
 
+        // Hide panels
         if (completeDishPanel != null) completeDishPanel.SetActive(false);
         if (scoreDashBoardPanel != null) scoreDashBoardPanel.SetActive(false);
-    }
-
-    // ---------------------- PERSISTED STAR SAVE ----------------------
-    private string GetRecipeKey(RecipeSO recipe)
-    {
-        string id = !string.IsNullOrEmpty(recipe.recipeID) ? recipe.recipeID : recipe.recipeName;
-        return $"Stars_{id}";
-    }
-
-    private void SaveStarsForRecipe(RecipeSO recipe, int stars)
-    {
-        string key = GetRecipeKey(recipe);
-        int prev = PlayerPrefs.GetInt(key, 0);
-        if (stars > prev)
-        {
-            PlayerPrefs.SetInt(key, stars);
-            PlayerPrefs.Save();
-        }
-        Debug.Log($"💾 Saved {stars} star(s) for {key}");
-    }
-
-    public int LoadStarsForRecipe(RecipeSO recipe)
-    {
-        string key = GetRecipeKey(recipe);
-        return PlayerPrefs.GetInt(key, 0);
-    }
-    public void OnContinueToMap()
-    {
-        SceneManager.LoadScene(GameSession.MapSceneName);
     }
 }
