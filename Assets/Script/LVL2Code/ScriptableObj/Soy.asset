@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
   m_Name: Soy
   m_EditorClassIdentifier: 
-  itemID: Soy
-  itemName: Vinegar
+  itemID: Soy001
+  itemName: Soy
   itemType: 2
-  itemSprite: {fileID: -947749556987461895, guid: e459ac6a5bed0a644aab25263a8d51db, type: 3}
+  itemSprite: {fileID: 6126183905695377157, guid: 9a83cb9002b33544ea6432eaecd68260, type: 3}
   choppedSprite: {fileID: 0}

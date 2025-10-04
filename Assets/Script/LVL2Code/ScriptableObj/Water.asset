@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: Water001
   itemName: Water
-  itemType: 0
+  itemType: 2
   itemSprite: {fileID: -3531731968469926067, guid: 77e272be238bd334e8ea161849c1283e, type: 3}
   choppedSprite: {fileID: 0}
