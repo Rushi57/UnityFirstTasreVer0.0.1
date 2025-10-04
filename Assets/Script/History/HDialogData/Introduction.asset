@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a9675abb170244180b2ed1bd826549, type: 3}
+  m_Name: Introduction
+  m_EditorClassIdentifier: 
+  dishSprite: {fileID: -8053197629789734714, guid: 46112b9472351694db800b4770b84eac, type: 3}
+  hDialogLines:
+  - text: "Oh, hello there, You must be new around here. Welcome to my kitchen! I\u2019m
+      Kriss."
+  - text: "Everyone in the barrio knows me for my cooking I\u2019ve been making delicious
+      Filipino dishes for as long as I can remember!"
+  - text: "Cooking isn\u2019t just about filling the stomach, you know. It\u2019s
+      about sharing love, preserving traditions, and making memories."
+  - text: "today, I\u2019ll teach you one of our most beloved dishes adobo"

@@ -61,13 +61,13 @@ public class CookingStepManager : MonoBehaviour
         }
         else
         {
-            Debug.Log($"➡️ Next step: {GetExpectedStep()}");
+            DebugMessageManager.Instance.ShowMessage($" Next step: {GetExpectedStep()}");
         }
     }
 
     public void WrongAttempt()
     {
-        DebugMessageManager.Instance.ShowMessage("❌ Wrong item or action for this step!");
+        DebugMessageManager.Instance.ShowMessage(" Wrong item or action for this step!");
     }
 
     public bool OnActionPerformed(string actionName)
