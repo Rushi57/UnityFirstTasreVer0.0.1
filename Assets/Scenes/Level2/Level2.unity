@@ -1608,7 +1608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &148674793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8097,7 +8097,7 @@ GameObject:
   - component: {fileID: 844653627}
   - component: {fileID: 844653626}
   m_Layer: 5
-  m_Name: Image (6)
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10265,7 +10265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pork Adobo Manila
+  m_text: Pork Sisig Pampanga
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10504,13 +10504,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 844653625}
   - {fileID: 1512016654}
   - {fileID: 212708019}
   - {fileID: 6581121}
   - {fileID: 929341816}
   - {fileID: 584077788}
   - {fileID: 1508156621}
-  - {fileID: 844653625}
   m_Father: {fileID: 382619522}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -15839,7 +15839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1736486717
 MonoBehaviour:
   m_ObjectHideFlags: 0

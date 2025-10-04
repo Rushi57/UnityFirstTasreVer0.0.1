@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
-  m_Name: PorkMeat
+  m_Name: Vinegar
   m_EditorClassIdentifier: 
-  itemID: PorkMeat01
-  itemName: PorkMeat
-  itemType: 1
-  itemSprite: {fileID: -2961824344225817496, guid: ae5e74db89128c042b4ae053860622e6, type: 3}
-  choppedSprite: {fileID: -6237445509998130909, guid: 959480b3f490d034b8fef2062336e9da, type: 3}
+  itemID: Vinegar001
+  itemName: Vinegar
+  itemType: 2
+  itemSprite: {fileID: -947749556987461895, guid: e459ac6a5bed0a644aab25263a8d51db, type: 3}
+  choppedSprite: {fileID: 0}

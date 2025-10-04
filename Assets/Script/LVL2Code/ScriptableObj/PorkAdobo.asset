@@ -22,15 +22,15 @@ MonoBehaviour:
     actionName: 
     Action: 
   - stepType: 1
-    ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
-    actionName: water
-    Action: water
+    ingredient: {fileID: 11400000, guid: 34e9b57eaf70a0d49b4ad7c4823a6c47, type: 2}
+    actionName: OIl
+    Action: Oil
   - stepType: 0
-    ingredient: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
+    ingredient: {fileID: 11400000, guid: e5a5ad4d7af1e63448860478876d4875, type: 2}
     actionName: 
     Action: 
   - stepType: 0
-    ingredient: {fileID: 11400000, guid: e5a5ad4d7af1e63448860478876d4875, type: 2}
+    ingredient: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
     actionName: 
     Action: 
   - stepType: 0
