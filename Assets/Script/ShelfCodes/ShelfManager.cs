@@ -8,11 +8,13 @@ public class ShelfManager : MonoBehaviour
     public GameObject vinegarobj;
     public GameObject oilobj;
     public GameObject soyobj;
+    public GameObject waterobj;
 
     [Header("Animation Durations")]
     public float vinegarDuration = 2.0f;
     public float oilDuration = 2.0f;
     public float soyDuration = 2.0f;
+    public float waterDuration = 2.0f;
 
     public void ShowShelf()
     {
@@ -36,6 +38,10 @@ public class ShelfManager : MonoBehaviour
 
             case "Soy":
                 StartCoroutine(PlayAndHide(soyobj, soyDuration, "Soy"));
+                break;
+
+            case "Water":
+                StartCoroutine(PlayAndHide(waterobj, waterDuration, "Water"));
                 break;
         }
     }

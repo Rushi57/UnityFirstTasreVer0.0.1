@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 629374931456249342}
   - component: {fileID: 5161996367577680798}
   m_Layer: 5
-  m_Name: PanPrefab
+  m_Name: PanSIsig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

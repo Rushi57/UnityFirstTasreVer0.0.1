@@ -69,7 +69,7 @@ public class InfoPanelController : MonoBehaviour
     {
         PlayerPrefs.SetInt("CurrentLevelIndex", currentLevelIndex);
         SceneManager.LoadScene($"Level{currentLevelIndex + 1}");
-        // assumes your scenes are named Level1, Level2, ...
+        // assumes your scenes are named Level1, Level2,
     }
 
     private void ClosePanel()

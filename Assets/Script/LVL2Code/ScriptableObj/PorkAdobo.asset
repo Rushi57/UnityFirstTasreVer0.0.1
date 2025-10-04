@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PorkAdobo
   m_EditorClassIdentifier: 
   recipeID: PorkAdobo01
-  recipeName: Pork Adobo
+  recipeName: Manila Pork Adobo
   recipeImage: {fileID: -8053197629789734714, guid: 46112b9472351694db800b4770b84eac, type: 3}
   targetScore: 25
   steps:
@@ -22,9 +22,9 @@ MonoBehaviour:
     actionName: 
     Action: 
   - stepType: 1
-    ingredient: {fileID: 0}
-    actionName: oil
-    Action: oil
+    ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
+    actionName: water
+    Action: water
   - stepType: 0
     ingredient: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
     actionName: 

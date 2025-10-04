@@ -19,6 +19,7 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
     public Sprite oilPanSprite;
     public Sprite vinegarPanSprite;
     public Sprite soyPanSprite;
+    public Sprite waterPanSprite;
 
     private int stepIndex = 0;
 
@@ -115,9 +116,11 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
             case "vinegar":
                 if (vinegarPanSprite) panImage.sprite = vinegarPanSprite;
                 break;
-            case "soy":
             case "soy sauce":
                 if (soyPanSprite) panImage.sprite = soyPanSprite;
+                break;
+            case "water":
+                if (waterPanSprite) panImage.sprite = waterPanSprite;
                 break;
         }
     }
