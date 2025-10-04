@@ -1,31 +1,33 @@
 using UnityEngine;
 
-public class LevelResultSaver
+public static class LevelResultSaver
 {
-    //Save Score and Start for level 
+    // Save Score and Stars for level
     public static void SaveResult(int levelIndex, int score, int stars)
     {
-
         string scoreKey = $"Level{levelIndex}_Score";
         string starKey = $"Level{levelIndex}_Stars";
 
-        //Save Score(Overwrite)
+        // Save score (always overwrite)
         PlayerPrefs.SetInt(scoreKey, score);
 
-        // Keep best stars (only overwrite if new stars > old)
+        // Save stars (only if it's higher than the previous)
         int prevStars = PlayerPrefs.GetInt(starKey, 0);
-        if(stars > prevStars)
-            PlayerPrefs.SetInt(starKey, prevStars);
+        if (stars > prevStars)
+            PlayerPrefs.SetInt(starKey, stars);
 
         PlayerPrefs.Save();
+
+        Debug.Log($"[LevelResultSaver] Saved Level {levelIndex}: Score={score}, Stars={stars}");
     }
 
     public static int LoadStars(int levelIndex)
     {
-        return PlayerPrefs.GetInt($"Level{levelIndex}", 0);
+        return PlayerPrefs.GetInt($"Level{levelIndex}_Stars", 0);
     }
+
     public static int LoadScore(int levelIndex)
     {
-        return PlayerPrefs.GetInt($"Level{levelIndex}", 0); 
+        return PlayerPrefs.GetInt($"Level{levelIndex}_Score", 0);
     }
 }

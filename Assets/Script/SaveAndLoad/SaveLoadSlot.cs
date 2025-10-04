@@ -66,7 +66,6 @@ public class SaveLoadSlot : MonoBehaviour
 
     private void SaveGame()
     {
-        // build SaveData
         var data = new SaveData
         {
             lastScene = SceneManager.GetActiveScene().name,
@@ -74,6 +73,19 @@ public class SaveLoadSlot : MonoBehaviour
             saveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm")
         };
 
+        // NEW: collect scores/stars from PlayerPrefs
+        for (int i = 0; i < 5; i++) // assume 5 levels, change as needed
+        {
+            int score = PlayerPrefs.GetInt($"Level{i}_Score", 0);
+            int stars = PlayerPrefs.GetInt($"Level{i}_Stars", 0);
+
+            data.levelProgressList.Add(new LevelProgress
+            {
+                levelIndex = i,
+                score = score,
+                stars = stars
+            });
+        }
         SaveSystem.Save(data, slotIndex);
         Refresh();
     }
@@ -87,11 +99,19 @@ public class SaveLoadSlot : MonoBehaviour
             return;
         }
 
-        // restore tutorial flag so scene's tutorial manager behaves correctly
+        // restore tutorial flag
         PlayerPrefs.SetInt("TutorialDone", data.tutorialDone ? 1 : 0);
+
+        // NEW: restore scores/stars to PlayerPrefs
+        foreach (var level in data.levelProgressList)
+        {
+            PlayerPrefs.SetInt($"Level{level.levelIndex}_Score", level.score);
+            PlayerPrefs.SetInt($"Level{level.levelIndex}_Stars", level.stars);
+        }
+
         PlayerPrefs.Save();
 
-        // load saved scene
         SceneManager.LoadScene(data.lastScene);
     }
+
 }

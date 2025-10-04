@@ -50,8 +50,8 @@ public class MainMenuScript : MonoBehaviour
     //newGame
     public void NewGame()
     {
-        SaveSystem.DeleteAllSlots(totalSlots);
-        PlayerPrefs.SetInt("TutorialDone",0);
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("TutorialDone", 0);
         PlayerPrefs.Save();
 
         SceneManager.LoadScene(firstGameScene);
