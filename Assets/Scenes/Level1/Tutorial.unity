@@ -455,12 +455,12 @@ MonoBehaviour:
   zoneRed: {fileID: 351736666}
   zoneYellow: {fileID: 971822116}
   zoneGreen: {fileID: 213164560}
+  redHeightRatio: 0.6
+  greenHeightRatio: 0.2
+  yellowHeightRatio: 0.2
   riseSpeed: 100
   fallSpeed: 180
   totalTime: 10
-  autoDropEnabled: 1
-  autoDropSpeed: 150
-  holdTimeAtTop: 0.3
   mixingPanel: {fileID: 16387587}
   completeShowPanel: {fileID: 1158947560}
   resultText: {fileID: 706392152}
@@ -1755,6 +1755,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149247665}
   m_CullTransparentMesh: 1
+--- !u!1 &168604095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168604097}
+  - component: {fileID: 168604096}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &168604096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168604095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed0788cab0446645bf6dc154b2d51f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogLines:
+  - {fileID: 11400000, guid: e9db80d196431e040ad2118b08995927, type: 2}
+  - {fileID: 11400000, guid: 38fcd7e7489efae419b2e49049554143, type: 2}
+  - {fileID: 11400000, guid: e6bae40a4428f194bb9806ac4f303b83, type: 2}
+  - {fileID: 11400000, guid: 72b1415970cb3a844950170316aeb97f, type: 2}
+  - {fileID: 11400000, guid: a969a4e234c474844a8470e39e159a7b, type: 2}
+  - {fileID: 11400000, guid: 1b15483b46638714b97f9c6626356303, type: 2}
+  - {fileID: 11400000, guid: 2a5153188c6b71646a5f9593284cae55, type: 2}
+  - {fileID: 11400000, guid: 4ac9e0e4c79287f4f921443b1c396baf, type: 2}
+  - {fileID: 11400000, guid: 8d5f419287cd6904ba2497d4f6133392, type: 2}
+  - {fileID: 11400000, guid: 7fe6a7bfb90e98e40949deb26af7c880, type: 2}
+  - {fileID: 11400000, guid: 61c5faec6f3be5e45bd47fb5e23187aa, type: 2}
+  dialogCanvas: {fileID: 0}
+  mapMainCanvas: {fileID: 0}
+  settingCanvas: {fileID: 0}
+  dialogText: {fileID: 0}
+  dialogBoxButton: {fileID: 0}
+--- !u!4 &168604097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168604095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 687.1396, y: 301.71463, z: 1.5872242}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &180797317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,8 +2217,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00024986, y: 237.17}
-  m_SizeDelta: {x: 33.45, y: 112.45}
+  m_AnchoredPosition: {x: 0, y: 117.35602}
+  m_SizeDelta: {x: 33.45, y: 117.35601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213164561
 MonoBehaviour:
@@ -3609,8 +3670,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00024986, y: -0.000015259}
-  m_SizeDelta: {x: 33.45, y: 586.78}
+  m_AnchoredPosition: {x: 0, y: -117.356}
+  m_SizeDelta: {x: 33.45, y: 352.06802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &351736667
 MonoBehaviour:
@@ -8818,8 +8879,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00024986, y: 55.009987}
-  m_SizeDelta: {x: 33.45, y: 251.86}
+  m_AnchoredPosition: {x: 0, y: 234.71204}
+  m_SizeDelta: {x: 33.45, y: 117.35601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &971822117
 MonoBehaviour:
@@ -19201,3 +19262,4 @@ SceneRoots:
   - {fileID: 693385016}
   - {fileID: 1280054964}
   - {fileID: 1247407968}
+  - {fileID: 168604097}
