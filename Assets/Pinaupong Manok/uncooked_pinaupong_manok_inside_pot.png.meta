@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      uncooked_pinaupong_manok_inside_pot_0: -9150075205282890149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

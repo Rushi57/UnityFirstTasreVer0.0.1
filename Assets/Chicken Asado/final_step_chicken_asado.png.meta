@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      final_step_chicken_asado_0: -4120271094096794115
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

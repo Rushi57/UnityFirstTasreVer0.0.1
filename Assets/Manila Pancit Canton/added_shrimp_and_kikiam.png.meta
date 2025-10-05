@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      added_shrimp_and_kikiam_0: 5439126658590873941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

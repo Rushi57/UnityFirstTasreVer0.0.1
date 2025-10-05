@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      roast_flour_0: 1277870952194171749
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

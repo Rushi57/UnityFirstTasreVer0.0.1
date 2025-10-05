@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
-  m_Name: Peppercorns
+  m_Name: PepperCornBits
   m_EditorClassIdentifier: 
-  itemID: Peppercorns001
-  itemName: Peppercorns
-  itemType: 0
-  itemSprite: {fileID: -1118230107652953636, guid: 458b7130506fc1c4996c823acd10252b, type: 3}
+  itemID: PepperCornBits001
+  itemName: PepperCornBits
+  itemType: 1
+  itemSprite: {fileID: -432706484008203230, guid: 554f4739188ea2c489fe8f02a23d0263, type: 3}
   choppedSprite: {fileID: 0}
+  spawnPrefab: {fileID: 3918062914182680560, guid: 8d5e1a9982e94c048a3d123eba0b6830, type: 3}
+  spawnItemSO: {fileID: 11400000, guid: 9c772f95bb148a6458d8c900b8d4c102, type: 2}

@@ -71,6 +71,7 @@ public class CuttingMechanic : MonoBehaviour
         // Reset knife
         arrowIndicator.anchoredPosition = new Vector2(-colorBar.rect.width / 2, 0);
 
+
         // Randomize zones
         SetupZones();
     }

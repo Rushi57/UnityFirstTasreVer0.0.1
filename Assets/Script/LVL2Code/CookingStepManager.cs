@@ -61,7 +61,7 @@ public class CookingStepManager : MonoBehaviour
         }
         else
         {
-            DebugMessageManager.Instance.ShowMessage($" Next step: {GetExpectedStep()}");
+           Debug.Log($" Next step: {GetExpectedStep()}");
         }
     }
 

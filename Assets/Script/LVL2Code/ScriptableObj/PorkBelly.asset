@@ -15,5 +15,7 @@ MonoBehaviour:
   itemID: Porkbelly001
   itemName: Porkbelly
   itemType: 1
-  itemSprite: {fileID: -2961824344225817496, guid: ae5e74db89128c042b4ae053860622e6, type: 3}
+  itemSprite: {fileID: 3708099114757368068, guid: d3490a95e09cadc47b2defbda666da8f, type: 3}
   choppedSprite: {fileID: -6237445509998130909, guid: 959480b3f490d034b8fef2062336e9da, type: 3}
+  spawnPrefab: {fileID: 0}
+  spawnItemSO: {fileID: 0}

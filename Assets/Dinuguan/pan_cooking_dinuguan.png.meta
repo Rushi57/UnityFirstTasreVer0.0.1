@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pan_cooking_dinuguan_0: 8581132265818856522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

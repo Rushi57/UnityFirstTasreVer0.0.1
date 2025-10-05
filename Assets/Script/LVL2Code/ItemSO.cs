@@ -18,4 +18,9 @@ public class ItemSO : ScriptableObject
     [Header("Visuals")]
     public Sprite itemSprite; // icon or image used in UI
     public Sprite choppedSprite; // icon for the CutSprite
+
+    [Header("Spawn Chain (Optional)")]
+    public GameObject spawnPrefab;     // prefab to spawn (e.g., PepperCornBitsPrefab)
+    public ItemSO spawnItemSO;         // item data for that spawned prefab    
+    
 }

@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      frying_peanuts_in_oil_0: -9119857266166368469
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -17,3 +17,5 @@ MonoBehaviour:
   itemType: 2
   itemSprite: {fileID: 480023656547242171, guid: 7e859dd8cc2351b4093be872739d9d53, type: 3}
   choppedSprite: {fileID: 0}
+  spawnPrefab: {fileID: 0}
+  spawnItemSO: {fileID: 0}

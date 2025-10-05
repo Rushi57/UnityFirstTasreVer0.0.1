@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cavite_tamales_0: 5763119657276854189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

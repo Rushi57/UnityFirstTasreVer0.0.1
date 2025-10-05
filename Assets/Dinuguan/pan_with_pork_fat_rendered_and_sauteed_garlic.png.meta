@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pan_with_pork_fat_rendered_and_sauteed_garlic_0: -78259305288738522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

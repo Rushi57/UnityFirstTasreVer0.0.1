@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      clay_pot_0: -4229284691285805305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

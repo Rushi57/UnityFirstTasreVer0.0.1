@@ -21,17 +21,22 @@ public class SpawnToTable : MonoBehaviour
         // Spawn prefab inside TableArea
         GameObject newSlot = Instantiate(slotPrefab, tableArea);
 
-        // Setup visuals + data
-        ItemData data = newSlot.GetComponent<ItemData>();
-        if (data != null)
+        StaticItemData staticData = newSlot.GetComponent<StaticItemData>();
+        ItemData itemData = newSlot.GetComponent<ItemData>();
+
+        if (staticData != null)
         {
-            data.SetupItem(itemSO); // load sprite + type from ItemSO
+            staticData.SetupItem(itemSO);
+            Debug.Log($"✅ Spawned STATIC item: {itemSO.itemName}");
+        }
+        else if (itemData != null)
+        {
+            itemData.SetupItem(itemSO);
+            Debug.Log($"✅ Spawned DRAGGABLE item: {itemSO.itemName}");
         }
         else
         {
-            Debug.LogWarning("Spawned prefab has no ItemData!");
+            Debug.LogWarning("⚠️ Spawned prefab has no ItemData or StaticItemData!");
         }
-
-        Debug.Log($"Spawned {itemSO.itemName} in TableArea.");
     }
 }

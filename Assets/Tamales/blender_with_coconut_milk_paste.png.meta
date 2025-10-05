@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blender_with_coconut_milk_paste_0: 8303955579377229249
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

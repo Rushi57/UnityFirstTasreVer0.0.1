@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chicken_marinated_in_calamansi_and_soy_sauce_0: 3486725313433281740
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

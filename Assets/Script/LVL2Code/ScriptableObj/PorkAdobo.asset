@@ -29,11 +29,15 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
     actionName: 
     Action: 
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: dffc5dfc07510c145a03fed5acd4802e, type: 2}
+    actionName: 
+    Action: 
   - stepType: 1
-    ingredient: {fileID: 11400000, guid: 54cd9018a4852d7448f76ee40cdcf93f, type: 2}
-    actionName: Peppercorns
-    Action: Peppercorns
-  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+    actionName: Mix
+    Action: Mix
+  - stepType: 0
     ingredient: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
     actionName: 
     Action: 
@@ -49,7 +53,3 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
     actionName: Water
     Action: Water
-  - stepType: 1
-    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
-    actionName: Mix
-    Action: Mix

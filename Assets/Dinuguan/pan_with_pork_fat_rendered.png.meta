@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pan_with_pork_fat_rendered_0: 5327369804472339899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

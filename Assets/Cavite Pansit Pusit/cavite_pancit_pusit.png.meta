@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cavite_pancit_pusit_0: -796215631308912956
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

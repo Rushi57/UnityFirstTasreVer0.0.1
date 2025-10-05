@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      added_chicken_gizzard__0: 4310801105979656373
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

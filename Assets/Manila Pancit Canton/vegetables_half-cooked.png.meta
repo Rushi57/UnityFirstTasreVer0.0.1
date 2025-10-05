@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vegetables_half-cooked_0: -7446490385998399924
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

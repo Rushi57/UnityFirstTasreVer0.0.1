@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      manila_pancit_canton_0: -826029532031184626
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
