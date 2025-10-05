@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 
+[ExecuteAlways] // 👈 lets you preview bar sizes in the Editor
 public class MixingMechanicManager : MonoBehaviour
 {
     [Header("UI References")]
@@ -9,23 +10,20 @@ public class MixingMechanicManager : MonoBehaviour
     public RectTransform indicator;
     public TextMeshProUGUI timerText;
 
-    [Header("Zones (fixed order)")]
+    [Header("Zones")]
     public RectTransform zoneRed;
     public RectTransform zoneYellow;
     public RectTransform zoneGreen;
+
+    [Header("Zone Heights (0–1 = percentage of total height)")]
+    [Range(0f, 1f)] public float redHeightRatio = 0.6f;
+    [Range(0f, 1f)] public float greenHeightRatio = 0.2f;
+    [Range(0f, 1f)] public float yellowHeightRatio = 0.2f;
 
     [Header("Gameplay Settings")]
     public float riseSpeed = 50f;
     public float fallSpeed = 20f;
     public float totalTime = 10f;
-
-    [Header("Auto Drop Settings")]
-    [Tooltip("If true, the indicator will drop when reaching the top (green zone).")]
-    public bool autoDropEnabled = true;
-    [Tooltip("How fast the indicator drops down after reaching the top.")]
-    public float autoDropSpeed = 150f;
-    [Tooltip("How long the indicator stays at the top before dropping.")]
-    public float holdTimeAtTop = 0.3f;
 
     [Header("Panels")]
     public GameObject mixingPanel;
@@ -36,13 +34,22 @@ public class MixingMechanicManager : MonoBehaviour
     private float timer;
     private bool isRotating = false;
     private bool hasEnded = false;
-    private bool isDropping = false;
+
+    private float cachedBarHeight;
+
+    private void Awake()
+    {
+        // Cache the color bar height once layout is updated
+        Canvas.ForceUpdateCanvases();
+        if (colorBar != null)
+            cachedBarHeight = colorBar.rect.height;
+    }
 
     private void Start()
     {
         ResetIndicator();
         timer = totalTime;
-        SetupFixedZones();
+        SetupZones();
 
         if (closeButton != null)
             closeButton.onClick.AddListener(CloseAllPanels);
@@ -53,15 +60,18 @@ public class MixingMechanicManager : MonoBehaviour
 
     private void Update()
     {
+        if (!Application.isPlaying) return; // prevent updates in Edit Mode
         if (hasEnded) return;
 
+        // Update timer
         if (timer > 0f)
         {
             timer -= Time.deltaTime;
             if (timer < 0f) timer = 0f;
         }
 
-        timerText.text = Mathf.Ceil(timer).ToString() + "s";
+        if (timerText != null)
+            timerText.text = Mathf.Ceil(timer).ToString() + "s";
 
         if (timer <= 0f)
         {
@@ -74,8 +84,6 @@ public class MixingMechanicManager : MonoBehaviour
 
     private void HandleIndicatorMovement()
     {
-        if (isDropping) return; // ⛔ Pause updates while dropping
-
         Vector2 pos = indicator.anchoredPosition;
 
         if (isRotating)
@@ -87,33 +95,7 @@ public class MixingMechanicManager : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, -halfHeight, halfHeight);
         indicator.anchoredPosition = pos;
 
-        // ✅ Auto drop when reaching the top
-        if (autoDropEnabled && Mathf.Approximately(pos.y, halfHeight))
-        {
-            StartCoroutine(AutoDropRoutine());
-        }
-
         isRotating = false;
-    }
-
-    private System.Collections.IEnumerator AutoDropRoutine()
-    {
-        isDropping = true;
-        yield return new WaitForSeconds(holdTimeAtTop);
-
-        Vector2 pos = indicator.anchoredPosition;
-        float halfHeight = colorBar.rect.height / 2f;
-        float targetY = -halfHeight;
-
-        while (pos.y > targetY)
-        {
-            pos.y -= autoDropSpeed * Time.deltaTime;
-            indicator.anchoredPosition = pos;
-            yield return null;
-        }
-
-        indicator.anchoredPosition = new Vector2(pos.x, targetY);
-        isDropping = false;
     }
 
     public void OnRotate() => isRotating = true;
@@ -175,27 +157,40 @@ public class MixingMechanicManager : MonoBehaviour
 
     public void ResetIndicator()
     {
-        indicator.anchoredPosition = new Vector2(indicator.anchoredPosition.x, -colorBar.rect.height / 2f);
+        if (indicator != null && colorBar != null)
+            indicator.anchoredPosition = new Vector2(indicator.anchoredPosition.x, -colorBar.rect.height / 2f);
     }
 
-    private void SetupFixedZones()
+    private void SetupZones()
     {
-        float totalHeight = colorBar.rect.height;
-        float redHeight = totalHeight * 0.59f;
-        float yellowHeight = totalHeight * 0.16f;
-        float greenHeight = totalHeight * 0.25f;
+        if (colorBar == null) return;
+
+        float totalHeight = cachedBarHeight > 0 ? cachedBarHeight : colorBar.rect.height;
+
+        float redHeight = totalHeight * redHeightRatio;
+        float greenHeight = totalHeight * greenHeightRatio;
+        float yellowHeight = totalHeight * yellowHeightRatio;
+
+        // Normalize if ratios exceed total 1
+        float totalRatio = redHeightRatio + greenHeightRatio + yellowHeightRatio;
+        if (totalRatio > 1f)
+        {
+            redHeight /= totalRatio;
+            greenHeight /= totalRatio;
+            yellowHeight /= totalRatio;
+        }
 
         // Red (Bottom)
         zoneRed.sizeDelta = new Vector2(zoneRed.sizeDelta.x, redHeight);
         zoneRed.anchoredPosition = new Vector2(0, -totalHeight / 2f + redHeight / 2f);
 
-        // Yellow (Middle)
-        zoneYellow.sizeDelta = new Vector2(zoneYellow.sizeDelta.x, yellowHeight);
-        zoneYellow.anchoredPosition = new Vector2(0, zoneRed.anchoredPosition.y + redHeight / 2f + yellowHeight / 2f);
-
-        // Green (Top)
+        // Green (Middle)
         zoneGreen.sizeDelta = new Vector2(zoneGreen.sizeDelta.x, greenHeight);
-        zoneGreen.anchoredPosition = new Vector2(0, zoneYellow.anchoredPosition.y + yellowHeight / 2f + greenHeight / 2f);
+        zoneGreen.anchoredPosition = new Vector2(0, zoneRed.anchoredPosition.y + redHeight / 2f + greenHeight / 2f);
+
+        // Yellow (Top)
+        zoneYellow.sizeDelta = new Vector2(zoneYellow.sizeDelta.x, yellowHeight);
+        zoneYellow.anchoredPosition = new Vector2(0, zoneGreen.anchoredPosition.y + greenHeight / 2f + yellowHeight / 2f);
     }
 
     private void CloseAllPanels()
@@ -205,5 +200,16 @@ public class MixingMechanicManager : MonoBehaviour
 
         if (completeShowPanel != null)
             completeShowPanel.SetActive(false);
+    }
+
+    // 🧩 Optional: Auto-update zones in the Editor when you change ratios
+    private void OnValidate()
+    {
+        if (!Application.isPlaying && colorBar != null)
+        {
+            Canvas.ForceUpdateCanvases();
+            cachedBarHeight = colorBar.rect.height;
+            SetupZones();
+        }
     }
 }
