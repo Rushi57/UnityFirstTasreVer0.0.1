@@ -2,31 +2,30 @@ using UnityEngine;
 
 public class TutorialSteps : MonoBehaviour
 {
-    public GlowButton button1;
-    public GlowButton button2;
-    public GlowButton button3;
+    public GlowButton[] buttons; // Assign 17 buttons in Inspector
+    private int currentIndex = 0;
 
     void Start()
     {
-        // Start the tutorial: first button glows
-        GlowManager.Instance.ActivateGlow(button1);
+        // Start tutorial with first button glowing
+        GlowManager.Instance.ActivateGlow(buttons[0]);
     }
 
-    public void OnButton1Clicked()
+    public void OnButtonClicked(int index)
     {
-        // After Button1 is clicked, make Button2 glow
-        GlowManager.Instance.ActivateGlow(button2);
+        if (index < buttons.Length - 1)
+        {
+            GlowManager.Instance.ActivateGlow(buttons[index + 1]);
+            currentIndex = index + 1;
+        }
     }
 
-    public void OnButton2Clicked()
+    public void NeedButtonAgain(int index)
     {
-        // After Button2 is clicked, make Button3 glow
-        GlowManager.Instance.ActivateGlow(button3);
-    }
-
-    public void NeedButton1Again()
-    {
-        // Later in tutorial, bring back Button1 glow
-        GlowManager.Instance.ActivateGlow(button1);
+        if (index < buttons.Length)
+        {
+            GlowManager.Instance.ActivateGlow(buttons[index]);
+            currentIndex = index;
+        }
     }
 }

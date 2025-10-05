@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: Ref001
   itemName: Ref
-  itemType: 2
+  itemType: 0
   itemSprite: {fileID: 216076454168767066, guid: c27a29936224ba246844f1a6645adeaa, type: 3}
   choppedSprite: {fileID: 0}
+  spawnPrefab: {fileID: 0}
+  spawnItemSO: {fileID: 0}
