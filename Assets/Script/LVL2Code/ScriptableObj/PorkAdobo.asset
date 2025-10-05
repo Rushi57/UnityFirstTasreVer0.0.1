@@ -23,7 +23,7 @@ MonoBehaviour:
     Action: 
   - stepType: 1
     ingredient: {fileID: 11400000, guid: 34e9b57eaf70a0d49b4ad7c4823a6c47, type: 2}
-    actionName: OIl
+    actionName: Oil
     Action: Oil
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
