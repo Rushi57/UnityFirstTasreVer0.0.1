@@ -43,6 +43,15 @@ public class UITutorialManagerAdobo : MonoBehaviour
         while (currentLine < dialogLines.Length)
         {
             UIDialogLineAdobo line = dialogLines[currentLine];
+
+            // 👇 Move dialog box based on this line's setting
+            if (dialogCanvasAdobo != null)
+            {
+                RectTransform rect = dialogCanvasAdobo.GetComponent<RectTransform>();
+                if (rect != null)
+                    rect.anchoredPosition = line.dialogPosition;
+            }
+
             yield return StartCoroutine(TypeText(line.dialogText));
             readyToAdvance = false;
 
@@ -94,8 +103,6 @@ public class UITutorialManagerAdobo : MonoBehaviour
         // ✅ Close the dialog box
         if (dialogCanvasAdobo != null)
             dialogCanvasAdobo.SetActive(false);
-
-
 
         // Wait a short moment, then show the next dialog (after settings open)
         StartCoroutine(ShowNextDialogAfterDelay(1f));

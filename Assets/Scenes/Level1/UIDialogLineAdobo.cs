@@ -1,12 +1,14 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "NewDialogLine", menuName = "Tutorial/Tutorial Line")]
-public class UIDialogLineAdobo : ScriptableObject
+[System.Serializable]
+public class UIDialogLineAdobo
 {
-    [TextArea]
-    public string dialogText;
+    [TextArea(2, 5)]
+    public string dialogText; // The text shown in the dialog
 
-    public string uiElementName;     //UnityEngine.UI.Button
-    public bool waitForClickOnUI;
+    public string uiElementName; // Name of the UI element to highlight
+    public bool waitForClickOnUI; // Should wait for UI click before advancing
+
+    // 👇 New field: controls where the dialog box appears
+    public Vector3 dialogPosition;
 }
