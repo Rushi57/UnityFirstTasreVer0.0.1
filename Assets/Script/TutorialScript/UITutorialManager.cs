@@ -1,17 +1,19 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class UITutorialManager : MonoBehaviour
 {
+    [Header("Dialog Settings")]
     public UIDialogLine[] dialogLines;
 
+    [Header("Canvas References")]
     public GameObject dialogCanvas;
     public GameObject mapMainCanvas;
     public GameObject settingCanvas;
 
+    [Header("UI Elements")]
     public TextMeshProUGUI dialogText;
     public Button dialogBoxButton;
 
@@ -19,15 +21,15 @@ public class UITutorialManager : MonoBehaviour
     private bool waitingForClick = false;
     private bool readyToAdvance = false;
 
-   
     void Start()
     {
-        //if Tutorial is already Finish
+        // Skip tutorial if already finished
         if (PlayerPrefs.GetInt("TutorialDone", 0) == 1)
         {
-            if(dialogCanvas) dialogCanvas.SetActive(false);
+            if (dialogCanvas) dialogCanvas.SetActive(false);
             return;
         }
+
         if (dialogBoxButton != null)
             dialogBoxButton.onClick.AddListener(OnDialogBoxClicked);
 
@@ -36,16 +38,14 @@ public class UITutorialManager : MonoBehaviour
 
     IEnumerator PlayTutorial()
     {
-      if (dialogCanvas) dialogCanvas.SetActive(true);
-       if(mapMainCanvas) mapMainCanvas.SetActive(true);
-        if(settingCanvas) settingCanvas.SetActive(false);
+        if (dialogCanvas) dialogCanvas.SetActive(true);
+        if (mapMainCanvas) mapMainCanvas.SetActive(true);
+        if (settingCanvas) settingCanvas.SetActive(false);
 
         while (currentLine < dialogLines.Length)
         {
             UIDialogLine line = dialogLines[currentLine];
-
             yield return StartCoroutine(TypeText(line.dialogText));
-
             readyToAdvance = false;
 
             Button buttonToHighlight = null;
@@ -59,6 +59,8 @@ public class UITutorialManager : MonoBehaviour
                     HighlightUI(uiObj);
                 }
             }
+
+            // Wait for user to click the highlighted UI
             if (line.waitForClickOnUI && buttonToHighlight != null)
             {
                 waitingForClick = true;
@@ -73,7 +75,7 @@ public class UITutorialManager : MonoBehaviour
             currentLine++;
         }
 
-       
+        // When tutorial ends
         if (dialogCanvas) dialogCanvas.SetActive(false);
         PlayerPrefs.SetInt("TutorialDone", 1);
         PlayerPrefs.Save();
@@ -81,34 +83,50 @@ public class UITutorialManager : MonoBehaviour
 
     void HighlightUI(GameObject ui)
     {
- 
         var image = ui.GetComponent<Image>();
         if (image != null)
-            image.color = Color.white; 
-
+            image.color = Color.white;
     }
 
     void OnUIElementClicked(Button button)
     {
         waitingForClick = false;
         button.onClick.RemoveAllListeners();
+
+        // ✅ Close the dialog box
+        if (dialogCanvas != null)
+            dialogCanvas.SetActive(false);
+
+        // ✅ Open the settings panel when SettingButton is clicked
+        if (button.name == "SettingButton" && settingCanvas != null)
+            settingCanvas.SetActive(true);
+
+        // Wait a short moment, then show the next dialog (after settings open)
+        StartCoroutine(ShowNextDialogAfterDelay(1f));
+    }
+
+    IEnumerator ShowNextDialogAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Reopen the dialog box to show the next tutorial message
+        if (dialogCanvas != null)
+            dialogCanvas.SetActive(true);
     }
 
     void OnDialogBoxClicked()
     {
         if (!waitingForClick)
-        {
             readyToAdvance = true;
-        }
     }
+
     IEnumerator TypeText(string textToType)
     {
         dialogText.text = "";
         foreach (char c in textToType)
         {
             dialogText.text += c;
-            yield return new WaitForSeconds(0.02f); 
+            yield return new WaitForSeconds(0.02f);
         }
-
     }
 }
