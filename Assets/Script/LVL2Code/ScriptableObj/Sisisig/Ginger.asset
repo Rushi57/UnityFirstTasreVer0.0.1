@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
-  m_Name: NewItem 1
+  m_Name: Ginger
   m_EditorClassIdentifier: 
-  itemID: PepperBowl01
-  itemName: PepperBowl
+  itemID: 'Ginger001 '
+  itemName: Ginger
   itemType: 1
-  itemSprite: {fileID: 4804446361586417100, guid: ae0c71436c98cfd40ac738f9b29e7ca6, type: 3}
-  choppedSprite: {fileID: 0}
+  itemSprite: {fileID: 8698163947868029849, guid: a641f745de930104a8ff45d78329cad0, type: 3}
+  choppedSprite: {fileID: -2478026441724452540, guid: dbc1eb4ac9a100a40bb2d0e96714c3bd, type: 3}
+  spawnPrefab: {fileID: 0}
+  spawnItemSO: {fileID: 0}

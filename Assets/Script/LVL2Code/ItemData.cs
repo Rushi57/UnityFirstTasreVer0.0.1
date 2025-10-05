@@ -38,6 +38,7 @@ public class ItemData : MonoBehaviour, IPointerClickHandler
             draggable.enabled = canDrag;
 
         hasBeenCut = false; // reset when new item setup
+
     }
 
     public void SetCutVersion()

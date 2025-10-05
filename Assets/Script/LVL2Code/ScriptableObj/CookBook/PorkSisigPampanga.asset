@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d6f2f2a2657c14485ee42bbb3506be, type: 3}
+  m_Name: PorkSisigPampanga
+  m_EditorClassIdentifier: 
+  dishName: Pork Sisig Pampanga
+  instructions: 
+  dishImage: {fileID: -1970620715997884394, guid: 11c28f77813eddc4499358461d38d091, type: 3}
+  ingredients:
+  - itemData: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
+    noteOrAmount: Water
+  - itemData: {fileID: 11400000, guid: 34e9b57eaf70a0d49b4ad7c4823a6c47, type: 2}
+    noteOrAmount: '2 tablespoons '
+  - itemData: {fileID: 11400000, guid: e5a5ad4d7af1e63448860478876d4875, type: 2}
+    noteOrAmount: '1 large Onion minced '
+  - itemData: {fileID: 11400000, guid: 1fc235732398e8c43b25f703eb2966ce, type: 2}
+    noteOrAmount: 1 Ginger Minced
+  - itemData: {fileID: 11400000, guid: 5e32e1335bf5caa4a84e2993d38d3b90, type: 2}
+    noteOrAmount: 3 pieces Finger Chillies
+  - itemData: {fileID: 11400000, guid: 56779b3cf1131274e8a2eb594ebea91e, type: 2}
+    noteOrAmount: 3 tablespoon Soy Sauces
+  - itemData: {fileID: 0}
+    noteOrAmount: 3-5 pieces calamansi
+  - itemData: {fileID: 0}
+    noteOrAmount: 1/4 Liko Chiken Liver
+  - itemData: {fileID: 0}
+    noteOrAmount: Salt to taste
+  - itemData: {fileID: 0}
+    noteOrAmount: Black Pepper

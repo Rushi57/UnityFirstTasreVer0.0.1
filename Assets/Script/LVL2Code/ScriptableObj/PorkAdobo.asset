@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeID: PorkAdobo01
   recipeName: Manila Pork Adobo
   recipeImage: {fileID: -8053197629789734714, guid: 46112b9472351694db800b4770b84eac, type: 3}
-  targetScore: 25
+  targetScore: 22
   steps:
   - stepType: 1
     ingredient: {fileID: 11400000, guid: cf4532f0f236b2f40afdefafae5793d7, type: 2}
@@ -53,3 +53,7 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
     actionName: Water
     Action: Water
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: a8b107d2228e5a54c810ac90b8914061, type: 2}
+    actionName: Simmer
+    Action: Simmer
