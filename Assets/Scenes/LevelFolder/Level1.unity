@@ -377,7 +377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &16387588
 RectTransform:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ MonoBehaviour:
   zoneYellow: {fileID: 971822116}
   zoneGreen: {fileID: 213164560}
   redHeightRatio: 0.621
-  greenHeightRatio: 0.411
+  greenHeightRatio: 0.586
   yellowHeightRatio: 0.582
   riseSpeed: 85
   fallSpeed: 180
@@ -2008,8 +2008,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 6.705864}
-  m_SizeDelta: {x: 33.45, y: 141.33917}
+  m_AnchoredPosition: {x: 0, y: 6.049904}
+  m_SizeDelta: {x: 33.45, y: 181.8074}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213164561
 MonoBehaviour:
@@ -3622,8 +3622,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -170.74185}
-  m_SizeDelta: {x: 33.45, y: 213.55626}
+  m_AnchoredPosition: {x: 0, y: -181.18689}
+  m_SizeDelta: {x: 33.45, y: 192.66618}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &351736667
 MonoBehaviour:
@@ -8853,8 +8853,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 177.44771}
-  m_SizeDelta: {x: 33.45, y: 200.14452}
+  m_AnchoredPosition: {x: 0, y: 187.23679}
+  m_SizeDelta: {x: 33.45, y: 180.56638}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &971822117
 MonoBehaviour:
@@ -19369,6 +19369,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1441699748}
     m_Modifications:
+    - target: {fileID: 460673337609865535, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 460673337609865535, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3566592000248826746, guid: 4ed26809ef1f30645b8acc9bd5079cf5, type: 3}
     - target: {fileID: 2513973763614843930, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: m_Name
       value: StoveBtnFire
@@ -19381,6 +19389,10 @@ PrefabInstance:
       propertyPath: simmerClockPanel
       value: 
       objectReference: {fileID: 550295131}
+    - target: {fileID: 4509987451686117501, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5093524903103033914, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -19465,8 +19477,25 @@ PrefabInstance:
       propertyPath: congratsPanel
       value: 
       objectReference: {fileID: 1015954698}
+    - target: {fileID: 6801267158568632665, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171205802329448337, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 169.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171205802329448337, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -383
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171205802329448337, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 115
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4031237940269342947, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
