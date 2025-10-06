@@ -20,6 +20,8 @@ public class UITutorialManagerAdobo : MonoBehaviour
     private bool waitingForClick = false;
     private bool readyToAdvance = false;
 
+    private Image currentImage = null;
+
     void Start()
     {
         // Skip tutorial if already finished
@@ -44,12 +46,19 @@ public class UITutorialManagerAdobo : MonoBehaviour
         {
             UIDialogLineAdobo line = dialogLines[currentLine];
 
-            // 👇 Move dialog box based on this line's setting
+            // Move dialog box
             if (dialogCanvasAdobo != null)
             {
                 RectTransform rect = dialogCanvasAdobo.GetComponent<RectTransform>();
                 if (rect != null)
                     rect.anchoredPosition = line.dialogPosition;
+            }
+
+            // Show image (if any)
+            if (line.dialogImage != null)
+            {
+                currentImage = line.dialogImage;
+                currentImage.gameObject.SetActive(true);
             }
 
             yield return StartCoroutine(TypeText(line.dialogText));
@@ -67,10 +76,11 @@ public class UITutorialManagerAdobo : MonoBehaviour
                 }
             }
 
-            // Wait for user to click the highlighted UI
+            // Wait for user interaction
             if (line.waitForClickOnUI && buttonToHighlight != null)
             {
                 waitingForClick = true;
+                buttonToHighlight.onClick.RemoveAllListeners();
                 buttonToHighlight.onClick.AddListener(() => OnUIElementClicked(buttonToHighlight));
                 yield return new WaitUntil(() => !waitingForClick);
             }
@@ -79,10 +89,17 @@ public class UITutorialManagerAdobo : MonoBehaviour
                 yield return new WaitUntil(() => readyToAdvance);
             }
 
+            // Hide image when advancing
+            if (currentImage != null)
+            {
+                currentImage.gameObject.SetActive(false);
+                currentImage = null;
+            }
+
             currentLine++;
         }
 
-        // When tutorial ends
+        // End tutorial
         if (dialogCanvasAdobo) dialogCanvasAdobo.SetActive(false);
         PlayerPrefs.SetInt("TutorialAdobo", 1);
         PlayerPrefs.Save();
@@ -100,11 +117,11 @@ public class UITutorialManagerAdobo : MonoBehaviour
         waitingForClick = false;
         button.onClick.RemoveAllListeners();
 
-        // ✅ Close the dialog box
+        // Hide the dialog canvas briefly
         if (dialogCanvasAdobo != null)
             dialogCanvasAdobo.SetActive(false);
 
-        // Wait a short moment, then show the next dialog (after settings open)
+        // After a short delay, bring the dialogue back and continue
         StartCoroutine(ShowNextDialogAfterDelay(1f));
     }
 
@@ -112,9 +129,11 @@ public class UITutorialManagerAdobo : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        // Reopen the dialog box to show the next tutorial message
         if (dialogCanvasAdobo != null)
             dialogCanvasAdobo.SetActive(true);
+
+        // Allow dialogue to continue
+        readyToAdvance = true;
     }
 
     void OnDialogBoxClicked()
