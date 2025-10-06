@@ -8748,10 +8748,12 @@ MonoBehaviour:
   oilobj: {fileID: 1043009356}
   soyobj: {fileID: 358148407}
   waterobj: {fileID: 1444832558}
+  saltobj: {fileID: 0}
   vinegarDuration: 1
   oilDuration: 1
   soyDuration: 1
   waterDuration: 1
+  saltDuration: 2
 --- !u!4 &961411585
 Transform:
   m_ObjectHideFlags: 0
@@ -19381,6 +19383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoveBtnFire
       objectReference: {fileID: 0}
+    - target: {fileID: 3008398612500453644, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: panPrefab
+      value: 
+      objectReference: {fileID: 6962404223520504196, guid: a03eec422dc1cf74a97bb5761c275406, type: 3}
     - target: {fileID: 3008398612500453644, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: mixingPanel
       value: 

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0df816a25a77c545a67e0b378bd0de4, type: 3}
+  m_Name: Pampanga SIsig
+  m_EditorClassIdentifier: 
+  dishName: PampangaSisig
+  region: 
+  dishDescription: 
+  dishImage: {fileID: -6115229438838554286, guid: c1be1d78f572e2b4bb1718edb067370b, type: 3}
+  ingredients:
+  - itemSO: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
+    description: Water
+  - itemSO: {fileID: 11400000, guid: 912ed7b954bbb13439f452d3dd9da3a5, type: 2}
+    description: 1 kilo Pork Jowl(Face)
+  - itemSO: {fileID: 11400000, guid: 34e9b57eaf70a0d49b4ad7c4823a6c47, type: 2}
+    description: 2 tablespoons Vegetable Oil
+  - itemSO: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
+    description: 3 cloves Garlic
+  - itemSO: {fileID: 11400000, guid: 1fc235732398e8c43b25f703eb2966ce, type: 2}
+    description: '1 Ginger minced '
+  - itemSO: {fileID: 11400000, guid: 5e32e1335bf5caa4a84e2993d38d3b90, type: 2}
+    description: 3 pieces finger Chilies(siling pangsigang)
+  - itemSO: {fileID: 11400000, guid: 56779b3cf1131274e8a2eb594ebea91e, type: 2}
+    description: 3 tablespoons Soy Sauce
+  - itemSO: {fileID: 0}
+    description: 3-5 pieces Calamansi
+  - itemSO: {fileID: 0}
+    description: '1/4 Kilo chicken liver '
+  - itemSO: {fileID: 0}
+    description: Salt
+  - itemSO: {fileID: 0}
+    description: black pepper

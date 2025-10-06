@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e21cf298bb2c148a4c999a7caf1ab9, type: 3}
+  m_Name: Sisig
+  m_EditorClassIdentifier: 
+  recipeID: Sisig001
+  recipeName: SIsig
+  recipeImage: {fileID: -6115229438838554286, guid: c1be1d78f572e2b4bb1718edb067370b, type: 3}
+  targetScore: 30
+  steps:
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: a93a4e6246335974abeb795640b9c029, type: 2}
+    actionName: 
+    Action: 
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
+    actionName: Water
+    Action: Water
+  - stepType: 0
+    ingredient: {fileID: 0}
+    actionName: 
+    Action: 
+  - stepType: 0
+    ingredient: {fileID: 0}
+    actionName: 
+    Action: 
+  - stepType: 0
+    ingredient: {fileID: 0}
+    actionName: 
+    Action: 
+  - stepType: 0
+    ingredient: {fileID: 0}
+    actionName: 
+    Action: 
+  - stepType: 0
+    ingredient: {fileID: 0}
+    actionName: 
+    Action: 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6962404223520504196
+--- !u!1 &7457079033613625480
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 310796496583159134}
-  - component: {fileID: 4876548452708841811}
-  - component: {fileID: 629374931456249342}
-  - component: {fileID: 5161996367577680798}
+  - component: {fileID: 4307859087976554737}
+  - component: {fileID: 4058957279613707849}
+  - component: {fileID: 455917723433932434}
+  - component: {fileID: 1934872162576812231}
+  - component: {fileID: 1950300210011664195}
+  - component: {fileID: 9030350058516428821}
   m_Layer: 5
-  m_Name: PanSIsig
+  m_Name: PotPrefabTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &310796496583159134
+--- !u!224 &4307859087976554737
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6962404223520504196}
+  m_GameObject: {fileID: 7457079033613625480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,23 +38,23 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 269.15, y: 179.23}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4876548452708841811
+--- !u!222 &4058957279613707849
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6962404223520504196}
+  m_GameObject: {fileID: 7457079033613625480}
   m_CullTransparentMesh: 1
---- !u!114 &629374931456249342
+--- !u!114 &455917723433932434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6962404223520504196}
+  m_GameObject: {fileID: 7457079033613625480}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -66,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7036844360217369140, guid: 625845716925cd84b94beafe212066d5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,28 +78,43 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5161996367577680798
+--- !u!114 &1934872162576812231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6962404223520504196}
+  m_GameObject: {fileID: 7457079033613625480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccd1e898a1f82f74a895a4f81a927565, type: 3}
+  m_Script: {fileID: 11500000, guid: bcb434c93a8117043b475ce43cd03820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixingMechPanel: {fileID: 0}
-  simmerClockPanel: {fileID: 0}
-  panImage: {fileID: 629374931456249342}
-  defaultPanSprite: {fileID: -7036844360217369140, guid: 625845716925cd84b94beafe212066d5, type: 3}
-  stepSprites:
-  - {fileID: -8479368559270907547, guid: 7d599a33a2f635e4498f25f73a5343bc, type: 3}
-  - {fileID: -4166617166384686503, guid: e156bbd295320524cafb6246f82380ea, type: 3}
-  - {fileID: -4166617166384686503, guid: e156bbd295320524cafb6246f82380ea, type: 3}
-  - {fileID: 2473399127474018101, guid: 424ab1fd29af59844a0ca18736b503b9, type: 3}
-  oilPanSprite: {fileID: 312855514268800688, guid: 8845af9206368b94a97eacc9cc141a6a, type: 3}
-  vinegarPanSprite: {fileID: -947749556987461895, guid: e459ac6a5bed0a644aab25263a8d51db, type: 3}
-  soyPanSprite: {fileID: 6126183905695377157, guid: 9a83cb9002b33544ea6432eaecd68260, type: 3}
-  waterPanSprite: {fileID: -3531731968469926067, guid: 77e272be238bd334e8ea161849c1283e, type: 3}
+--- !u!114 &1950300210011664195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457079033613625480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e57202344b58f7141bc4559832128c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSO: {fileID: 0}
+  originalParent: {fileID: 0}
+  originalAnchoredPosition: {x: 0, y: 0}
+  canDrag: 1
+--- !u!225 &9030350058516428821
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457079033613625480}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

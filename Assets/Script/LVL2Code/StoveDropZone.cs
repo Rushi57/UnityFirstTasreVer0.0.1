@@ -3,92 +3,108 @@ using UnityEngine.EventSystems;
 
 public class StoveDropZone : MonoBehaviour, IDropHandler
 {
-    [Header("References")]
-    public GameObject panPrefab;   // Prefab with PanStateHandler
-    public GameObject mixingPanel; // Scene UI  mixing mini-game
-    public GameObject simmerClockPanel; // Scene UI simmer mini-game
+    [Header("Cookware Prefabs")]
+    public GameObject panPrefab;
+    public GameObject potPrefab;
+    public GameObject wokPrefab;
 
-    private GameObject currentPan; // Spawned pan instance
+    [Header("Mini-Game Panels")]
+    public GameObject mixingPanel;
+    public GameObject simmerClockPanel;
+
+    private GameObject currentCookware;
 
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag == null)
         {
-            Debug.LogWarning("[DropZone] pointerDrag is null");
+            Debug.LogWarning("[StoveDropZone] pointerDrag is null");
             return;
         }
-
 
         ItemData draggedData = eventData.pointerDrag.GetComponent<ItemData>();
         if (draggedData == null || draggedData.itemSO == null)
         {
-            Debug.LogWarning("[DropZone] No ItemData on dragged object");
+            Debug.LogWarning("[StoveDropZone] No valid ItemData on dragged object");
             return;
         }
 
         ItemSO item = draggedData.itemSO;
-        Debug.Log($"[DropZone] Dropped item: {item.itemName}, Type: {item.itemType}");
+        Debug.Log($"[StoveDropZone] Dropped item: {item.itemName}, Type: {item.itemType}");
 
-        // === 1️⃣ Place the Pan ===
-        if (item.itemType == ItemType.Utility && item.itemName == "Pan")
+        // === 1️⃣ Handle Cookware (Pan, Pot, Wok, etc.) ===
+        if (item.itemType == ItemType.Utility)
         {
-            if (currentPan == null)
-            {
-                // ⬇️ The updated block starts here
-                currentPan = Instantiate(panPrefab, transform);
-                currentPan.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            TryPlaceCookware(item, eventData);
+            return;
+        }
 
-                // Assign the Mixing Panel reference to the spawned PanStateHandler
-                PanStateHandler handler = currentPan.GetComponent<PanStateHandler>();
-                if (handler != null)
-                {
-                    handler.mixingMechPanel = mixingPanel;
-                }
+        // === 2️⃣ Handle Ingredient ===
+        if (currentCookware != null && item.itemType == ItemType.Ingredient)
+        {
+            HandleIngredientDrop(item, draggedData);
+            return;
+        }
 
-                //Assign the Simmer Panel reference to the spawned PanstateHandler 
-                PanStateHandler simmerhandler = currentPan.GetComponent<PanStateHandler>();
-                if (handler != null)
-                {
-                    simmerhandler.simmerClockPanel = simmerClockPanel;
-                }
+        Debug.Log("[StoveDropZone] Drop ignored (no matching condition).");
+    }
 
+    private void TryPlaceCookware(ItemSO item, PointerEventData eventData)
+    {
+        if (currentCookware != null)
+        {
+            Debug.Log("[StoveDropZone] Cookware already placed");
+            return;
+        }
 
-                // ⬆️ Updated block ends here
+        GameObject prefabToSpawn = GetCookwarePrefab(item.itemName);
+        if (prefabToSpawn == null)
+        {
+            Debug.LogWarning($"[StoveDropZone] No prefab found for {item.itemName}");
+            return;
+        }
 
-                Debug.Log("✅ Pan placed on stove");
-            }
+        currentCookware = Instantiate(prefabToSpawn, transform);
+        currentCookware.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
-            Destroy(eventData.pointerDrag);
+        PanStateHandler handler = currentCookware.GetComponent<PanStateHandler>();
+        if (handler != null)
+        {
+            handler.mixingMechPanel = mixingPanel;
+            handler.simmerClockPanel = simmerClockPanel;
+        }
+
+        Debug.Log($"✅ {item.itemName} placed on stove");
+        Destroy(eventData.pointerDrag);
+        CookingStepManager.Instance.NextStep();
+    }
+
+    private GameObject GetCookwarePrefab(string itemName)
+    {
+        switch (itemName)
+        {
+            case "Pan": return panPrefab;
+            case "Pot": return potPrefab;
+            case "Wok": return wokPrefab;
+            default: return null;
+        }
+    }
+
+    private void HandleIngredientDrop(ItemSO item, ItemData draggedData)
+    {
+        bool correct = CookingStepManager.Instance.IsCorrectItem(item);
+        if (correct)
+        {
+            PanStateHandler handler = currentCookware.GetComponent<PanStateHandler>();
+            handler?.UpdatePanIngredient();
+
             CookingStepManager.Instance.NextStep();
-            return;
+            Destroy(draggedData.gameObject);
         }
-
-        // === 2️⃣ Ingredient Handling ===
-        if (currentPan != null && item.itemType == ItemType.Ingredient)
+        else
         {
-            bool correct = CookingStepManager.Instance.IsCorrectItem(item);
-            if (correct)
-            {
-                PanStateHandler panHandler = currentPan.GetComponent<PanStateHandler>();
-                if (panHandler != null)
-                {
-                    panHandler.UpdatePanIngredient();
-                }
-
-                CookingStepManager.Instance.NextStep();
-                Destroy(eventData.pointerDrag);
-            }
-            else
-            {
-                draggedData.GetComponent<Draggable>()?.RevertToOriginalPosition();
-                CookingStepManager.Instance.WrongAttempt();
-            }
-            return;
+            draggedData.GetComponent<Draggable>()?.RevertToOriginalPosition();
+            CookingStepManager.Instance.WrongAttempt();
         }
-
-        
-
-        // === Nothing matched ===
-        Debug.Log("[DropZone] Drop ignored (no matching condition).");
     }
 }

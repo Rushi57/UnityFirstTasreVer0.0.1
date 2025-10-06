@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
+  m_Name: salt
+  m_EditorClassIdentifier: 
+  itemID: Salt001
+  itemName: Salt
+  itemType: 2
+  itemSprite: {fileID: -1162442978445507191, guid: dec4113226d66b743ad75208cfa70ebf, type: 3}
+  choppedSprite: {fileID: 0}
+  spawnPrefab: {fileID: 0}
+  spawnItemSO: {fileID: 0}
