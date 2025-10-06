@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 100353939}
   - component: {fileID: 100353938}
   m_Layer: 5
-  m_Name: PanBtn
+  m_Name: PotBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
-  slotPrefab: {fileID: 7457079033613625480, guid: 705d9b6f3c095fc4abc75455170f4fad, type: 3}
+  slotPrefab: {fileID: 7457079033613625480, guid: abfd09a06fa055f4287c1fc5ea0eafdc, type: 3}
   itemSO: {fileID: 11400000, guid: a93a4e6246335974abeb795640b9c029, type: 2}
 --- !u!114 &100353939
 MonoBehaviour:
@@ -11373,7 +11373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1384964273
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17922,11 +17922,11 @@ PrefabInstance:
     - target: {fileID: 3008398612500453644, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: panPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6962404223520504196, guid: a03eec422dc1cf74a97bb5761c275406, type: 3}
     - target: {fileID: 3008398612500453644, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: potPrefab
       value: 
-      objectReference: {fileID: 6962404223520504196, guid: 8c1fdb694c3f81b4d86e90459e014078, type: 3}
+      objectReference: {fileID: 6962404223520504196, guid: 82b44dc949f4e4c43b2a65d7b8d334e8, type: 3}
     - target: {fileID: 3008398612500453644, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: mixingPanel
       value: 

@@ -5,6 +5,8 @@ public class ShelfManager : MonoBehaviour
 {
     [Header("Canvas Reference")]
     public GameObject shelfCanvas;
+
+    [Header("Condiment Objects (with Pour Animation)")]
     public GameObject vinegarobj;
     public GameObject oilobj;
     public GameObject soyobj;
@@ -33,15 +35,12 @@ public class ShelfManager : MonoBehaviour
             case "Vinegar":
                 StartCoroutine(PlayAndHide(vinegarobj, vinegarDuration, "Vinegar"));
                 break;
-
             case "Oil":
                 StartCoroutine(PlayAndHide(oilobj, oilDuration, "Oil"));
                 break;
-
             case "Soy":
-                StartCoroutine(PlayAndHide(soyobj, soyDuration, "Soy"));
+                StartCoroutine(PlayAndHide(soyobj, soyDuration, "Soy")); // ✅ use same name as PanStateHandler
                 break;
-
             case "Water":
                 StartCoroutine(PlayAndHide(waterobj, waterDuration, "Water"));
                 break;
@@ -53,19 +52,38 @@ public class ShelfManager : MonoBehaviour
 
     IEnumerator PlayAndHide(GameObject obj, float duration, string actionName)
     {
-        obj.SetActive(true);
-        Animator anim = obj.GetComponent<Animator>();
-
-        if (anim != null)
+        if (obj == null)
         {
-            anim.Play("Pour"); // Play pouring animation
+            Debug.LogWarning($"[ShelfManager] Missing object for {actionName}");
+            yield break;
         }
+
+        obj.SetActive(true);
+
+        Animator anim = obj.GetComponent<Animator>();
+        if (anim != null)
+            anim.Play("Pour");
 
         yield return new WaitForSeconds(duration);
 
         obj.SetActive(false);
 
-        // ✅ Now notify CookingStepManager
-        CookingStepManager.Instance.OnActionPerformed(actionName);
+        // ✅ Notify CookingStepManager
+        bool correct = CookingStepManager.Instance.OnActionPerformed(actionName);
+
+        // ✅ Find the currently active cookware (pan/pot/wok)
+        PanStateHandler panHandler = FindObjectOfType<PanStateHandler>();
+        if (panHandler == null)
+        {
+            Debug.LogWarning("[ShelfManager] No active PanStateHandler found!");
+            yield break;
+        }
+
+        // ✅ Update cookware sprite only if action was correct
+        if (correct)
+        {
+            panHandler.AdvanceStep();
+            Debug.Log($"[ShelfManager] Updated pan sprite with {actionName}");
+        }
     }
 }

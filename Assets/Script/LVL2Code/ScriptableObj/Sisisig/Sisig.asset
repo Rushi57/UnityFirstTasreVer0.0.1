@@ -23,25 +23,5 @@ MonoBehaviour:
     Action: 
   - stepType: 1
     ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
-    actionName: Water
-    Action: Water
-  - stepType: 0
-    ingredient: {fileID: 0}
-    actionName: 
-    Action: 
-  - stepType: 0
-    ingredient: {fileID: 0}
-    actionName: 
-    Action: 
-  - stepType: 0
-    ingredient: {fileID: 0}
-    actionName: 
-    Action: 
-  - stepType: 0
-    ingredient: {fileID: 0}
-    actionName: 
-    Action: 
-  - stepType: 0
-    ingredient: {fileID: 0}
-    actionName: 
-    Action: 
+    actionName: water
+    Action: water

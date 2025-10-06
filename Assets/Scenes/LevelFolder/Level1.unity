@@ -3676,6 +3676,7 @@ GameObject:
   - component: {fileID: 358148409}
   - component: {fileID: 358148412}
   - component: {fileID: 358148408}
+  - component: {fileID: 358148413}
   m_Layer: 5
   m_Name: soyrObj
   m_TagString: Untagged
@@ -3774,7 +3775,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Soy
+  actionName: soy
+--- !u!114 &358148413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358148407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: soy
 --- !u!1 &374907197
 GameObject:
   m_ObjectHideFlags: 0
@@ -8754,6 +8768,7 @@ MonoBehaviour:
   soyDuration: 1
   waterDuration: 1
   saltDuration: 2
+  panHandler: {fileID: 0}
 --- !u!4 &961411585
 Transform:
   m_ObjectHideFlags: 0
@@ -9973,6 +9988,7 @@ GameObject:
   - component: {fileID: 1043009359}
   - component: {fileID: 1043009361}
   - component: {fileID: 1043009358}
+  - component: {fileID: 1043009362}
   m_Layer: 5
   m_Name: oilObj
   m_TagString: Untagged
@@ -10071,7 +10087,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Oil
+  actionName: oil
+--- !u!114 &1043009362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043009356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: oil
 --- !u!1 &1050379664
 GameObject:
   m_ObjectHideFlags: 0
@@ -11924,6 +11953,7 @@ GameObject:
   - component: {fileID: 1338196538}
   - component: {fileID: 1338196540}
   - component: {fileID: 1338196537}
+  - component: {fileID: 1338196541}
   m_Layer: 5
   m_Name: vinegarObj
   m_TagString: Untagged
@@ -12022,7 +12052,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Vinegar
+  actionName: vinegar
+--- !u!114 &1338196541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338196535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: vinegar
 --- !u!1 &1339094907
 GameObject:
   m_ObjectHideFlags: 0
@@ -13212,7 +13255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Water
+  actionName: water
 --- !u!114 &1444832562
 MonoBehaviour:
   m_ObjectHideFlags: 0

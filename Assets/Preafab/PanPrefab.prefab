@@ -93,6 +93,7 @@ MonoBehaviour:
   panImage: {fileID: 629374931456249342}
   defaultPanSprite: {fileID: -7036844360217369140, guid: 625845716925cd84b94beafe212066d5, type: 3}
   stepSprites:
+  - {fileID: -7036844360217369140, guid: 625845716925cd84b94beafe212066d5, type: 3}
   - {fileID: -1474310736544980709, guid: 6b6b0fcecb35edf4e9d9df6ec2bb0f4d, type: 3}
   - {fileID: -1474310736544980709, guid: 6b6b0fcecb35edf4e9d9df6ec2bb0f4d, type: 3}
   - {fileID: -8479368559270907547, guid: 7d599a33a2f635e4498f25f73a5343bc, type: 3}
@@ -100,8 +101,3 @@ MonoBehaviour:
   - {fileID: 2473399127474018101, guid: 424ab1fd29af59844a0ca18736b503b9, type: 3}
   - {fileID: -8151840367760014900, guid: b0e84ceec4f89234899cbfd26066a797, type: 3}
   - {fileID: -8151840367760014900, guid: b0e84ceec4f89234899cbfd26066a797, type: 3}
-  oilPanSprite: {fileID: 312855514268800688, guid: 8845af9206368b94a97eacc9cc141a6a, type: 3}
-  vinegarPanSprite: {fileID: -947749556987461895, guid: e459ac6a5bed0a644aab25263a8d51db, type: 3}
-  soyPanSprite: {fileID: 6126183905695377157, guid: 9a83cb9002b33544ea6432eaecd68260, type: 3}
-  waterPanSprite: {fileID: -3531731968469926067, guid: 77e272be238bd334e8ea161849c1283e, type: 3}
-  saltPanSprite: {fileID: 0}

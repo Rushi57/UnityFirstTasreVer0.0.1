@@ -96,7 +96,7 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
         if (correct)
         {
             PanStateHandler handler = currentCookware.GetComponent<PanStateHandler>();
-            handler?.UpdatePanIngredient();
+            handler.AdvanceStep();
 
             CookingStepManager.Instance.NextStep();
             Destroy(draggedData.gameObject);

@@ -10,21 +10,20 @@ public class CookingStepManager : MonoBehaviour
 
     private void Awake()
     {
-
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
     private void Start()
     {
-        if(GameSession.SelectedRecipe != null)
+        if (GameSession.SelectedRecipe != null)
         {
             currentRecipe = GameSession.SelectedRecipe;
-            Debug.Log("Load recipe form GameSession: " + currentRecipe.recipeName);
+            Debug.Log("Loaded recipe from GameSession: " + currentRecipe.recipeName);
         }
         else
         {
-            Debug.Log("NO recipe selected via GameSession  using inspector currentRecipe");
+            Debug.Log("No recipe selected via GameSession — using inspector currentRecipe");
         }
     }
 
@@ -50,24 +49,42 @@ public class CookingStepManager : MonoBehaviour
                string.Equals(step.actionName?.Trim(), action?.Trim(), System.StringComparison.OrdinalIgnoreCase);
     }
 
-    public void NextStep()
+    // ✅ Updated NextStep with suppressMessage behavior
+    public void NextStep(bool suppressMessage = false)
     {
         currentStepIndex++;
+
         if (currentStepIndex >= currentRecipe.steps.Count)
         {
-            // pass the RecipeSO — TotalScoreManager will read targetScore from it
             TotalScoreManager.Instance.CalculateFinalScore("Level1", currentRecipe);
+            return;
+        }
 
-        }
-        else
+        var nextStep = currentRecipe.steps[currentStepIndex];
+
+        // 🧠 Suppress the message if caller asked (e.g. Mix/Simmer started)
+        if (suppressMessage)
         {
-           DebugMessageManager.Instance.ShowMessage($" Next step: {GetExpectedStep()}");
+            Debug.Log($"[CookingStepManager] Message suppressed for step: {GetExpectedStep()}");
+            return;
         }
+
+        // 🧠 Skip showing message if next step is a mini-game (Mix or Simmer)
+        if (nextStep.stepType == StepType.Action &&
+            (nextStep.actionName.Equals("Mix", System.StringComparison.OrdinalIgnoreCase) ||
+             nextStep.actionName.Equals("Simmer", System.StringComparison.OrdinalIgnoreCase)))
+        {
+            Debug.Log($"[CookingStepManager] Suppressing message until {nextStep.actionName} mini-game finishes");
+            return;
+        }
+
+        // ✅ Normal case — show next step message
+        DebugMessageManager.Instance.ShowMessage($"Next step: {GetExpectedStep()}");
     }
 
     public void WrongAttempt()
     {
-        DebugMessageManager.Instance.ShowMessage(" Wrong item or action for this step!");
+        DebugMessageManager.Instance.ShowMessage("Wrong item or action for this step!");
     }
 
     public bool OnActionPerformed(string actionName)
@@ -75,9 +92,21 @@ public class CookingStepManager : MonoBehaviour
         if (IsCorrectAction(actionName))
         {
             Debug.Log("Correct action: " + actionName);
-            NextStep();
+
+            // If the action is Mix or Simmer, suppress until mini-game completes
+            if (actionName.Equals("Mix", System.StringComparison.OrdinalIgnoreCase) ||
+                actionName.Equals("Simmer", System.StringComparison.OrdinalIgnoreCase))
+            {
+                NextStep(true); // ✅ Suppress next step message
+            }
+            else
+            {
+                NextStep(); // ✅ Show normal message
+            }
+
             return true;
         }
+
         WrongAttempt();
         return false;
     }
@@ -87,7 +116,7 @@ public class CookingStepManager : MonoBehaviour
         if (IsCorrectAction("Mix"))
         {
             Debug.Log("Correct action: Mix");
-            NextStep();
+            NextStep(true); // ✅ No "Next step" message yet — wait for mini-game to finish
         }
         else
         {
@@ -100,7 +129,7 @@ public class CookingStepManager : MonoBehaviour
         if (IsCorrectAction("Simmer"))
         {
             Debug.Log("Correct action: Simmer");
-            NextStep();
+            NextStep(true); // ✅ No "Next step" message yet — wait for mini-game to finish
         }
         else
         {
@@ -130,12 +159,8 @@ public class CookingStepManager : MonoBehaviour
             : step.ingredient != null ? step.ingredient.itemName : null;
     }
 
-
     public bool IsRecipeCompleted()
     {
         return currentRecipe != null && currentStepIndex >= currentRecipe.steps.Count;
     }
-    
-
-
 }
