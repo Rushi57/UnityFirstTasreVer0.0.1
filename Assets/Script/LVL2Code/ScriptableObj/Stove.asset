@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
-  m_Name: Garlic
+  m_Name: Stove
   m_EditorClassIdentifier: 
-  itemID: Garlic001
-  itemName: Garlic
-  itemType: 1
-  itemSprite: {fileID: -8944997348610683000, guid: 0a9a7f0ef8a26e442a9e9f267562c2ad, type: 3}
-  choppedSprite: {fileID: -1015048517840907415, guid: 9d716030ada5f0c43820788d1ed240ee, type: 3}
+  itemID: Stove001
+  itemName: Stove
+  itemType: 2
+  itemSprite: {fileID: -6696897164379916337, guid: 4fb3b6832789d3845997cb674da0abfe, type: 3}
+  choppedSprite: {fileID: 0}
   spawnPrefab: {fileID: 0}
   spawnItemSO: {fileID: 0}

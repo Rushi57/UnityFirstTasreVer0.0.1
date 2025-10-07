@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8413077575480754647}
   - component: {fileID: 3510769319000742779}
   - component: {fileID: -7986591739806470731}
+  - component: {fileID: 1564348959621719279}
   m_Layer: 5
   m_Name: IngredientPrefab
   m_TagString: Untagged
@@ -134,3 +135,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 2, y: 2}
   m_UseGraphicAlpha: 1
+--- !u!114 &1564348959621719279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6528799815589156294}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 113bc65fd73a8d94c873361722ae37e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  glowIntensity: 1.5
+  pulseSpeed: 2
+  glowing: 1
