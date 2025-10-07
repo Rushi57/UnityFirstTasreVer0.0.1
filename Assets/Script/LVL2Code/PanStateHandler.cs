@@ -41,25 +41,63 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
         }
 
         // --- MIX / SPATULA STEP ---
-        else if (CookingStepManager.Instance.IsCorrectAction("Mix") &&
-                 droppedItem.itemSO.itemName.Equals("Spatula", System.StringComparison.OrdinalIgnoreCase))
+        else if (droppedItem.itemSO.itemName.Equals("Spatula", System.StringComparison.OrdinalIgnoreCase))
         {
-            CookingStepManager.Instance.NextStep();
-            mixingMechPanel.SetActive(true);
+            if (CookingStepManager.Instance.IsCorrectAction("Mix"))
+            {
+                // ✅ Restart or start the mixing minigame
+                if (mixingMechPanel != null)
+                {
+                    mixingMechPanel.SetActive(true);
 
-            Debug.Log("[PanStateHandler] Mix action triggered.");
-            Destroy(eventData.pointerDrag.gameObject);
+                    var mixManager = mixingMechPanel.GetComponent<MixingMechanicManager>();
+                    if (mixManager != null)
+                    {
+                        mixManager.RestartMixing(); // <-- this is where the reset happens
+                    }
+                }
+
+                CookingStepManager.Instance.NextStep();
+                Debug.Log("[PanStateHandler] Mix action triggered.");
+                Destroy(eventData.pointerDrag.gameObject);
+            }
+            else
+            {
+                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
+                CookingStepManager.Instance.WrongAttempt();
+            }
         }
 
         // --- SIMMER / PAN LID STEP ---
-        else if (CookingStepManager.Instance.IsCorrectAction("Simmer") &&
-                 droppedItem.itemSO.itemName.Equals("PanLid", System.StringComparison.OrdinalIgnoreCase))
+        else if (droppedItem.itemSO.itemName.Equals("PanLid", System.StringComparison.OrdinalIgnoreCase))
         {
-            CookingStepManager.Instance.NextStep();
-            simmerClockPanel.SetActive(true);
+            if (CookingStepManager.Instance.IsCorrectAction("Simmer"))
+            {
+                Debug.Log("[PanStateHandler] Simmer action triggered.");
 
-            Debug.Log("[PanStateHandler] Simmer action triggered.");
-            Destroy(eventData.pointerDrag.gameObject);
+                if (simmerClockPanel != null)
+                {
+                    simmerClockPanel.SetActive(true);
+
+                    // ✅ Restart simmer mini-game if it's already open
+                    var simmerManager = simmerClockPanel.GetComponent<NeedleTimer>();
+                    if (simmerManager != null)
+                    {
+                        simmerManager.RestartSimmer();
+                    }
+                }
+
+                // Optional: move to next step
+                // CookingStepManager.Instance.NextStep();
+
+                // ✅ Optionally keep PanLid for reuse
+                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
+            }
+            else
+            {
+                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
+                CookingStepManager.Instance.WrongAttempt();
+            }
         }
 
         // --- CONDIMENT / ACTION DROP ---

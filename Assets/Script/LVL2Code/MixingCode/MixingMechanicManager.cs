@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 
-[ExecuteAlways] // 👈 lets you preview bar sizes in the Editor
+[ExecuteAlways] // lets you preview bar sizes in the Editor
 public class MixingMechanicManager : MonoBehaviour
 {
     [Header("UI References")]
@@ -212,4 +212,27 @@ public class MixingMechanicManager : MonoBehaviour
             SetupZones();
         }
     }
+    public void RestartMixing()
+    {
+        Debug.Log("[MixingMechanicManager] Restarting Mixing Mechanic...");
+
+        hasEnded = false;
+        timer = totalTime;
+        isRotating = false;
+
+        // Reset UI states
+        if (completeShowPanel != null)
+            completeShowPanel.SetActive(false);
+
+        if (mixingPanel != null)
+            mixingPanel.SetActive(true);
+
+        ResetIndicator();
+
+        if (timerText != null)
+            timerText.text = Mathf.Ceil(timer).ToString() + "s";
+
+        Debug.Log("[MixingMechanicManager] Mixing reset complete.");
+    }
+
 }

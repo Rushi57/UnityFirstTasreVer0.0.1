@@ -24,7 +24,6 @@ public class NeedleTimer : MonoBehaviour
     public TextMeshProUGUI resultText;
     public Button closeButton;
 
-    // 🔹 Temp storage for score & result
     private int pendingScore = 0;
     private string pendingResult = "Bad";
 
@@ -44,9 +43,7 @@ public class NeedleTimer : MonoBehaviour
             rotationTime += Time.deltaTime;
 
             if (rotationTime >= fullRotationTime)
-            {
                 AutoFail();
-            }
         }
     }
 
@@ -60,7 +57,7 @@ public class NeedleTimer : MonoBehaviour
         angle = (360f - angle + 90f) % 360f;
 
         pendingResult = "Bad";
-        pendingScore = 3; // default
+        pendingScore = 3;
 
         if (IsAngleInSector(angle, greenStart, greenEnd))
         {
@@ -73,7 +70,6 @@ public class NeedleTimer : MonoBehaviour
             pendingScore = 8;
         }
 
-        // Show result panel (but no score yet)
         if (completeShowPanel != null)
         {
             completeShowPanel.SetActive(true);
@@ -96,8 +92,6 @@ public class NeedleTimer : MonoBehaviour
     {
         rotating = false;
         rotationTime = 0f;
-
-        // Always Bad
         pendingScore = 3;
         pendingResult = "Bad";
 
@@ -113,19 +107,50 @@ public class NeedleTimer : MonoBehaviour
 
     private void ClosePanels()
     {
-        TotalScoreManager.Instance.AddSimmerScore(pendingScore);
-        StartCoroutine(CloseAndProceed());
-    }
+        Debug.Log("[NeedleTimer] Close button pressed");
 
-    private IEnumerator CloseAndProceed()
-    {
+        if (TotalScoreManager.Instance != null)
+            TotalScoreManager.Instance.AddSimmerScore(pendingScore);
+        else
+            Debug.LogWarning("[NeedleTimer] TotalScoreManager.Instance is NULL!");
+
+        // Instantly close and move to next step
         if (completeShowPanel != null)
             completeShowPanel.SetActive(false);
 
         if (simmerPanel != null)
             simmerPanel.SetActive(false);
 
-        yield return new WaitForSeconds(0.3f);
-        CookingStepManager.Instance.NextStep();
+        if (CookingStepManager.Instance != null)
+        {
+            Debug.Log("[NeedleTimer] Calling CookingStepManager.NextStep()");
+            CookingStepManager.Instance.NextStep();
+        }
+        else
+        {
+            Debug.LogWarning("[NeedleTimer] CookingStepManager.Instance is NULL!");
+        }
+    }
+
+    public void RestartSimmer()
+    {
+        Debug.Log("[NeedleTimer] Restarting simmer mini-game...");
+
+        rotationTime = 0f;
+        rotating = true;
+
+        if (needle != null)
+            needle.localRotation = Quaternion.Euler(0f, 0f, 90f);
+
+        if (completeShowPanel != null)
+            completeShowPanel.SetActive(false);
+
+        if (simmerPanel != null)
+            simmerPanel.SetActive(true);
+
+        pendingScore = 0;
+        pendingResult = "Bad";
+
+        Debug.Log("[NeedleTimer] Simmer reset complete.");
     }
 }
