@@ -1670,9 +1670,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152198388}
+      - m_Target: {fileID: 1388714549}
         m_TargetAssemblyTypeName: DebugMessageManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: HideMessage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3028,7 +3028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &250779953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3072,7 +3072,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 250779954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1388714549}
+        m_TargetAssemblyTypeName: DebugMessageManager, Assembly-CSharp
+        m_MethodName: HideMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &250779954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16050,7 +16062,7 @@ MonoBehaviour:
     dialogPosition: {x: 130, y: 163.96}
     uiElementName: 
     waitForClickOnUI: 1
-    dialogImage: {fileID: 574525388}
+    dialogImage: {fileID: 250779954}
   - dialogText: 'EXPLAIN THE CHOPPING MECHANIC
 
 
@@ -16058,11 +16070,11 @@ MonoBehaviour:
     dialogPosition: {x: 130, y: 163.96}
     uiElementName: 
     waitForClickOnUI: 0
-    dialogImage: {fileID: 0}
+    dialogImage: {fileID: 250779954}
   dialogCanvasAdobo: {fileID: 152198388}
   mapMainCanvasAdobo: {fileID: 1416921948}
   dialogText: {fileID: 1485980008}
-  dialogBoxButton: {fileID: 250779953}
+  dialogBoxButton: {fileID: 152198389}
 --- !u!1 &1736486716
 GameObject:
   m_ObjectHideFlags: 0
