@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e21cf298bb2c148a4c999a7caf1ab9, type: 3}
+  m_Name: Dinuguan
+  m_EditorClassIdentifier: 
+  recipeID: 'Dinuguan '
+  recipeName: 'Dinuguan '
+  recipeImage: {fileID: 1208040086343421634, guid: dbe5bac0b22c963458f1f4116ce19a1c, type: 3}
+  targetScore: 31
+  steps:
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: cf4532f0f236b2f40afdefafae5793d7, type: 2}
+    actionName: pen
+    Action: pan
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 3b6f5a1d22dfc27478bf2e1821b91a63, type: 2}
+    actionName: cut
+    Action: cut
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
+    actionName: water
+    Action: water
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
+    actionName: water
+    Action: 'water '
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: a8b107d2228e5a54c810ac90b8914061, type: 2}
+    actionName: simmer
+    Action: simmer
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
+    actionName: cut
+    Action: cut
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+    actionName: Mix
+    Action: Mix
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 567eae9f841f60c448fc2f53f80f8991, type: 2}
+    actionName: salt
+    Action: Salt
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: d4c6d1fc87552b5489f00f2bb221f2e5, type: 2}
+    actionName: pepper
+    Action: pepper
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 5e32e1335bf5caa4a84e2993d38d3b90, type: 2}
+    actionName: cut
+    Action: cut
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 4bb0a33deb400004da469d825815faee, type: 2}
+    actionName: vinegar
+    Action: vinegar
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+    actionName: mix
+    Action: mix

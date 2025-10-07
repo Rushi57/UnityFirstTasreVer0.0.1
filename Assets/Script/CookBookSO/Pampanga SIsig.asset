@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0df816a25a77c545a67e0b378bd0de4, type: 3}
   m_Name: Pampanga SIsig
   m_EditorClassIdentifier: 
-  dishName: PampangaSisig
-  region: 
+  dishName: 
+  region: 'Paampanga '
   dishDescription: 
   dishImage: {fileID: -6115229438838554286, guid: c1be1d78f572e2b4bb1718edb067370b, type: 3}
   ingredients:
   - itemSO: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
     description: Water
-  - itemSO: {fileID: 11400000, guid: 912ed7b954bbb13439f452d3dd9da3a5, type: 2}
+  - itemSO: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
     description: 1 kilo Pork Jowl(Face)
   - itemSO: {fileID: 11400000, guid: 34e9b57eaf70a0d49b4ad7c4823a6c47, type: 2}
     description: 2 tablespoons Vegetable Oil

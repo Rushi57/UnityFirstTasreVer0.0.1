@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
-  m_Name: Chilies
+  m_Name: PepperBottle
   m_EditorClassIdentifier: 
-  itemID: 'GreenChillies001 '
-  itemName: Green Chillies
-  itemType: 1
-  itemSprite: {fileID: -4956963896366311441, guid: bbdbe2b40b7ff91409dd0b382d00e8d3, type: 3}
-  choppedSprite: {fileID: -5869853433686614793, guid: 75eb6dcb83901ea43b6ab5eeccee2fac, type: 3}
+  itemID: PepperBottle001
+  itemName: PepperBottle
+  itemType: 0
+  itemSprite: {fileID: 5102435302969789738, guid: 8a756b0e85f56c94d897ce92405409d3, type: 3}
+  choppedSprite: {fileID: 0}
   spawnPrefab: {fileID: 0}
   spawnItemSO: {fileID: 0}

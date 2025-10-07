@@ -46,11 +46,12 @@ public class CookingStepManager : MonoBehaviour
         if (!HasCurrentStep()) return false;
         var step = currentRecipe.steps[currentStepIndex];
         return step.stepType == StepType.Action &&
-               string.Equals(step.actionName?.Trim(), action?.Trim(), System.StringComparison.OrdinalIgnoreCase);
+               string.Equals(step.actionName?.Trim(), action?.Trim(),
+               System.StringComparison.OrdinalIgnoreCase);
     }
 
-    // ✅ Updated NextStep with suppressMessage behavior
-    public void NextStep(bool suppressMessage = false)
+    // ✅ Simplified NextStep — always shows next step immediately
+    public void NextStep()
     {
         currentStepIndex++;
 
@@ -60,26 +61,8 @@ public class CookingStepManager : MonoBehaviour
             return;
         }
 
-        var nextStep = currentRecipe.steps[currentStepIndex];
-
-        // 🧠 Suppress the message if caller asked (e.g. Mix/Simmer started)
-        if (suppressMessage)
-        {
-            Debug.Log($"[CookingStepManager] Message suppressed for step: {GetExpectedStep()}");
-            return;
-        }
-
-        // 🧠 Skip showing message if next step is a mini-game (Mix or Simmer)
-        if (nextStep.stepType == StepType.Action &&
-            (nextStep.actionName.Equals("Mix", System.StringComparison.OrdinalIgnoreCase) ||
-             nextStep.actionName.Equals("Simmer", System.StringComparison.OrdinalIgnoreCase)))
-        {
-            Debug.Log($"[CookingStepManager] Suppressing message until {nextStep.actionName} mini-game finishes");
-            return;
-        }
-
-        // ✅ Normal case — show next step message
-        DebugMessageManager.Instance.ShowMessage($"Next step: {GetExpectedStep()}");
+        // ✅ Always show the next step message
+        Debug.Log($"Next step: {GetExpectedStep()}");
     }
 
     public void WrongAttempt()
@@ -92,18 +75,7 @@ public class CookingStepManager : MonoBehaviour
         if (IsCorrectAction(actionName))
         {
             Debug.Log("Correct action: " + actionName);
-
-            // If the action is Mix or Simmer, suppress until mini-game completes
-            if (actionName.Equals("Mix", System.StringComparison.OrdinalIgnoreCase) ||
-                actionName.Equals("Simmer", System.StringComparison.OrdinalIgnoreCase))
-            {
-                NextStep(true); // ✅ Suppress next step message
-            }
-            else
-            {
-                NextStep(); // ✅ Show normal message
-            }
-
+            NextStep(); // ✅ Always show next step message immediately
             return true;
         }
 
@@ -116,7 +88,7 @@ public class CookingStepManager : MonoBehaviour
         if (IsCorrectAction("Mix"))
         {
             Debug.Log("Correct action: Mix");
-            NextStep(true); // ✅ No "Next step" message yet — wait for mini-game to finish
+            NextStep();
         }
         else
         {
@@ -129,7 +101,7 @@ public class CookingStepManager : MonoBehaviour
         if (IsCorrectAction("Simmer"))
         {
             Debug.Log("Correct action: Simmer");
-            NextStep(true); // ✅ No "Next step" message yet — wait for mini-game to finish
+            NextStep();
         }
         else
         {
@@ -142,6 +114,19 @@ public class CookingStepManager : MonoBehaviour
         if (IsCorrectAction("Cut"))
         {
             Debug.Log("Correct action: Cut");
+            NextStep();
+        }
+        else
+        {
+            WrongAttempt();
+        }
+    }
+
+    public void TryGrill()
+    {
+        if (IsCorrectAction("Grill"))
+        {
+            Debug.Log("Correct action: Grill");
             NextStep();
         }
         else

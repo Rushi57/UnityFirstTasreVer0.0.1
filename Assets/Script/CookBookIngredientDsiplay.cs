@@ -12,7 +12,7 @@ public class CookBookIngredientDisplay : MonoBehaviour
 
     [Header("Ingredient List")]
     public Transform ingredientContainer;
-    public GameObject ingredientIconPrefab; // prefab with icon + TMP text
+    public GameObject ingredientPrefab; // should have Image + TMP
 
     [Header("CookBook Data")]
     public CookBookSO cookBookSO;
@@ -25,10 +25,9 @@ public class CookBookIngredientDisplay : MonoBehaviour
 
     public void SetupCookBook(CookBookSO data)
     {
-        cookBookSO = data;
         if (data == null)
         {
-            Debug.LogWarning("CookBookDisplay: No CookBookSO assigned!");
+            Debug.LogWarning("❌ No CookBookSO assigned!");
             return;
         }
 
@@ -38,27 +37,37 @@ public class CookBookIngredientDisplay : MonoBehaviour
         if (descriptionText) descriptionText.text = data.dishDescription;
         if (dishImage) dishImage.sprite = data.dishImage;
 
-        // Clear existing ingredient icons
+        // Clear previous list
         foreach (Transform child in ingredientContainer)
             Destroy(child.gameObject);
 
-        // Populate ingredient list
+        // Spawn new ingredients
         foreach (var ingredient in data.ingredients)
         {
             if (ingredient == null || ingredient.itemSO == null) continue;
 
-            GameObject iconObj = Instantiate(ingredientIconPrefab, ingredientContainer);
-            iconObj.name = $"Ingredient_{ingredient.itemSO.itemName}";
+            GameObject newIngredient = Instantiate(ingredientPrefab, ingredientContainer);
+            newIngredient.name = ingredient.itemSO.itemName;
 
-            // Set the image and text
-            Image img = iconObj.GetComponentInChildren<Image>(true);
-            TextMeshProUGUI txtDesc = iconObj.GetComponentInChildren<TextMeshProUGUI>(true);
+            // 🔹 Get references
+            Image img = newIngredient.transform.Find("IngredientImage")?.GetComponent<Image>();
+            TextMeshProUGUI txt = newIngredient.transform.Find("IngredientText")?.GetComponent<TextMeshProUGUI>();
 
-            if (img != null && ingredient.itemSO.itemSprite != null)
+            // 🔹 Apply icon (scaled 60x60)
+            if (img != null)
+            {
                 img.sprite = ingredient.itemSO.itemSprite;
+                img.rectTransform.sizeDelta = new Vector2(60, 60);
+                img.preserveAspect = true;
+            }
 
-            if (txtDesc != null)
-                txtDesc.text = ingredient.description;
+            // 🔹 Apply text
+            if (txt != null)
+            {
+                txt.text = ingredient.description;
+                txt.alignment = TextAlignmentOptions.Left;
+                txt.fontSize = 26;
+            }
         }
     }
 }

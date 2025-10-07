@@ -47,23 +47,45 @@ public class TotalScoreManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    // ------------- Score registration -------------
-    public void AddMixScore(int amount) => mixScore += amount;
-    public void AddCutScore(int amount) => cutScore += amount;
-    public void AddSimmerScore(int amount) => simmerScore += amount;
+    // ---------------- SCORE REGISTRATION ----------------
+
+    public void AddMixScore(int amount)
+    {
+        mixScore += amount;
+        RecalculateFinalScore();
+        Debug.Log($"[TotalScoreManager] Mix Score Added: +{amount} (Total Mix: {mixScore})");
+    }
+
+    public void AddCutScore(int amount)
+    {
+        cutScore += amount;
+        RecalculateFinalScore();
+        Debug.Log($"[TotalScoreManager] Cut Score Added: +{amount} (Total Cut: {cutScore})");
+    }
+
+    public void AddSimmerScore(int amount)
+    {
+        simmerScore += amount;
+        RecalculateFinalScore();
+        Debug.Log($"[TotalScoreManager] Simmer Score Added: +{amount} (Total Simmer: {simmerScore})");
+    }
+
+    // ---------------- FINAL CALCULATION ----------------
+
+    private void RecalculateFinalScore()
+    {
+        FinalScore = mixScore + cutScore + simmerScore;
+    }
 
     // Called once when recipe is done - pass the RecipeSO so we can show dish image/title later
     public void CalculateFinalScore(string recipeName, RecipeSO recipe)
     {
-        // Optional: ensure recipe finished check (if you have CookingStepManager)
-        // if (!CookingStepManager.Instance.IsRecipeCompleted()) return;
-
-        FinalScore = mixScore + cutScore + simmerScore;
         lastRecipe = recipe;
 
-        // Set the per-level targetScore from the recipe
         if (recipe != null)
             targetScore = recipe.targetScore;
+
+        RecalculateFinalScore();
 
         Debug.Log($"[TotalScoreManager] Final Score for {recipe.recipeName}: {FinalScore} / Target {targetScore}");
 
@@ -71,11 +93,15 @@ public class TotalScoreManager : MonoBehaviour
             completeDishPanel.SetActive(true);
     }
 
-    // Show scoreboard (called when tap/click on Congrats panel)
+    // ---------------- SCOREBOARD DISPLAY ----------------
+
     public void ShowScoreBoard()
     {
         if (completeDishPanel != null) completeDishPanel.SetActive(false);
         if (scoreDashBoardPanel != null) scoreDashBoardPanel.SetActive(true);
+
+        // Ensure total is fresh
+        RecalculateFinalScore();
 
         UpdateScoreUI();
         lastStarCount = CalculateStarCount();
@@ -93,7 +119,8 @@ public class TotalScoreManager : MonoBehaviour
 
     private int CalculateStarCount()
     {
-        int middleScore = targetScore / 2;
+        int middleScore = Mathf.CeilToInt(targetScore * 0.5f);
+
         if (FinalScore >= targetScore) return 3;
         if (FinalScore >= middleScore) return 2;
         if (FinalScore > 0) return 1;
@@ -103,7 +130,9 @@ public class TotalScoreManager : MonoBehaviour
     private void UpdateStars(int starCount)
     {
         for (int i = 0; i < stars.Length; i++)
+        {
             stars[i].color = (i < starCount) ? starFilledColor : starEmptyColor;
+        }
     }
 
     private void UpdateDishInfo()
@@ -116,19 +145,24 @@ public class TotalScoreManager : MonoBehaviour
         }
     }
 
-    // Called by Continue button on the Score Dashboard
+    // ---------------- CONTINUE BUTTON ----------------
+
     public void OnContinueAndReturnToMap()
     {
+        // Recalculate before saving
+        RecalculateFinalScore();
+
         int stars = CalculateStarCount();
         LevelResultSaver.SaveResult(currentLevelIndex, FinalScore, stars);
 
-        Debug.Log($"Saved Level {currentLevelIndex} → Score: {FinalScore}, Stars: {stars}");
+        Debug.Log($"[TotalScoreManager] Saved Level {currentLevelIndex} → Score: {FinalScore}, Stars: {stars}");
 
         ResetScores();
         SceneManager.LoadScene(mapSceneName);
     }
 
-    // Reset gameplay scores (call this in Start of level to ensure fresh run)
+    // ---------------- RESET ----------------
+
     public void ResetScores()
     {
         mixScore = 0;
@@ -138,7 +172,6 @@ public class TotalScoreManager : MonoBehaviour
         lastRecipe = null;
         lastStarCount = 0;
 
-        // Hide panels
         if (completeDishPanel != null) completeDishPanel.SetActive(false);
         if (scoreDashBoardPanel != null) scoreDashBoardPanel.SetActive(false);
     }

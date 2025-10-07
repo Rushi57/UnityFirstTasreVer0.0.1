@@ -27,7 +27,7 @@ public class IndicatorController : MonoBehaviour
     void SetupIndicator()
     {
         int previousScore = PlayerPrefs.GetInt($"Level{levelIndex - 1}_Score", 0);
-        bool isUnlocked = (levelIndex == 0) || (previousScore >= 75);
+        bool isUnlocked = (levelIndex == 0) || (previousScore >= 22);
 
         if (buttonImage != null) buttonImage.color = isUnlocked ? unlockedColor : lockedColor;
         if (button != null) button.interactable = isUnlocked;

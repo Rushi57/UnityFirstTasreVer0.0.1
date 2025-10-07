@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class NeedleTimer : MonoBehaviour
 {
@@ -112,14 +113,19 @@ public class NeedleTimer : MonoBehaviour
 
     private void ClosePanels()
     {
-        // ✅ Apply score only here
         TotalScoreManager.Instance.AddSimmerScore(pendingScore);
-        CookingStepManager.Instance.NextStep();
+        StartCoroutine(CloseAndProceed());
+    }
 
+    private IEnumerator CloseAndProceed()
+    {
         if (completeShowPanel != null)
             completeShowPanel.SetActive(false);
 
         if (simmerPanel != null)
             simmerPanel.SetActive(false);
+
+        yield return new WaitForSeconds(0.3f);
+        CookingStepManager.Instance.NextStep();
     }
 }
