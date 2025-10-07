@@ -159,7 +159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipe: {fileID: 11400000, guid: 515f43d0e9f88174a8d891f952eb950a, type: 2}
   levelIndex: 0
-  infoPanelPrefab: {fileID: 0}
+  requiredScore: 22
+  infoPanelPrefab: {fileID: 7151956852835983481, guid: b185b4822fdbe3241b9410163761ebd4, type: 3}
   buttonImage: {fileID: 2955475022786769049}
   lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}

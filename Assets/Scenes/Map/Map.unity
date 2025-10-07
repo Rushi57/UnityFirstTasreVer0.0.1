@@ -6166,7 +6166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -454.03, y: 15.76}
+  m_AnchoredPosition: {x: -454.02, y: 0}
   m_SizeDelta: {x: 908.03, y: 751.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1400435042
@@ -6729,6 +6729,10 @@ PrefabInstance:
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: levelIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
+      propertyPath: requiredScore
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: infoPanelPrefab

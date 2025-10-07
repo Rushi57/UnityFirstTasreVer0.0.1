@@ -19,12 +19,12 @@ MonoBehaviour:
   steps:
   - stepType: 1
     ingredient: {fileID: 11400000, guid: cf4532f0f236b2f40afdefafae5793d7, type: 2}
-    actionName: pen
+    actionName: pan
     Action: pan
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 3b6f5a1d22dfc27478bf2e1821b91a63, type: 2}
-    actionName: cut
-    Action: cut
+    actionName: Cut
+    Action: Cut
   - stepType: 1
     ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
     actionName: water
@@ -39,28 +39,28 @@ MonoBehaviour:
     Action: simmer
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
-    actionName: cut
-    Action: cut
-  - stepType: 1
-    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
-    actionName: Mix
-    Action: Mix
+    actionName: 
+    Action: 
   - stepType: 1
     ingredient: {fileID: 11400000, guid: 567eae9f841f60c448fc2f53f80f8991, type: 2}
     actionName: salt
-    Action: Salt
+    Action: salt
   - stepType: 1
     ingredient: {fileID: 11400000, guid: d4c6d1fc87552b5489f00f2bb221f2e5, type: 2}
     actionName: pepper
     Action: pepper
-  - stepType: 0
-    ingredient: {fileID: 11400000, guid: 5e32e1335bf5caa4a84e2993d38d3b90, type: 2}
-    actionName: cut
-    Action: cut
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+    actionName: mix
+    Action: mix
   - stepType: 1
     ingredient: {fileID: 11400000, guid: 4bb0a33deb400004da469d825815faee, type: 2}
     actionName: vinegar
     Action: vinegar
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: a2c930fb6e1f7c44cbb9fc1cff84e715, type: 2}
+    actionName: pig
+    Action: pig
   - stepType: 1
     ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
     actionName: mix

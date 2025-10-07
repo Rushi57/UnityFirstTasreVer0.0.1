@@ -8737,7 +8737,7 @@ MonoBehaviour:
   saltDuration: 1
   pepperDuration: 1
   pigBloodDuration: 1
-  waterBottlePrefab: {fileID: 7938009516709897234, guid: 738c9ad08bf76024a841bf7e9c132e4b, type: 3}
+  waterBottlePrefab: {fileID: 0}
   tableSpawnPoint: {fileID: 1197491932}
 --- !u!4 &961411585
 Transform:
@@ -12107,7 +12107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1384964273
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12268,7 +12268,7 @@ MonoBehaviour:
   starEmptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   targetScore: 31
   mapSceneName: Map
-  currentLevelIndex: 0
+  currentLevelIndex: 2
 --- !u!1 &1413811193
 GameObject:
   m_ObjectHideFlags: 0
@@ -18861,6 +18861,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6326225996670017009, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: recipeToShow
+      value: 
+      objectReference: {fileID: 11400000, guid: 87bf2371ca23725408936bd4195126db, type: 2}
     - target: {fileID: 6326225996670017009, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: congratsPanel
       value: 

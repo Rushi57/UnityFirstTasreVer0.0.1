@@ -57,7 +57,7 @@ public class CookingStepManager : MonoBehaviour
 
         if (currentStepIndex >= currentRecipe.steps.Count)
         {
-            TotalScoreManager.Instance.CalculateFinalScore("Level1", currentRecipe);
+            TotalScoreManager.Instance.CalculateFinalScore("Level", currentRecipe);
             return;
         }
 
@@ -85,9 +85,9 @@ public class CookingStepManager : MonoBehaviour
 
     public void TryMix()
     {
-        if (IsCorrectAction("Mix"))
+        if (IsCorrectAction("mix"))
         {
-            Debug.Log("Correct action: Mix");
+            Debug.Log("Correct action: mix");
             NextStep();
         }
         else
@@ -98,9 +98,9 @@ public class CookingStepManager : MonoBehaviour
 
     public void TrySimmer()
     {
-        if (IsCorrectAction("Simmer"))
+        if (IsCorrectAction("simmer"))
         {
-            Debug.Log("Correct action: Simmer");
+            Debug.Log("Correct action: simmer");
             NextStep();
         }
         else
@@ -111,9 +111,9 @@ public class CookingStepManager : MonoBehaviour
 
     public void TryCut()
     {
-        if (IsCorrectAction("Cut"))
+        if (IsCorrectAction("cut"))
         {
-            Debug.Log("Correct action: Cut");
+            Debug.Log("Correct action: cut");
             NextStep();
         }
         else
