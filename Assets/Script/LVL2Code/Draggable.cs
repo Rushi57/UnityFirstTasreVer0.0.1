@@ -64,26 +64,40 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private IEnumerator SmoothReturnToGrid()
     {
-        // ✅ Step 1: Set parent back to original grid
+        // ✅ Step 1: Set parent back to original parent before animation
         transform.SetParent(originalParent);
         canvasGroup.blocksRaycasts = true;
 
-        // ✅ Step 2: Wait one frame to let GridLayoutGroup reposition it
+        // ✅ Step 2: Wait one frame to let layout update (important)
         yield return null;
 
-        // ✅ Step 3: Snap position smoothly (optional)
+        // ✅ Step 3: Make sure anchored position is within the visible bounds
+        RectTransform tableRect = originalParent.GetComponent<RectTransform>();
+        RectTransform itemRect = rectTransform;
+
+        Vector2 startPos = itemRect.anchoredPosition;
+        Vector2 targetPos = originalPosition;
+
+        // Clamp target position within parent bounds
+        if (tableRect != null)
+        {
+            Vector2 halfSize = tableRect.rect.size / 2f;
+            targetPos.x = Mathf.Clamp(targetPos.x, -halfSize.x, halfSize.x);
+            targetPos.y = Mathf.Clamp(targetPos.y, -halfSize.y, halfSize.y);
+        }
+
+        // ✅ Step 4: Smooth move back
         float duration = 0.25f;
         float elapsed = 0f;
-        Vector2 startPos = rectTransform.anchoredPosition;
-        Vector2 targetPos = originalPosition;
 
         while (elapsed < duration)
         {
-            rectTransform.anchoredPosition = Vector2.Lerp(startPos, targetPos, elapsed / duration);
+            itemRect.anchoredPosition = Vector2.Lerp(startPos, targetPos, elapsed / duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        rectTransform.anchoredPosition = targetPos;
+        itemRect.anchoredPosition = targetPos;
     }
+
 }

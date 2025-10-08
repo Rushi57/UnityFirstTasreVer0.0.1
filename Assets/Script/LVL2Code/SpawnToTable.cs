@@ -9,6 +9,14 @@ public class SpawnToTable : MonoBehaviour
     [Header("Item Data")]
     [SerializeField] private ItemSO itemSO; // The item this button will spawn
 
+    [Header("Spawn Layout Settings")]
+    [SerializeField] private int columns = 4;       // How many per row
+    [SerializeField] private float cellWidth = 120f;
+    [SerializeField] private float cellHeight = 120f;
+    [SerializeField] private Vector2 startOffset = new Vector2(50f, -50f);
+
+    private int spawnCount = 0;
+
     // Call this from the Button OnClick()
     public void SpawnItem()
     {
@@ -20,7 +28,20 @@ public class SpawnToTable : MonoBehaviour
 
         // Spawn prefab inside TableArea
         GameObject newSlot = Instantiate(slotPrefab, tableArea);
+        RectTransform rect = newSlot.GetComponent<RectTransform>();
 
+        // Calculate grid position (no overlap)
+        int row = spawnCount / columns;
+        int col = spawnCount % columns;
+
+        Vector2 spawnPos = new Vector2(
+            startOffset.x + (col * cellWidth),
+            startOffset.y - (row * cellHeight)
+        );
+
+        rect.anchoredPosition = spawnPos;
+
+        // Assign ItemSO data
         StaticItemData staticData = newSlot.GetComponent<StaticItemData>();
         ItemData itemData = newSlot.GetComponent<ItemData>();
 
@@ -38,5 +59,8 @@ public class SpawnToTable : MonoBehaviour
         {
             Debug.LogWarning("⚠️ Spawned prefab has no ItemData or StaticItemData!");
         }
+
+        // Increment counter
+        spawnCount++;
     }
 }
