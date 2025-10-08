@@ -28,10 +28,6 @@ MonoBehaviour:
   - stepType: 1
     ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
     actionName: water
-    Action: water
-  - stepType: 1
-    ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
-    actionName: water
     Action: 'water '
   - stepType: 1
     ingredient: {fileID: 11400000, guid: a8b107d2228e5a54c810ac90b8914061, type: 2}
@@ -39,8 +35,8 @@ MonoBehaviour:
     Action: simmer
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
-    actionName: 
-    Action: 
+    actionName: garlic
+    Action: garlic
   - stepType: 1
     ingredient: {fileID: 11400000, guid: 567eae9f841f60c448fc2f53f80f8991, type: 2}
     actionName: salt
@@ -55,8 +51,8 @@ MonoBehaviour:
     Action: mix
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 5e32e1335bf5caa4a84e2993d38d3b90, type: 2}
-    actionName: 
-    Action: 
+    actionName: 'chilies '
+    Action: 'chilies '
   - stepType: 1
     ingredient: {fileID: 11400000, guid: 4bb0a33deb400004da469d825815faee, type: 2}
     actionName: vinegar
