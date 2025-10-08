@@ -238,6 +238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panPrefab: {fileID: 6962404223520504196, guid: a03eec422dc1cf74a97bb5761c275406, type: 3}
+  potPrefab: {fileID: 0}
+  wokPrefab: {fileID: 0}
   mixingPanel: {fileID: 0}
   simmerClockPanel: {fileID: 0}
 --- !u!1 &4031237940269342947
@@ -543,7 +545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7439628631334763840
 RectTransform:
   m_ObjectHideFlags: 0

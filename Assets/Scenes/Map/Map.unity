@@ -356,6 +356,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 515f43d0e9f88174a8d891f952eb950a, type: 2}
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
+      propertyPath: levelIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: infoPanelPrefab
       value: 
       objectReference: {fileID: 7151956852835983481, guid: b185b4822fdbe3241b9410163761ebd4, type: 3}
@@ -1218,7 +1222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8655f356010f58a4ba6432e2a9aecf42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
+  buttons:
+  - {fileID: 1822610432}
 --- !u!4 &294457815
 Transform:
   m_ObjectHideFlags: 0

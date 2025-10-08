@@ -53,6 +53,10 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
     actionName: mix
     Action: mix
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 5e32e1335bf5caa4a84e2993d38d3b90, type: 2}
+    actionName: 
+    Action: 
   - stepType: 1
     ingredient: {fileID: 11400000, guid: 4bb0a33deb400004da469d825815faee, type: 2}
     actionName: vinegar
@@ -61,6 +65,10 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: a2c930fb6e1f7c44cbb9fc1cff84e715, type: 2}
     actionName: pig
     Action: pig
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+    actionName: mix
+    Action: mix
   - stepType: 1
     ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
     actionName: mix

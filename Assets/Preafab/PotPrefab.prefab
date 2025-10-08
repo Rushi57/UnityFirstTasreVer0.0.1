@@ -170,3 +170,4 @@ MonoBehaviour:
   defaultPanSprite: {fileID: -1380315134905807815, guid: c102f73d1bded10439b61478e20270a6, type: 3}
   stepSprites:
   - {fileID: 53688227211966257, guid: 12923b6ba7ab62e45b923457e6455e24, type: 3}
+  - {fileID: -1511155633075670039, guid: c330e76b11b2ef7479630a03f2a32afe, type: 3}

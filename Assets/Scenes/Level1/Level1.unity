@@ -705,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 587270359772405348, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 210.91
+      value: 210.9
       objectReference: {fileID: 0}
     - target: {fileID: 587270359772405348, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -762,6 +762,10 @@ PrefabInstance:
     - target: {fileID: 3443565483546008351, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
       propertyPath: m_Name
       value: DialogBoxDebugError
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443565483546008351, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6167629679748559466, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1161,6 +1165,10 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 7457079033613625480, guid: 7bcf28ab7fbce584fb4d360dfd2f770c, type: 3}
   itemSO: {fileID: 11400000, guid: cf4532f0f236b2f40afdefafae5793d7, type: 2}
+  columns: 4
+  cellWidth: 120
+  cellHeight: 120
+  startOffset: {x: 50, y: -50}
 --- !u!114 &100353939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2370,6 +2378,10 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
   itemSO: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
+  columns: 4
+  cellWidth: 120
+  cellHeight: 120
+  startOffset: {x: 50, y: -50}
 --- !u!114 &216649683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2859,6 +2871,10 @@ MonoBehaviour:
   tableArea: {fileID: 1718752172}
   slotPrefab: {fileID: 5758280413322206689, guid: 4d8d87965d55116419d6468cc8cded56, type: 3}
   itemSO: {fileID: 11400000, guid: 9c772f95bb148a6458d8c900b8d4c102, type: 2}
+  columns: 4
+  cellWidth: 120
+  cellHeight: 120
+  startOffset: {x: 50, y: -50}
 --- !u!114 &238718325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3702,6 +3718,10 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 790432942333000715, guid: 2d90352d1834e134f9eb90fb563d4059, type: 3}
   itemSO: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+  columns: 4
+  cellWidth: 120
+  cellHeight: 120
+  startOffset: {x: 50, y: -50}
 --- !u!114 &347354727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5383,6 +5403,10 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 790432942333000715, guid: 2d90352d1834e134f9eb90fb563d4059, type: 3}
   itemSO: {fileID: 11400000, guid: a8b107d2228e5a54c810ac90b8914061, type: 2}
+  columns: 4
+  cellWidth: 120
+  cellHeight: 120
+  startOffset: {x: 50, y: -50}
 --- !u!114 &535077817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15108,6 +15132,10 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
   itemSO: {fileID: 11400000, guid: e5a5ad4d7af1e63448860478876d4875, type: 2}
+  columns: 4
+  cellWidth: 120
+  cellHeight: 120
+  startOffset: {x: 50, y: -50}
 --- !u!114 &1648777757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16101,6 +16129,10 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
   itemSO: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
+  columns: 4
+  cellWidth: 120
+  cellHeight: 120
+  startOffset: {x: 50, y: -50}
 --- !u!114 &1755400742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19466,14 +19498,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogBoxDebugImage
       objectReference: {fileID: 0}
+    - target: {fileID: 3443565483546008351, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6167629679748559466, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1388714549}
     - target: {fileID: 7403214107860120469, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403214107860120469, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403214107860120469, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1388714549}
+    - target: {fileID: 7403214107860120469, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403214107860120469, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DebugMessageManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

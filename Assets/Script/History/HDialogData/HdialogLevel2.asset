@@ -15,7 +15,10 @@ MonoBehaviour:
   dishSprite: {fileID: 1208040086343421634, guid: dbe5bac0b22c963458f1f4116ce19a1c, type: 3}
   hDialogLines:
   - text: Hello in this level the dish we will cook is Dinuguan from Nueva Ejica.
-  - text: but first a little Dinuguan, a Filipino pork blood stew
+  - text: 'but first a lets have a short history about Dinuguan,It is  a
+
+      Filipino
+      pork blood stew'
   - text: 'It has many regional versions across the country. In Nueva Ecija
 
       it
@@ -24,7 +27,8 @@ MonoBehaviour:
 
       tamarind
       leaves (usbong ng sampaloc)'
-  - text: "instead of vinegar for sourness reflecting the province\u2019s\nabundance
-      of tamarind trees."
-  - text: "Over time, tinumis became a traditional home-cooked dish in Nueva Ecija,\nsymbolizing
-      the region\u2019s uniquetwist on a classic Filipino favorite."
+  - text: "instead of vinegar for sourness reflecting the province\u2019s abundance\nof
+      tamarind trees."
+  - text: "Over time, tinumis became a traditional home-cooked dish in Nueva\nEcija,
+      symbolizing the region\u2019s uniquetwist on a classic Filipino\nfavorite."
+  - text: Now Lets start cookig.

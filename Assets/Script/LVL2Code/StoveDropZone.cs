@@ -62,6 +62,7 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
         {
             Debug.LogWarning($"[StoveDropZone] No prefab found for {item.itemName}");
             return;
+            CookingStepManager.Instance.NextStep();
         }
 
         currentCookware = Instantiate(prefabToSpawn, transform);
