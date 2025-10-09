@@ -1,13 +1,12 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Collections;
 
-public class NeedleTimer : MonoBehaviour
+public class BoilTimer : MonoBehaviour
 {
     public RectTransform needle;
     public float speed = 180f;
-    public bool rotating = true;
+    public bool rotating = false;
 
     private float rotationTime;
     private float fullRotationTime;
@@ -19,10 +18,12 @@ public class NeedleTimer : MonoBehaviour
     public float greenEnd = 60f;
 
     [Header("Panels & UI")]
-    public GameObject simmerPanel;
+    public GameObject boilPanel;
     public GameObject completeShowPanel;
     public TextMeshProUGUI resultText;
     public Button closeButton;
+
+    public  Button setAsideButton;
 
     private int pendingScore = 0;
     private string pendingResult = "Bad";
@@ -105,32 +106,35 @@ public class NeedleTimer : MonoBehaviour
         Debug.Log("Auto Fail → Bad (time ran out)");
     }
 
-    private void ClosePanels()
+    public void ClosePanels()
     {
-        Debug.Log("[NeedleTimer] Close button pressed");
+        Debug.Log("[BoilTimer] Close button pressed");
 
+        // ✅ Add simmer/boil score only
         if (TotalScoreManager.Instance != null)
             TotalScoreManager.Instance.AddSimmerScore(pendingScore);
         else
-            Debug.LogWarning("[NeedleTimer] TotalScoreManager.Instance is NULL!");
+            Debug.LogWarning("[BoilTimer] TotalScoreManager.Instance is NULL!");
 
-        // Instantly close and move to next step
+        // ✅ Hide the result panel
         if (completeShowPanel != null)
             completeShowPanel.SetActive(false);
 
-        if (simmerPanel != null)
-            simmerPanel.SetActive(false);
+        // ✅ Hide the boil gameplay panel
+        if (boilPanel != null)
+            boilPanel.SetActive(false);
 
-     
-        else
+        // ✅ Show Set Aside button (the handler will call NextStep)
+        if (setAsideButton != null)
         {
-            Debug.LogWarning("[NeedleTimer] CookingStepManager.Instance is NULL!");
+            setAsideButton.gameObject.SetActive(true);
+            Debug.Log("[BoilTimer] SetAsideButton shown. Player must click to continue.");
         }
     }
 
-    public void RestartSimmer()
+    public void RestartBoil()
     {
-        Debug.Log("[NeedleTimer] Restarting simmer mini-game...");
+        Debug.Log("[BoilTimer] Restarting boil mini-game...");
 
         rotationTime = 0f;
         rotating = true;
@@ -141,12 +145,15 @@ public class NeedleTimer : MonoBehaviour
         if (completeShowPanel != null)
             completeShowPanel.SetActive(false);
 
-        if (simmerPanel != null)
-            simmerPanel.SetActive(true);
+        if (boilPanel != null)
+            boilPanel.SetActive(true);
+
+        if (setAsideButton != null)
+            setAsideButton.gameObject.SetActive(true); // ✅ Hides until ClosePanels() is called
 
         pendingScore = 0;
         pendingResult = "Bad";
 
-        Debug.Log("[NeedleTimer] Simmer reset complete.");
+        Debug.Log("[BoilTimer] Boil reset and started.");
     }
 }

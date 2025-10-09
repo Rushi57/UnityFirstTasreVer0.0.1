@@ -101,7 +101,7 @@ public class CookingStepManager : MonoBehaviour
         if (IsCorrectAction("simmer"))
         {
             Debug.Log("Correct action: simmer");
-            NextStep();
+            
         }
         else
         {
@@ -121,13 +121,12 @@ public class CookingStepManager : MonoBehaviour
             WrongAttempt();
         }
     }
-
-    public void TryGrill()
+    public void TryBoil()
     {
-        if (IsCorrectAction("Grill"))
+        if (IsCorrectAction("boil"))
         {
-            Debug.Log("Correct action: Grill");
-            NextStep();
+            Debug.Log("Correct action: boil");
+            
         }
         else
         {

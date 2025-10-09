@@ -7,7 +7,7 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
     [Header("UI Reference")]
     public GameObject mixingMechPanel;   // MixingPanel
     public GameObject simmerClockPanel;
-
+    public GameObject boilClockPanel;
     [Header("Pan Images")]
     public Image panImage;
     public Sprite defaultPanSprite;
@@ -69,36 +69,50 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
         }
 
         // --- SIMMER / PAN LID STEP ---
-        else if (droppedItem.itemSO.itemName.Equals("PanLid", System.StringComparison.OrdinalIgnoreCase))
+        else if (droppedItem.itemSO.itemName.Contains("Cover") || droppedItem.itemSO.itemName.Contains("Lid"))
         {
+            Debug.Log($"[PanStateHandler] Lid/Cover detected for {droppedItem.itemSO.itemName}");
+
+            // 🔹 Handle Simmer
             if (CookingStepManager.Instance.IsCorrectAction("Simmer"))
             {
-                Debug.Log("[PanStateHandler] Simmer action triggered.");
+                Debug.Log("[PanStateHandler] Simmer action triggered (Cover/Lid)");
 
                 if (simmerClockPanel != null)
                 {
                     simmerClockPanel.SetActive(true);
-
-                    // ✅ Restart simmer mini-game if it's already open
-                    var simmerManager = simmerClockPanel.GetComponent<NeedleTimer>();
-                    if (simmerManager != null)
-                    {
-                        simmerManager.RestartSimmer();
-                    }
+                    simmerClockPanel.GetComponent<NeedleTimer>()?.RestartSimmer();
                 }
 
-                // Optional: move to next step
-                // CookingStepManager.Instance.NextStep();
+                CookingStepManager.Instance.TrySimmer();
+                CookingStepManager.Instance.NextStep();
+            }
+            // 🔹 Handle Boil
+            else if (CookingStepManager.Instance.IsCorrectAction("Boil"))
+            {
+                Debug.Log("[PanStateHandler] Boil action triggered (Cover/Lid)");
 
-                // ✅ Optionally keep PanLid for reuse
-                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
+                if (boilClockPanel != null)
+                {
+                    boilClockPanel.SetActive(true);
+                    boilClockPanel.GetComponent<BoilTimer>()?.RestartBoil();
+                }
+
+                CookingStepManager.Instance.TryBoil();
             }
             else
             {
-                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
+                Debug.LogWarning("[PanStateHandler] Cover/Lid dropped but not the expected step.");
                 CookingStepManager.Instance.WrongAttempt();
             }
+
+            // Always destroy the dragged item
+            Destroy(eventData.pointerDrag.gameObject);
         }
+
+
+
+
 
         // --- CONDIMENT / ACTION DROP ---
         else if (droppedItem.itemSO.itemType == ItemType.Action)

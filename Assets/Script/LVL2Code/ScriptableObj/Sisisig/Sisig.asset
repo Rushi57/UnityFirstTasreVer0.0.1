@@ -30,6 +30,10 @@ MonoBehaviour:
     actionName: 
     Action: 
   - stepType: 1
-    ingredient: {fileID: 11400000, guid: a8b107d2228e5a54c810ac90b8914061, type: 2}
-    actionName: Simmer
-    Action: Simme
+    ingredient: {fileID: 11400000, guid: 289d4048c3c93124898f4e1648ee72b8, type: 2}
+    actionName: boil
+    Action: boil
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
+    actionName: 
+    Action: 

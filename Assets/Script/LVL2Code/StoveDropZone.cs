@@ -11,6 +11,7 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
     [Header("Mini-Game Panels")]
     public GameObject mixingPanel;
     public GameObject simmerClockPanel;
+    public GameObject boilClockPanel;
 
     private GameObject currentCookware;
 
@@ -62,7 +63,7 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
         {
             Debug.LogWarning($"[StoveDropZone] No prefab found for {item.itemName}");
             return;
-            CookingStepManager.Instance.NextStep();
+            //CookingStepManager.Instance.NextStep();
         }
 
         currentCookware = Instantiate(prefabToSpawn, transform);
@@ -73,6 +74,7 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
         {
             handler.mixingMechPanel = mixingPanel;
             handler.simmerClockPanel = simmerClockPanel;
+            handler.boilClockPanel = boilClockPanel;
         }
 
         Debug.Log($"✅ {item.itemName} placed on stove");
@@ -106,6 +108,15 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
         {
             draggedData.GetComponent<Draggable>()?.RevertToOriginalPosition();
             CookingStepManager.Instance.WrongAttempt();
+        }
+    }
+    public void ResetStove()
+    {
+        if (currentCookware != null)
+        {
+            Destroy(currentCookware);
+            currentCookware = null;
+            Debug.Log("[StoveDropZone] Stove reset.");
         }
     }
 }
