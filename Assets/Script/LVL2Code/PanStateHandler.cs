@@ -15,6 +15,10 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
     [Header("Ingredient Step Sprites")]
     public Sprite[] stepSprites; // ordered per ingredient or action step
 
+    [Header("UI Checkmarks")]
+    public GameObject uncheckedImage1; // Assign in Inspector
+    public GameObject uncheckedImage2; // Assign in Inspector
+
     private int stepIndex = 0;
 
     public void OnDrop(PointerEventData eventData)
@@ -45,7 +49,6 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
         {
             if (CookingStepManager.Instance.IsCorrectAction("Mix"))
             {
-                // ✅ Restart or start the mixing minigame
                 if (mixingMechPanel != null)
                 {
                     mixingMechPanel.SetActive(true);
@@ -53,7 +56,7 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
                     var mixManager = mixingMechPanel.GetComponent<MixingMechanicManager>();
                     if (mixManager != null)
                     {
-                        mixManager.RestartMixing(); // <-- this is where the reset happens
+                        mixManager.RestartMixing();
                     }
                 }
 
@@ -122,7 +125,7 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
 
             if (CookingStepManager.Instance.OnActionPerformed(actionName))
             {
-                AdvanceStep(); // ✅ now it uses next step sprite instead of oil/vinegar sprite
+                AdvanceStep();
                 CookingStepManager.Instance.NextStep();
 
                 Debug.Log($"[PanStateHandler] Correct action '{actionName}' — advanced to next sprite.");
@@ -149,6 +152,22 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
         {
             panImage.sprite = stepSprites[stepIndex];
             Debug.Log($"[PanStateHandler] Updated pan sprite to step {stepIndex + 1}");
+
+            // ✅ Show unchecked images only when Element 4 (index 4) is done
+            if (stepIndex == 4)
+            {
+                if (uncheckedImage1 != null) uncheckedImage1.SetActive(true);
+                if (uncheckedImage2 != null) uncheckedImage2.SetActive(true);
+                Debug.Log("[PanStateHandler] Unchecked images shown (step 4 done).");
+            }
+            // ✅ Hide both automatically on next step (Element 5)
+            else if (stepIndex == 5)
+            {
+                if (uncheckedImage1 != null) uncheckedImage1.SetActive(false);
+                if (uncheckedImage2 != null) uncheckedImage2.SetActive(false);
+                Debug.Log("[PanStateHandler] Unchecked images hidden (step 5 started).");
+            }
+
             stepIndex++;
         }
         else
@@ -161,6 +180,10 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
     {
         panImage.sprite = defaultPanSprite;
         stepIndex = 0;
+
+        if (uncheckedImage1 != null) uncheckedImage1.SetActive(false);
+        if (uncheckedImage2 != null) uncheckedImage2.SetActive(false);
+
         Debug.Log("[PanStateHandler] Pan reset to default state.");
     }
 }
