@@ -5501,6 +5501,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535077814}
   m_CullTransparentMesh: 1
+--- !u!1 &538553980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2513973763614843930, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+  m_PrefabInstance: {fileID: 6378100163654797815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &538618065
 GameObject:
   m_ObjectHideFlags: 0
@@ -7776,6 +7781,7 @@ GameObject:
   - component: {fileID: 832263726}
   - component: {fileID: 832263725}
   - component: {fileID: 832263724}
+  - component: {fileID: 832263727}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -7858,6 +7864,30 @@ MonoBehaviour:
           m_StringArgument: CloseRef
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 832263727}
+        m_TargetAssemblyTypeName: GlowButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1729965583}
+        m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &832263725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7896,6 +7926,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832263722}
   m_CullTransparentMesh: 1
+--- !u!114 &832263727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832263722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.89754456, b: 0, a: 0.5882353}
+  pulseSpeed: 2
 --- !u!1 &837634790
 GameObject:
   m_ObjectHideFlags: 0
@@ -11041,6 +11085,7 @@ GameObject:
   - component: {fileID: 1156531551}
   - component: {fileID: 1156531550}
   - component: {fileID: 1156531549}
+  - component: {fileID: 1156531552}
   m_Layer: 5
   m_Name: CabinetButton
   m_TagString: Untagged
@@ -11123,6 +11168,30 @@ MonoBehaviour:
           m_StringArgument: OpenRef
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1156531552}
+        m_TargetAssemblyTypeName: GlowButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1729965583}
+        m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1156531550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11161,6 +11230,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156531547}
   m_CullTransparentMesh: 1
+--- !u!114 &1156531552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156531547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pulseSpeed: 2
 --- !u!1 &1158947560
 GameObject:
   m_ObjectHideFlags: 0
@@ -15566,6 +15649,9 @@ MonoBehaviour:
   - {fileID: 238718328}
   - {fileID: 1755400745}
   - {fileID: 1127230012}
+  - {fileID: 1156531552}
+  - {fileID: 832263727}
+  - {fileID: 2035283575}
 --- !u!4 &1729965584
 Transform:
   m_ObjectHideFlags: 0
@@ -18592,6 +18678,20 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5093524903103033914, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
   m_PrefabInstance: {fileID: 6378100163654797815}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2035283575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538553980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pulseSpeed: 2
 --- !u!1 &2038749142
 GameObject:
   m_ObjectHideFlags: 0
@@ -19547,6 +19647,62 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3566592000248826746, guid: 4ed26809ef1f30645b8acc9bd5079cf5, type: 3}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2035283575}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1729965583}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: OnButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GlowButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TutorialSteps, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2513973763614843930, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: m_Name
       value: StoveBtnFire
@@ -19667,7 +19823,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4031237940269342947, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2513973763614843930, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2035283575}
   m_SourcePrefab: {fileID: 100100000, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
