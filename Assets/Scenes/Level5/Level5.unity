@@ -10359,23 +10359,31 @@ PrefabInstance:
     - target: {fileID: 5161996367577680798, guid: e36d6bf04cf75f6419181a9379c4d2eb, type: 3}
       propertyPath: uncheckedImage1
       value: 
-      objectReference: {fileID: 833925594}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161996367577680798, guid: e36d6bf04cf75f6419181a9379c4d2eb, type: 3}
+      propertyPath: 'stepSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5161996367577680798, guid: e36d6bf04cf75f6419181a9379c4d2eb, type: 3}
       propertyPath: 'stepSprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 7422115165725662755, guid: e273b6550de899a40ba9ee8de9052a88, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161996367577680798, guid: e36d6bf04cf75f6419181a9379c4d2eb, type: 3}
+      propertyPath: 'stepSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5161996367577680798, guid: e36d6bf04cf75f6419181a9379c4d2eb, type: 3}
       propertyPath: 'stepSprites.Array.data[3]'
       value: 
-      objectReference: {fileID: 7422115165725662755, guid: e273b6550de899a40ba9ee8de9052a88, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5161996367577680798, guid: e36d6bf04cf75f6419181a9379c4d2eb, type: 3}
       propertyPath: 'stepSprites.Array.data[4]'
       value: 
-      objectReference: {fileID: 7422115165725662755, guid: e273b6550de899a40ba9ee8de9052a88, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5161996367577680798, guid: e36d6bf04cf75f6419181a9379c4d2eb, type: 3}
       propertyPath: 'stepSprites.Array.data[5]'
       value: 
-      objectReference: {fileID: 1617910363732575206, guid: 97feecb4b607c264ea807569c0558b2a, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6962404223520504196, guid: e36d6bf04cf75f6419181a9379c4d2eb, type: 3}
       propertyPath: m_Name
       value: PanChickenAsadoPrefab

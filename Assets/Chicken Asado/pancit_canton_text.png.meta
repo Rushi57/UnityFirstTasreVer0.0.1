@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pancit_canton_text_0: 5541689470040148820
+      pancit_canton_text_1: -8140686760210385916
+      pancit_canton_text_2: -5006097932816458888
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

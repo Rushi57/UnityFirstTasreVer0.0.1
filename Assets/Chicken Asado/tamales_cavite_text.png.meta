@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tamales_cavite_text_0: 6655923661698991588
+      tamales_cavite_text_1: -6191331089240169197
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

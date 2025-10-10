@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dinuguan_0: -6561501872683093162
+      dinuguan_1: 1916210630804850981
+      dinuguan_2: 8008388475592844574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
