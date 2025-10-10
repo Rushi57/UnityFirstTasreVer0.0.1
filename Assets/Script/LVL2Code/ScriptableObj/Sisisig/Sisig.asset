@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeID: Sisig001
   recipeName: SIsig
   recipeImage: {fileID: -6115229438838554286, guid: c1be1d78f572e2b4bb1718edb067370b, type: 3}
-  targetScore: 30
+  targetScore: 42
   steps:
   - stepType: 1
     ingredient: {fileID: 11400000, guid: a93a4e6246335974abeb795640b9c029, type: 2}
@@ -30,10 +30,74 @@ MonoBehaviour:
     actionName: 
     Action: 
   - stepType: 1
+    ingredient: {fileID: 11400000, guid: 567eae9f841f60c448fc2f53f80f8991, type: 2}
+    actionName: salt
+    Action: salt
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 9c772f95bb148a6458d8c900b8d4c102, type: 2}
+    actionName: pepper
+    Action: pepper
+  - stepType: 1
     ingredient: {fileID: 11400000, guid: 289d4048c3c93124898f4e1648ee72b8, type: 2}
     actionName: boil
-    Action: boil
+    Action: boll
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: cf4532f0f236b2f40afdefafae5793d7, type: 2}
+    actionName: 
+    Action: 
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 34e9b57eaf70a0d49b4ad7c4823a6c47, type: 2}
+    actionName: oil
+    Action: oil
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: e5a5ad4d7af1e63448860478876d4875, type: 2}
+    actionName: 
+    Action: 
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+    actionName: mix
+    Action: mix
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 1fc235732398e8c43b25f703eb2966ce, type: 2}
+    actionName: 
+    Action: 
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
     actionName: 
     Action: 
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 5e32e1335bf5caa4a84e2993d38d3b90, type: 2}
+    actionName: 
+    Action: 
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+    actionName: mix
+    Action: mix
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 5666afa5fc41b1846890ca25bc6d7625, type: 2}
+    actionName: 
+    Action: 
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: f3a0d545e3dfb8d49aa05dfdd73a78fa, type: 2}
+    actionName: 
+    Action: 
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+    actionName: mix
+    Action: mix
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 56779b3cf1131274e8a2eb594ebea91e, type: 2}
+    actionName: soy
+    Action: soy
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 567eae9f841f60c448fc2f53f80f8991, type: 2}
+    actionName: salt
+    Action: salt
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: d4c6d1fc87552b5489f00f2bb221f2e5, type: 2}
+    actionName: pepper
+    Action: pepper
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+    actionName: mix
+    Action: mix

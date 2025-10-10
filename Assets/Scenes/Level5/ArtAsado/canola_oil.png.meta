@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      canola_oil_0: 8562873478437045693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

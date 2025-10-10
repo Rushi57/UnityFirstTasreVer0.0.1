@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      laurel_leaf_0: -539067805126908547
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

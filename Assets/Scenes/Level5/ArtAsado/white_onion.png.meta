@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      white_onion_0: 1019688028240960167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

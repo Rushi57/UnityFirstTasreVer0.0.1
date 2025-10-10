@@ -237,7 +237,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      diced_tomatoes_0: 3951718693081335404
+      diced_tomatoes_1: 6926779654083727541
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

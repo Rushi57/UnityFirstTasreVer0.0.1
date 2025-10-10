@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pot_with_oil_and_butter_0: 7422115165725662755
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

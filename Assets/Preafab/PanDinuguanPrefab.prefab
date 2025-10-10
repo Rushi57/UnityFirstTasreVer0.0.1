@@ -90,10 +90,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixingMechPanel: {fileID: 0}
   simmerClockPanel: {fileID: 0}
+  boilClockPanel: {fileID: 0}
   panImage: {fileID: 629374931456249342}
   defaultPanSprite: {fileID: -7036844360217369140, guid: 625845716925cd84b94beafe212066d5, type: 3}
   stepSprites:
-  - {fileID: -8479368559270907547, guid: 7d599a33a2f635e4498f25f73a5343bc, type: 3}
+  - {fileID: 3108547032472243862, guid: d4e9440505bbf0b49bebe5bef94cc48b, type: 3}
   - {fileID: -201320770681668781, guid: 123d6beb7c1467f4781b4515d5bb7e6e, type: 3}
   - {fileID: -6812383180039209108, guid: 881c1a175c3db244ca75b9cabe975f7b, type: 3}
   - {fileID: 5327369804472339899, guid: 39170a4a41b2e6640aedff32d458e39f, type: 3}
@@ -102,3 +103,5 @@ MonoBehaviour:
   - {fileID: -78259305288738522, guid: a56969ad201ad1f41b221aa4cde6f1f4, type: 3}
   - {fileID: -78259305288738522, guid: a56969ad201ad1f41b221aa4cde6f1f4, type: 3}
   - {fileID: 8581132265818856522, guid: e69dc540fc043b448922a4f8b716498a, type: 3}
+  uncheckedImage1: {fileID: 0}
+  uncheckedImage2: {fileID: 0}

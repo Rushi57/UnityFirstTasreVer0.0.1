@@ -13727,7 +13727,7 @@ MonoBehaviour:
   - {fileID: 1520039991}
   starFilledColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   starEmptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  targetScore: 31
+  targetScore: 42
   mapSceneName: Map
   currentLevelIndex: 2
 --- !u!1 &1413811193

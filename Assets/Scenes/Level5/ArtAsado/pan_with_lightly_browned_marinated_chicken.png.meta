@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pan_with_lightly_browned_marinated_chicken_0: 1617910363732575206
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

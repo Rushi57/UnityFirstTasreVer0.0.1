@@ -312,7 +312,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WhiteOnionSliced_0: 6556074730966526405
+      WhiteOnionSliced_1: 4438953175243339301
+      WhiteOnionSliced_2: -5310436920315557283
+      WhiteOnionSliced_3: -7523592960030074544
+      WhiteOnionSliced_4: -3670513320096226977
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
