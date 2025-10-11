@@ -12154,7 +12154,7 @@ MonoBehaviour:
   starEmptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   targetScore: 31
   mapSceneName: Map
-  currentLevelIndex: 2
+  currentLevelIndex: 3
 --- !u!1 &1413811193
 GameObject:
   m_ObjectHideFlags: 0

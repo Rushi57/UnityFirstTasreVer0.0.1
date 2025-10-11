@@ -6733,7 +6733,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 87bf2371ca23725408936bd4195126db, type: 2}
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: levelIndex
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: requiredScore
