@@ -12,8 +12,8 @@ public class TotalScoreManager : MonoBehaviour
     private int simmerScore;
 
     [Header("Panels")]
-    [SerializeField] private GameObject completeDishPanel;   // Congrats Panel
-    [SerializeField] private GameObject scoreDashBoardPanel; // Score Panel
+    [SerializeField] private GameObject completeDishPanel;
+    [SerializeField] private GameObject scoreDashBoardPanel;
 
     [Header("UI References (Score Panel)")]
     [SerializeField] private TextMeshProUGUI mixingText;
@@ -22,7 +22,7 @@ public class TotalScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI totalScoreText;
 
     [Header("Dish UI Reference (Score Panel)")]
-    [SerializeField] private Image dishImageDisplay;   // assign ScorePanel's dish image
+    [SerializeField] private Image dishImageDisplay;
     [SerializeField] private TextMeshProUGUI dishNameText;
 
     [Header("Star References")]
@@ -31,14 +31,14 @@ public class TotalScoreManager : MonoBehaviour
     [SerializeField] private Color starEmptyColor = Color.gray;
 
     [Header("Target Scores (tweak per-level in inspector or code)")]
-    [SerializeField] private int targetScore = 300; // 3★ threshold
+    [SerializeField] private int targetScore = 300;
 
     [Header("Map/Level Settings")]
-    [SerializeField] private string mapSceneName = "Map"; // change to your map scene name
-    [SerializeField] private int currentLevelIndex = 0; // set to 0 for Lvl1, 1 for Lvl2...
+    [SerializeField] private string mapSceneName = "Map";
+    [SerializeField] private int currentLevelIndex = 0;
 
     public int FinalScore { get; private set; }
-    private RecipeSO lastRecipe; // store recipe used (so scoreboard shows image/title)
+    private RecipeSO lastRecipe;
     private int lastStarCount = 0;
 
     private void Awake()
@@ -77,7 +77,6 @@ public class TotalScoreManager : MonoBehaviour
         FinalScore = mixScore + cutScore + simmerScore;
     }
 
-    // Called once when recipe is done - pass the RecipeSO so we can show dish image/title later
     public void CalculateFinalScore(string recipeName, RecipeSO recipe)
     {
         lastRecipe = recipe;
@@ -100,10 +99,9 @@ public class TotalScoreManager : MonoBehaviour
         if (completeDishPanel != null) completeDishPanel.SetActive(false);
         if (scoreDashBoardPanel != null) scoreDashBoardPanel.SetActive(true);
 
-        // Ensure total is fresh
         RecalculateFinalScore();
-
         UpdateScoreUI();
+
         lastStarCount = CalculateStarCount();
         UpdateStars(lastStarCount);
         UpdateDishInfo();
@@ -130,9 +128,7 @@ public class TotalScoreManager : MonoBehaviour
     private void UpdateStars(int starCount)
     {
         for (int i = 0; i < stars.Length; i++)
-        {
             stars[i].color = (i < starCount) ? starFilledColor : starEmptyColor;
-        }
     }
 
     private void UpdateDishInfo()
@@ -149,11 +145,14 @@ public class TotalScoreManager : MonoBehaviour
 
     public void OnContinueAndReturnToMap()
     {
-        // Recalculate before saving
         RecalculateFinalScore();
-
         int stars = CalculateStarCount();
+
+        // Save your normal level results (for any other UI tracking)
         LevelResultSaver.SaveResult(currentLevelIndex, FinalScore, stars);
+
+        // ✅ Save for IndicatorController unlock logic
+        IndicatorController.SaveLevelProgress(currentLevelIndex, FinalScore, targetScore);
 
         Debug.Log($"[TotalScoreManager] Saved Level {currentLevelIndex} → Score: {FinalScore}, Stars: {stars}");
 
