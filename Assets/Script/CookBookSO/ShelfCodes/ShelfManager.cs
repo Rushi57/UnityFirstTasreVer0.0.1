@@ -85,7 +85,7 @@ public class ShelfManager : MonoBehaviour
 
         Animator anim = obj.GetComponent<Animator>();
         if (anim != null)
-            anim.Play("Pour");
+            anim.Play("BottlePourAnim");
 
         yield return new WaitForSeconds(duration);
 
@@ -125,7 +125,7 @@ public class ShelfManager : MonoBehaviour
         obj.SetActive(true);
         Animator anim = obj.GetComponent<Animator>();
         if (anim != null)
-            anim.Play("Pour");
+            anim.Play("BottlePourAnim");
 
         // ✅ Spawn the physical water bottle on the table
         if (waterBottlePrefab != null && tableSpawnPoint != null)
@@ -135,7 +135,7 @@ public class ShelfManager : MonoBehaviour
             // Optional: play its own animation
             Animator bottleAnim = bottle.GetComponent<Animator>();
             if (bottleAnim != null)
-                bottleAnim.Play("Pour");
+                bottleAnim.Play("BottlePourAnim");
         }
 
         yield return new WaitForSeconds(duration);

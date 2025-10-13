@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ConfirmButton : MonoBehaviour
+public class Co : MonoBehaviour
 {
     public void MapScene()
     {

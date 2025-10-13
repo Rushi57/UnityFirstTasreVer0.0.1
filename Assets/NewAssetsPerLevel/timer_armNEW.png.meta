@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7e859dd8cc2351b4093be872739d9d53
+guid: 609471ab77fa4724bbe35f170b5441d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 480023656547242171
-    second: pan lid_0
+      213: 6503448331649010136
+    second: timer_armNEW_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,92 +109,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: VisionOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pan lid_0
+      name: timer_armNEW_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 286
-        width: 855
-        height: 494
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 230
+        y: 229
+        width: 40
+        height: 120
+      alignment: 9
+      pivot: {x: 0.50000036, y: 0.0012128194}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb0584ce8f269a600800000000000000
-      internalID: 480023656547242171
+      spriteID: 8d9cb070dc3e04a50800000000000000
+      internalID: 6503448331649010136
       vertices: []
       indices: 
       edges: []
@@ -203,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c42a89e119f5dca42aba16963ba3fc2b
+    spriteID: 4fd8c6366ee201946b2e042f03256de0
     internalID: 0
     vertices: []
     indices: 
@@ -213,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pan lid_0: 480023656547242171
+      timer_armNEW_0: 6503448331649010136
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
