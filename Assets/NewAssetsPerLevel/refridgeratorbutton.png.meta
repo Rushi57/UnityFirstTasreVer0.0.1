@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      refridgeratorbutton_0: 4304324758300090783
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
