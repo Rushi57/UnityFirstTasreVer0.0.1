@@ -1101,7 +1101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 1822610432}
-  - {fileID: 1822610432}
 --- !u!4 &294457815
 Transform:
   m_ObjectHideFlags: 0
@@ -2016,7 +2015,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 550310072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d65468c8547a842a4833c3599dc2e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9628d886ad5e4954986f97246cfc49dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &580384786
@@ -8001,7 +8000,7 @@ MonoBehaviour:
   dialogCanvas: {fileID: 982883534}
   mapMainCanvas: {fileID: 232487417}
   settingCanvas: {fileID: 1349574954}
-  dialogText: {fileID: 0}
+  dialogText: {fileID: 1081888827}
   dialogBoxButton: {fileID: 1945596804}
 --- !u!4 &1932581160
 Transform:
