@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 8
   m_EditorClassIdentifier: 
   dialogText: "You\u2019ll see prompts appear while you cook. Just follow the instructions
-    to chop, stir, fry, and plate your food!"
+    to chop, stir, fry, and learn an insigth of the origin of the dish!"
   uiElementName: 
   waitForClickOnUI: 0

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 12
   m_EditorClassIdentifier: 
   dialogText: 'In here you will see the dish dashboar '
-  uiElementName: 
+  uiElementName: Play
   waitForClickOnUI: 0
