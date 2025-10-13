@@ -809,6 +809,7 @@ GameObject:
   - component: {fileID: 139990830}
   - component: {fileID: 139990829}
   - component: {fileID: 139990828}
+  - component: {fileID: 139990831}
   m_Layer: 5
   m_Name: VinegarObj
   m_TagString: Untagged
@@ -823,17 +824,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139990826}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1035263523}
+  m_Father: {fileID: 1982775471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.9199982, y: 0.0014953613}
-  m_SizeDelta: {x: -108.15, y: 0.7299957}
+  m_AnchoredPosition: {x: -335.11002, y: 122.65149}
+  m_SizeDelta: {x: -1202.4102, y: -552.54004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &139990828
 Animator:
@@ -895,6 +896,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139990826}
   m_CullTransparentMesh: 1
+--- !u!114 &139990831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139990826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: vinegar
 --- !u!1 &140170997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2882,7 +2896,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080250921}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShelfManager, Assembly-CSharp
         m_MethodName: OnCondimentSelected
         m_Mode: 5
@@ -4016,7 +4030,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080250921}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShelfManager, Assembly-CSharp
         m_MethodName: OnCondimentSelected
         m_Mode: 5
@@ -4153,6 +4167,7 @@ GameObject:
   - component: {fileID: 575702614}
   - component: {fileID: 575702613}
   - component: {fileID: 575702612}
+  - component: {fileID: 575702616}
   m_Layer: 5
   m_Name: PigBloodObj
   m_TagString: Untagged
@@ -4227,18 +4242,31 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575702611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1035263523}
+  m_Father: {fileID: 1982775471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.0999985, y: 0.0014953613}
-  m_SizeDelta: {x: -77.71, y: 0.73}
+  m_AnchoredPosition: {x: -333.93002, y: 122.65149}
+  m_SizeDelta: {x: -1171.9701, y: -552.54004}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &575702616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575702611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: pig
 --- !u!1 &589569336
 GameObject:
   m_ObjectHideFlags: 0
@@ -5527,6 +5555,7 @@ GameObject:
   - component: {fileID: 733614738}
   - component: {fileID: 733614737}
   - component: {fileID: 733614736}
+  - component: {fileID: 733614739}
   m_Layer: 5
   m_Name: PepperObj
   m_TagString: Untagged
@@ -5541,17 +5570,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733614734}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1035263523}
+  m_Father: {fileID: 1982775471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.0999985, y: 0.0014953613}
-  m_SizeDelta: {x: -77.71, y: 0.73}
+  m_AnchoredPosition: {x: -333.93002, y: 122.65149}
+  m_SizeDelta: {x: -1171.9701, y: -552.54004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &733614736
 Animator:
@@ -5613,6 +5642,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733614734}
   m_CullTransparentMesh: 1
+--- !u!114 &733614739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733614734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: pepper
 --- !u!1 &735365207
 GameObject:
   m_ObjectHideFlags: 0
@@ -5704,6 +5746,7 @@ GameObject:
   - component: {fileID: 739620921}
   - component: {fileID: 739620920}
   - component: {fileID: 739620919}
+  - component: {fileID: 739620923}
   m_Layer: 5
   m_Name: SelfCanvas
   m_TagString: Untagged
@@ -5794,6 +5837,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &739620923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739620918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d33ade0cb667554d96522d45f96621c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shelfCanvas: {fileID: 739620918}
+  vinegarobj: {fileID: 139990826}
+  oilobj: {fileID: 1434205609}
+  soyobj: {fileID: 2074839851}
+  waterobj: {fileID: 970031378}
+  saltobj: {fileID: 2076365477}
+  pepperobj: {fileID: 733614734}
+  pigbloodObj: {fileID: 575702611}
+  vinegarDuration: 1
+  oilDuration: 1
+  soyDuration: 1
+  waterDuration: 1
+  saltDuration: 1
+  pepperDuration: 1
+  pigBloodDuration: 1
+  waterBottlePrefab: {fileID: 0}
+  tableSpawnPoint: {fileID: 0}
 --- !u!1 &755214415
 GameObject:
   m_ObjectHideFlags: 0
@@ -7545,6 +7617,7 @@ GameObject:
   - component: {fileID: 970031382}
   - component: {fileID: 970031381}
   - component: {fileID: 970031380}
+  - component: {fileID: 970031383}
   m_Layer: 5
   m_Name: 'WaterObj '
   m_TagString: Untagged
@@ -7559,17 +7632,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970031378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1035263523}
+  m_Father: {fileID: 1982775471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.0999985, y: 0.0014953613}
-  m_SizeDelta: {x: -77.71, y: 0.73}
+  m_AnchoredPosition: {x: -333.93002, y: 122.65149}
+  m_SizeDelta: {x: -1171.9701, y: -552.54004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &970031380
 Animator:
@@ -7631,6 +7704,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970031378}
   m_CullTransparentMesh: 1
+--- !u!114 &970031383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970031378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: water
 --- !u!1 &972894391
 GameObject:
   m_ObjectHideFlags: 0
@@ -8101,88 +8187,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020163609}
-  m_CullTransparentMesh: 1
---- !u!1 &1035263522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1035263523}
-  - component: {fileID: 1035263525}
-  - component: {fileID: 1035263524}
-  m_Layer: 5
-  m_Name: BottleHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1035263523
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035263522}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 139990827}
-  - {fileID: 1434205610}
-  - {fileID: 2074839852}
-  - {fileID: 970031379}
-  - {fileID: 2076365478}
-  - {fileID: 733614735}
-  - {fileID: 575702615}
-  m_Father: {fileID: 1982775471}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 302.42004, y: 122.65}
-  m_SizeDelta: {x: 186.64001, y: 166.73}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1035263524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035263522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.46226418, g: 0.19406372, b: 0.39521408, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1035263525
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035263522}
   m_CullTransparentMesh: 1
 --- !u!1 &1045091941
 GameObject:
@@ -8759,7 +8763,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080250920}
-  - component: {fileID: 1080250921}
   m_Layer: 0
   m_Name: SelfManager
   m_TagString: Untagged
@@ -8782,35 +8785,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1080250921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080250919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d33ade0cb667554d96522d45f96621c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shelfCanvas: {fileID: 739620918}
-  vinegarobj: {fileID: 139990826}
-  oilobj: {fileID: 2074839851}
-  soyobj: {fileID: 1434205609}
-  waterobj: {fileID: 970031378}
-  saltobj: {fileID: 733614734}
-  pepperobj: {fileID: 733614734}
-  pigbloodObj: {fileID: 575702611}
-  vinegarDuration: 1
-  oilDuration: 1
-  soyDuration: 1
-  waterDuration: 1
-  saltDuration: 1
-  pepperDuration: 1
-  pigBloodDuration: 1
-  waterBottlePrefab: {fileID: 0}
-  tableSpawnPoint: {fileID: 0}
 --- !u!1 &1098179522
 GameObject:
   m_ObjectHideFlags: 0
@@ -9550,7 +9524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1166938490
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11755,6 +11729,7 @@ GameObject:
   - component: {fileID: 1434205613}
   - component: {fileID: 1434205612}
   - component: {fileID: 1434205611}
+  - component: {fileID: 1434205614}
   m_Layer: 5
   m_Name: SoyObj
   m_TagString: Untagged
@@ -11769,17 +11744,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434205609}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1035263523}
+  m_Father: {fileID: 1982775471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.9199982, y: 0.0014953613}
-  m_SizeDelta: {x: -108.15, y: 0.7299957}
+  m_AnchoredPosition: {x: -335.11002, y: 122.65149}
+  m_SizeDelta: {x: -1202.4102, y: -552.54004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1434205611
 Animator:
@@ -11841,6 +11816,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434205609}
   m_CullTransparentMesh: 1
+--- !u!114 &1434205614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434205609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: 'Soy '
 --- !u!1 &1436118141
 GameObject:
   m_ObjectHideFlags: 0
@@ -13552,7 +13540,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080250921}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShelfManager, Assembly-CSharp
         m_MethodName: OnCondimentSelected
         m_Mode: 5
@@ -15902,7 +15890,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080250921}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShelfManager, Assembly-CSharp
         m_MethodName: OnCondimentSelected
         m_Mode: 5
@@ -16909,7 +16897,13 @@ RectTransform:
   - {fileID: 313567242}
   - {fileID: 1460547103}
   - {fileID: 1320246433}
-  - {fileID: 1035263523}
+  - {fileID: 139990827}
+  - {fileID: 1434205610}
+  - {fileID: 2074839852}
+  - {fileID: 970031379}
+  - {fileID: 2076365478}
+  - {fileID: 733614735}
+  - {fileID: 575702615}
   - {fileID: 848626948}
   m_Father: {fileID: 341245272}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17336,7 +17330,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080250921}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShelfManager, Assembly-CSharp
         m_MethodName: OnCondimentSelected
         m_Mode: 5
@@ -17692,6 +17686,7 @@ GameObject:
   - component: {fileID: 2074839855}
   - component: {fileID: 2074839854}
   - component: {fileID: 2074839853}
+  - component: {fileID: 2074839856}
   m_Layer: 5
   m_Name: OilObj
   m_TagString: Untagged
@@ -17706,17 +17701,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074839851}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1035263523}
+  m_Father: {fileID: 1982775471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.9199982, y: 0.0014953613}
-  m_SizeDelta: {x: -108.15, y: 0.7299957}
+  m_AnchoredPosition: {x: -335.11002, y: 122.65149}
+  m_SizeDelta: {x: -1202.4102, y: -552.54004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2074839853
 Animator:
@@ -17778,6 +17773,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074839851}
   m_CullTransparentMesh: 1
+--- !u!114 &2074839856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074839851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: oil
 --- !u!1 &2076365477
 GameObject:
   m_ObjectHideFlags: 0
@@ -17790,6 +17798,7 @@ GameObject:
   - component: {fileID: 2076365481}
   - component: {fileID: 2076365480}
   - component: {fileID: 2076365479}
+  - component: {fileID: 2076365482}
   m_Layer: 5
   m_Name: 'SaltObj '
   m_TagString: Untagged
@@ -17804,17 +17813,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076365477}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1035263523}
+  m_Father: {fileID: 1982775471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.0999985, y: 0.0014953613}
-  m_SizeDelta: {x: -77.71, y: 0.73}
+  m_AnchoredPosition: {x: -333.93002, y: 122.65149}
+  m_SizeDelta: {x: -1171.9701, y: -552.54004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2076365479
 Animator:
@@ -17876,6 +17885,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076365477}
   m_CullTransparentMesh: 1
+--- !u!114 &2076365482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076365477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73ca002f6841f049a3b6e0d3368cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: salt
 --- !u!1 &2090079282
 GameObject:
   m_ObjectHideFlags: 0

@@ -184,12 +184,12 @@ TextureImporter:
       name: garlic_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 18
-        width: 106
-        height: 147
+        x: 17
+        y: 62
+        width: 93
+        height: 103
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -211,7 +211,7 @@ TextureImporter:
         width: 42
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,7 +228,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 58e474c2630bebd488a99872bd9c0f61
     internalID: 0
     vertices: []
     indices: 

@@ -242,6 +242,7 @@ MonoBehaviour:
   wokPrefab: {fileID: 0}
   mixingPanel: {fileID: 0}
   simmerClockPanel: {fileID: 0}
+  boilClockPanel: {fileID: 0}
 --- !u!1 &4031237940269342947
 GameObject:
   m_ObjectHideFlags: 0

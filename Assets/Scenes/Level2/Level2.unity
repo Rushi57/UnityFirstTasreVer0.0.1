@@ -676,10 +676,6 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 7457079033613625480, guid: 7bcf28ab7fbce584fb4d360dfd2f770c, type: 3}
   itemSO: {fileID: 11400000, guid: cf4532f0f236b2f40afdefafae5793d7, type: 2}
-  columns: 4
-  cellWidth: 120
-  cellHeight: 120
-  startOffset: {x: 50, y: -50}
 --- !u!114 &100353939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1988,10 +1984,6 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
   itemSO: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
-  columns: 4
-  cellWidth: 120
-  cellHeight: 120
-  startOffset: {x: 50, y: -50}
 --- !u!114 &216649683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2364,10 +2356,6 @@ MonoBehaviour:
   tableArea: {fileID: 1718752172}
   slotPrefab: {fileID: 3918062914182680560, guid: 8d5e1a9982e94c048a3d123eba0b6830, type: 3}
   itemSO: {fileID: 11400000, guid: 9c772f95bb148a6458d8c900b8d4c102, type: 2}
-  columns: 4
-  cellWidth: 120
-  cellHeight: 120
-  startOffset: {x: 50, y: -50}
 --- !u!114 &238718325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3496,10 +3484,6 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 790432942333000715, guid: 2d90352d1834e134f9eb90fb563d4059, type: 3}
   itemSO: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
-  columns: 4
-  cellWidth: 120
-  cellHeight: 120
-  startOffset: {x: 50, y: -50}
 --- !u!114 &347354727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5121,10 +5105,6 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 790432942333000715, guid: 2d90352d1834e134f9eb90fb563d4059, type: 3}
   itemSO: {fileID: 11400000, guid: a8b107d2228e5a54c810ac90b8914061, type: 2}
-  columns: 4
-  cellWidth: 120
-  cellHeight: 120
-  startOffset: {x: 50, y: -50}
 --- !u!114 &535077817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6913,7 +6893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &710112741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7119,10 +7099,6 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
   itemSO: {fileID: 11400000, guid: 5e32e1335bf5caa4a84e2993d38d3b90, type: 2}
-  columns: 4
-  cellWidth: 100
-  cellHeight: 100
-  startOffset: {x: 50, y: -50}
 --- !u!114 &761750432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8624,7 +8600,7 @@ MonoBehaviour:
   pepperDuration: 1
   pigBloodDuration: 1
   waterBottlePrefab: {fileID: 0}
-  tableSpawnPoint: {fileID: 1197491932}
+  tableSpawnPoint: {fileID: 0}
 --- !u!4 &961411585
 Transform:
   m_ObjectHideFlags: 0
@@ -14652,10 +14628,6 @@ MonoBehaviour:
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
   itemSO: {fileID: 11400000, guid: 3b6f5a1d22dfc27478bf2e1821b91a63, type: 2}
-  columns: 4
-  cellWidth: 100
-  cellHeight: 100
-  startOffset: {x: 50, y: -50}
 --- !u!114 &1755400742
 MonoBehaviour:
   m_ObjectHideFlags: 0
