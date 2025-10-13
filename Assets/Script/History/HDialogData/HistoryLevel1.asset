@@ -17,12 +17,19 @@ MonoBehaviour:
   - text: "Alright! Today, we\u2019re starting with one of the most iconic dishes
       in Filipino cuisine "
   - text: "Adobo! Are you excited? Let\u2019s dive in!"
-  - text: But before we start cooking, let me tell you a little story about it!
-  - text: Adobo has been a part of Filipino kitchens for centuries, even before the
-      Spanish arrived!
-  - text: Early Filipinos used vinegar and salt to preserve meat
-  - text: And over time, soy sauce was introduced, blending both local and foreign
-      flavors
-  - text: "That\u2019s why adobo is often called the unofficial national dish"
+  - text: But before we start cooking, let me tell you about the History of Adobo
+  - text: Adobo in the Philippines grew out of indigenous preservation and cooking
+      practices that used vinegar (and other souring agents), salt, and garlic to
+      preserve meat and flavor food long before Spanish contact.
+  - text: " When the Spanish arrived they applied the word adobo (from adobar, \u201Cto
+      marinate\u201D)"
+  - text: to these native preparations early colonial records (17th-century vocabularies)
+      refer to adobo-style dishes as adobo de los naturales. And over time, soy sauce
+      was introduced, blending both local and foreign flavors
+  - text: Over time adobo absorbed external influences (for example, soy sauce from
+      Chinese trade), producing the many regional and household variants like white
+      adobo, adobo sa gata, adobong baboy, adobong manok, etc
   - text: "It\u2019s simple, delicious, and truly Filipino at heart!"
-  - text: Now let's start, All the instruction and ingrediets is in the CookBook
+  - text: "And becoming a ubiquitous, long-shelf-life staple often considered the
+      Philippines\u2019 unofficial national dish."
+  - text: 'Now lets start '
