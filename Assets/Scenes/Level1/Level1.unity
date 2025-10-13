@@ -604,6 +604,7 @@ GameObject:
   - component: {fileID: 27110760}
   - component: {fileID: 27110759}
   - component: {fileID: 27110758}
+  - component: {fileID: 27110761}
   m_Layer: 5
   m_Name: CloseBtnCabinet
   m_TagString: Untagged
@@ -686,6 +687,30 @@ MonoBehaviour:
           m_StringArgument: CLOSED
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 27110761}
+        m_TargetAssemblyTypeName: GlowButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1729965583}
+        m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &27110759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,6 +749,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27110756}
   m_CullTransparentMesh: 1
+--- !u!114 &27110761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27110756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pulseSpeed: 2
 --- !u!1 &28683636
 GameObject:
   m_ObjectHideFlags: 0
@@ -6253,6 +6292,7 @@ GameObject:
   - component: {fileID: 589919945}
   - component: {fileID: 589919944}
   - component: {fileID: 589919943}
+  - component: {fileID: 589919946}
   m_Layer: 5
   m_Name: CloseBtnRef
   m_TagString: Untagged
@@ -6335,6 +6375,30 @@ MonoBehaviour:
           m_StringArgument: CLOSED
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 589919946}
+        m_TargetAssemblyTypeName: GlowButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1729965583}
+        m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &589919944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6373,6 +6437,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589919941}
   m_CullTransparentMesh: 1
+--- !u!114 &589919946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589919941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pulseSpeed: 2
 --- !u!1 &632367188
 GameObject:
   m_ObjectHideFlags: 0
@@ -6535,6 +6613,7 @@ GameObject:
   - component: {fileID: 649786141}
   - component: {fileID: 649786140}
   - component: {fileID: 649786139}
+  - component: {fileID: 649786142}
   m_Layer: 5
   m_Name: CookBookButton
   m_TagString: Untagged
@@ -6617,6 +6696,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 649786142}
+        m_TargetAssemblyTypeName: GlowButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1729965583}
+        m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &649786140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6655,6 +6758,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649786137}
   m_CullTransparentMesh: 1
+--- !u!114 &649786142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649786137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pulseSpeed: 2
 --- !u!1 &667965832
 GameObject:
   m_ObjectHideFlags: 0
@@ -6827,7 +6944,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -342.99997, y: 0}
+  m_AnchoredPosition: {x: -342.99988, y: 0}
   m_SizeDelta: {x: -686, y: 0.000061035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673418178
@@ -10866,6 +10983,7 @@ GameObject:
   - component: {fileID: 1141735594}
   - component: {fileID: 1141735593}
   - component: {fileID: 1141735592}
+  - component: {fileID: 1141735595}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -10948,6 +11066,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1141735595}
+        m_TargetAssemblyTypeName: GlowButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1729965583}
+        m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1141735593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10986,6 +11128,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141735590}
   m_CullTransparentMesh: 1
+--- !u!114 &1141735595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141735590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pulseSpeed: 2
 --- !u!1 &1156531547
 GameObject:
   m_ObjectHideFlags: 0
@@ -11846,7 +12002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -342.99997, y: -0.000061035156}
+  m_AnchoredPosition: {x: -342.99988, y: -0.000061035156}
   m_SizeDelta: {x: -686, y: 0.000061035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237976829
@@ -12725,6 +12881,7 @@ GameObject:
   - component: {fileID: 1340215352}
   - component: {fileID: 1340215351}
   - component: {fileID: 1340215350}
+  - component: {fileID: 1340215354}
   m_Layer: 5
   m_Name: GarlicBtn
   m_TagString: Untagged
@@ -12822,6 +12979,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1340215354}
+        m_TargetAssemblyTypeName: GlowButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1729965583}
+        m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1340215352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12860,6 +13041,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340215348}
   m_CullTransparentMesh: 1
+--- !u!114 &1340215354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340215348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pulseSpeed: 2
 --- !u!1 &1378653030
 GameObject:
   m_ObjectHideFlags: 0
@@ -13557,6 +13752,7 @@ RectTransform:
   - {fileID: 710112741}
   - {fileID: 16387588}
   - {fileID: 550295132}
+  - {fileID: 1946402018}
   - {fileID: 152198392}
   - {fileID: 2145652779}
   m_Father: {fileID: 0}
@@ -13760,12 +13956,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2035283570}
   - {fileID: 860817085}
   - {fileID: 1156531548}
   - {fileID: 649786138}
   - {fileID: 1635283567}
   - {fileID: 1817427433}
-  - {fileID: 2035283570}
   - {fileID: 1245740}
   - {fileID: 1718752172}
   - {fileID: 454166041}
@@ -16067,6 +16263,7 @@ GameObject:
   - component: {fileID: 1646753125}
   - component: {fileID: 1646753124}
   - component: {fileID: 1646753123}
+  - component: {fileID: 1646753127}
   m_Layer: 5
   m_Name: PepperCornBowl
   m_TagString: Untagged
@@ -16164,6 +16361,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1646753127}
+        m_TargetAssemblyTypeName: GlowButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1729965583}
+        m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1646753125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16202,6 +16423,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646753121}
   m_CullTransparentMesh: 1
+--- !u!114 &1646753127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646753121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pulseSpeed: 2
 --- !u!1 &1678174693
 GameObject:
   m_ObjectHideFlags: 0
@@ -16746,13 +16981,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 860817089}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1340215354}
+  - {fileID: 1646753127}
+  - {fileID: 2114940022}
+  - {fileID: 589919946}
   - {fileID: 1156531552}
-  - {fileID: 0}
+  - {fileID: 27110761}
   - {fileID: 2035283575}
+  - {fileID: 649786142}
 --- !u!4 &1729965584
 Transform:
   m_ObjectHideFlags: 0
@@ -16800,7 +17036,7 @@ MonoBehaviour:
   - dialogText: Click Peppercorn
     dialogPosition: {x: 11.26, y: -196}
     waitForClickOnUI: 1
-    uiElementName: PeppercornBowl
+    uiElementName: PepperCornBowl
     dialogImage: {fileID: 0}
     waitForResumeButton: 0
     resumeButton: {fileID: 0}
@@ -16816,7 +17052,7 @@ MonoBehaviour:
   - dialogText: Click the back button
     dialogPosition: {x: 11.26, y: -196}
     waitForClickOnUI: 1
-    uiElementName: RefExit
+    uiElementName: CloseBtnRef
     dialogImage: {fileID: 0}
     waitForResumeButton: 0
     resumeButton: {fileID: 0}
@@ -16883,7 +17119,7 @@ MonoBehaviour:
     uiElementName: 
     dialogImage: {fileID: 0}
     waitForResumeButton: 1
-    resumeButton: {fileID: 0}
+    resumeButton: {fileID: 27110758}
     resumeButtonName: 
   - dialogText: NOW OPEN THE STOVE
     dialogPosition: {x: 130, y: 163.96}
@@ -16894,6 +17130,46 @@ MonoBehaviour:
     resumeButton: {fileID: 0}
     resumeButtonName: 
   - dialogText: DRAG THE PAN PAPUNTANG STOVE
+    dialogPosition: {x: 130, y: 163.96}
+    waitForClickOnUI: 0
+    uiElementName: 
+    dialogImage: {fileID: 0}
+    waitForResumeButton: 0
+    resumeButton: {fileID: 0}
+    resumeButtonName: 
+  - dialogText: CLICK THE BOOK PARA MAKITA YUNG LULUTUIN
+    dialogPosition: {x: 130, y: 163.96}
+    waitForClickOnUI: 1
+    uiElementName: CookBookButton
+    dialogImage: {fileID: 0}
+    waitForResumeButton: 0
+    resumeButton: {fileID: 0}
+    resumeButtonName: 
+  - dialogText: makikit natin dito yung mga lulutuin
+    dialogPosition: {x: 130, y: 163.96}
+    waitForClickOnUI: 1
+    uiElementName: 
+    dialogImage: {fileID: 0}
+    waitForResumeButton: 0
+    resumeButton: {fileID: 0}
+    resumeButtonName: 
+  - dialogText: 
+    dialogPosition: {x: 130, y: 163.96}
+    waitForClickOnUI: 0
+    uiElementName: 
+    dialogImage: {fileID: 0}
+    waitForResumeButton: 1
+    resumeButton: {fileID: 0}
+    resumeButtonName: 
+  - dialogText: 
+    dialogPosition: {x: 130, y: 163.96}
+    waitForClickOnUI: 0
+    uiElementName: 
+    dialogImage: {fileID: 0}
+    waitForResumeButton: 1
+    resumeButton: {fileID: 374907199}
+    resumeButtonName: 
+  - dialogText: NOW LETS START
     dialogPosition: {x: 130, y: 163.96}
     waitForClickOnUI: 0
     uiElementName: 
@@ -16999,8 +17275,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1946402018}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19178,19 +19453,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946402017}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6479.9995}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 382619522}
   - {fileID: 283467714}
-  m_Father: {fileID: 1736486720}
+  m_Father: {fileID: 1416921952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -1280, y: -720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946402019
 MonoBehaviour:
@@ -20853,6 +21128,7 @@ GameObject:
   - component: {fileID: 2114940020}
   - component: {fileID: 2114940019}
   - component: {fileID: 2114940018}
+  - component: {fileID: 2114940022}
   m_Layer: 5
   m_Name: PorkBtn
   m_TagString: Untagged
@@ -20950,6 +21226,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2114940022}
+        m_TargetAssemblyTypeName: GlowButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1729965583}
+        m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
+        m_MethodName: OnButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2114940020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20988,6 +21288,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114940016}
   m_CullTransparentMesh: 1
+--- !u!114 &2114940022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114940016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pulseSpeed: 2
 --- !u!1 &2119698686
 GameObject:
   m_ObjectHideFlags: 0
@@ -21357,7 +21671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4509987451686117501, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5093524903103033914, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: m_Pivot.x
