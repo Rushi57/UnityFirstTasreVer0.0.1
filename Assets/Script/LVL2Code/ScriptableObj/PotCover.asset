@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
   m_Name: PotCover
   m_EditorClassIdentifier: 
-  itemID: 
-  itemName: 
+  itemID: PotCover001
+  itemName: PotCover
   itemType: 0
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -7993621935716013107, guid: f7e5c6f356bcb664b916aeeeacd5f434, type: 3}
   choppedSprite: {fileID: 0}
   spawnPrefab: {fileID: 0}
   spawnItemSO: {fileID: 0}

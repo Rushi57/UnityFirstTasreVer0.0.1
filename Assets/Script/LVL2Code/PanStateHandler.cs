@@ -79,7 +79,7 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
             // 🔹 Handle Simmer
             if (CookingStepManager.Instance.IsCorrectAction("Simmer"))
             {
-                Debug.Log("[PanStateHandler] Simmer action triggered (Cover/Lid)");
+                Debug.Log("[PanStateHandler] Simmer action triggered (Lid)");
 
                 if (simmerClockPanel != null)
                 {
@@ -90,10 +90,10 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
                 CookingStepManager.Instance.TrySimmer();
                 CookingStepManager.Instance.NextStep();
             }
-            // 🔹 Handle Boil
+            // Handle Boil
             else if (CookingStepManager.Instance.IsCorrectAction("Boil"))
             {
-                Debug.Log("[PanStateHandler] Boil action triggered (Cover/Lid)");
+                Debug.Log("[PanStateHandler] Boil action triggered (Cover)");
 
                 if (boilClockPanel != null)
                 {

@@ -7,6 +7,7 @@ public class SetAsideButton : MonoBehaviour
     [SerializeField] private GameObject itemPrefab;       // Prefab that contains ItemData
     [SerializeField] private Transform tableZone3;        // Spawn point or parent
     [SerializeField] private ItemSO itemData;             // The ItemSO you want to assign
+    [SerializeField] private GameObject setAsidePanel;
 
     public void SetSideButton()
     {
@@ -63,6 +64,7 @@ public class SetAsideButton : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+        setAsidePanel.SetActive(false);
         Debug.Log("Hide");
     }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   recipeID: Sisig001
   recipeName: Sisig
   recipeImage: {fileID: -6115229438838554286, guid: c1be1d78f572e2b4bb1718edb067370b, type: 3}
-  targetScore: 42
+  targetScore: 52
   steps:
   - stepType: 1
     ingredient: {fileID: 11400000, guid: a93a4e6246335974abeb795640b9c029, type: 2}
