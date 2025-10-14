@@ -12,6 +12,7 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
     public GameObject mixingPanel;
     public GameObject simmerClockPanel;
     public GameObject boilClockPanel;
+    public GameObject sautePanel;
 
     private GameObject currentCookware;
 
@@ -75,6 +76,7 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             handler.mixingMechPanel = mixingPanel;
             handler.simmerClockPanel = simmerClockPanel;
             handler.boilClockPanel = boilClockPanel;
+            handler.sauteMechPanel = sautePanel;
         }
 
         Debug.Log($"✅ {item.itemName} placed on stove");

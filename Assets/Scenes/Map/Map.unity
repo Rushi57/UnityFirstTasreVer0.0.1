@@ -1288,7 +1288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241, y: -70.52}
+  m_AnchoredPosition: {x: 241, y: -70.52002}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329658826
@@ -6749,10 +6749,10 @@ PrefabInstance:
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: recipe
       value: 
-      objectReference: {fileID: 11400000, guid: 87bf2371ca23725408936bd4195126db, type: 2}
+      objectReference: {fileID: 11400000, guid: 619bd4f56f05f864595329d2b4535dad, type: 2}
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: levelIndex
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: requiredScore
@@ -6828,11 +6828,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7271466708567346792, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -39.5
+      value: -117
       objectReference: {fileID: 0}
     - target: {fileID: 7271466708567346792, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 271
+      value: 218
       objectReference: {fileID: 0}
     - target: {fileID: 7271466708567346792, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8683,10 +8683,10 @@ PrefabInstance:
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: recipe
       value: 
-      objectReference: {fileID: 11400000, guid: 619bd4f56f05f864595329d2b4535dad, type: 2}
+      objectReference: {fileID: 11400000, guid: 87bf2371ca23725408936bd4195126db, type: 2}
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: levelIndex
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7106654414090436211, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: requiredScore
@@ -8762,11 +8762,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7271466708567346792, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -133
+      value: -38
       objectReference: {fileID: 0}
     - target: {fileID: 7271466708567346792, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 213
+      value: 276
       objectReference: {fileID: 0}
     - target: {fileID: 7271466708567346792, guid: bb01a84e5237fd54f9eb4f093620332c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

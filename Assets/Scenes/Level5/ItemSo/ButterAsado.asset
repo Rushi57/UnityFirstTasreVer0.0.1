@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: ButterAsado001
   itemName: ButterAsado
   itemType: 1
-  itemSprite: {fileID: -2657492848283155972, guid: 6a6300b999ee2744197faf4075ddd4d3, type: 3}
+  itemSprite: {fileID: -7161970024020529175, guid: 72aa7ec4ed6247b4ea0e4e11b055c151, type: 3}
   choppedSprite: {fileID: 0}
   spawnPrefab: {fileID: 0}
   spawnItemSO: {fileID: 0}

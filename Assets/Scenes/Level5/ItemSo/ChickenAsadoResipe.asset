@@ -25,6 +25,10 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: 503d7d5550d83704ab789a72a88fc440, type: 2}
     actionName: Oil
     Action: Oil
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: af392c2ef0582224d9c39407b28c795c, type: 2}
+    actionName: saute
+    Action: saute
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 2c84b2f41bb7b3f469cd2497dd26d1e9, type: 2}
     actionName: Butter
@@ -33,10 +37,6 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: c552a689f0801f144b1dee18e73fc3c1, type: 2}
     actionName: Chicken
     Action: Chicken
-  - stepType: 1
-    ingredient: {fileID: 11400000, guid: af392c2ef0582224d9c39407b28c795c, type: 2}
-    actionName: Mix
-    Action: Mix
   - stepType: 1
     ingredient: {fileID: 11400000, guid: af392c2ef0582224d9c39407b28c795c, type: 2}
     actionName: Mix

@@ -96,6 +96,19 @@ public class CookingStepManager : MonoBehaviour
         }
     }
 
+    public void TrySaute()
+    {
+        if (IsCorrectAction("saute"))
+        {
+            Debug.Log("Correct action: saute");
+            NextStep();
+        }
+        else
+        {
+            WrongAttempt();
+        }
+    }
+
     public void TrySimmer()
     {
         if (IsCorrectAction("simmer"))

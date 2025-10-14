@@ -8,6 +8,7 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
     public GameObject mixingMechPanel;   // MixingPanel
     public GameObject simmerClockPanel;
     public GameObject boilClockPanel;
+    public GameObject sauteMechPanel;
     [Header("Pan Images")]
     public Image panImage;
     public Sprite defaultPanSprite;
@@ -45,30 +46,45 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
         }
 
         // --- MIX / SPATULA STEP ---
-        else if (droppedItem.itemSO.itemName.Equals("Spatula", System.StringComparison.OrdinalIgnoreCase))
+        else if (droppedItem.itemSO.itemName.Contains("Spatula") || droppedItem.itemSO.itemName.Contains("Flipper"))
         {
+            Debug.Log($"[PanStateHandler] Lid/Cover detected for {droppedItem.itemSO.itemName}");
+
+            // 🔹 Handle Simmer
             if (CookingStepManager.Instance.IsCorrectAction("Mix"))
             {
+                Debug.Log("[PanStateHandler] Simmer action triggered (Spatula)");
+
                 if (mixingMechPanel != null)
                 {
                     mixingMechPanel.SetActive(true);
-
-                    var mixManager = mixingMechPanel.GetComponent<MixingMechanicManager>();
-                    if (mixManager != null)
-                    {
-                        mixManager.RestartMixing();
-                    }
+                    mixingMechPanel.GetComponent<MixingMechanicManager>()?.RestartMixing();
                 }
 
+                CookingStepManager.Instance.TryMix();
                 CookingStepManager.Instance.NextStep();
-                Debug.Log("[PanStateHandler] Mix action triggered.");
-                Destroy(eventData.pointerDrag.gameObject);
+            }
+            // Handle Saute
+            else if (CookingStepManager.Instance.IsCorrectAction("Saute"))
+            {
+                Debug.Log("[PanStateHandler] Boil action triggered (Flipper)");
+
+                if (sauteMechPanel != null)
+                {
+                    sauteMechPanel.SetActive(true);
+                    sauteMechPanel.GetComponent<SauteMechanicManager>()?.RestartSaute();
+                }
+
+                CookingStepManager.Instance.TrySaute();
             }
             else
             {
-                droppedItem.GetComponent<Draggable>()?.RevertToOriginalPosition();
+                Debug.LogWarning("[PanStateHandler] Cover/Lid dropped but not the expected step.");
                 CookingStepManager.Instance.WrongAttempt();
             }
+
+            // Always destroy the dragged item
+            Destroy(eventData.pointerDrag.gameObject);
         }
 
         // --- SIMMER / PAN LID STEP ---
