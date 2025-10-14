@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a9675abb170244180b2ed1bd826549, type: 3}
+  m_Name: HdialogLevel3
+  m_EditorClassIdentifier: 
+  dishSprite: {fileID: -6115229438838554286, guid: c1be1d78f572e2b4bb1718edb067370b, type: 3}
+  hDialogLines:
+  - text: Hello in this level the dish we will cook is Sisig form  Pampanga.
+  - text: but first a lets have a short history about Sisig
+  - text: but first a lets have a short history about Sisig

@@ -23,7 +23,7 @@ public class BoilTimer : MonoBehaviour
     public TextMeshProUGUI resultText;
     public Button closeButton;
 
-    public  Button setAsideButton;
+    public GameObject setSidePanel;
 
     private int pendingScore = 0;
     private string pendingResult = "Bad";
@@ -125,9 +125,9 @@ public class BoilTimer : MonoBehaviour
             boilPanel.SetActive(false);
 
         // ✅ Show Set Aside button (the handler will call NextStep)
-        if (setAsideButton != null)
+        if (setSidePanel != null)
         {
-            setAsideButton.gameObject.SetActive(true);
+            setSidePanel.gameObject.SetActive(true);
             Debug.Log("[BoilTimer] SetAsideButton shown. Player must click to continue.");
         }
     }
@@ -148,8 +148,8 @@ public class BoilTimer : MonoBehaviour
         if (boilPanel != null)
             boilPanel.SetActive(true);
 
-        if (setAsideButton != null)
-            setAsideButton.gameObject.SetActive(true); // ✅ Hides until ClosePanels() is called
+        if (setSidePanel != null)
+            setSidePanel.gameObject.SetActive(true); // ✅ Hides until ClosePanels() is called
 
         pendingScore = 0;
         pendingResult = "Bad";

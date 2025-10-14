@@ -16,13 +16,13 @@ MonoBehaviour:
   hDialogLines:
   - text: "Alright! Today, we\u2019re starting with one of the most iconic dishes
       in Filipino cuisine "
-  - text: "Adobo! Are you excited? Let\u2019s dive in!"
   - text: But before we start cooking, let me tell you about the History of Adobo
+  - text: "Acording to De la Cruz, E. (2025, July 16). A brief history of adobo,
+      the Philippines\u2019 national dish."
   - text: Adobo in the Philippines grew out of indigenous preservation and cooking
-      practices that used vinegar (and other souring agents), salt, and garlic to
-      preserve meat and flavor food long before Spanish contact.
-  - text: " When the Spanish arrived they applied the word adobo (from adobar, \u201Cto
-      marinate\u201D)"
+      practices that used vinegar (and other souring agents), salt, and garlic,
+  - text: "to preserve meat and flavor food long before Spanish contact. When the
+      Spanish arrived they applied the word adobo (from adobar, \u201Cto marinate\u201D)"
   - text: to these native preparations early colonial records (17th-century vocabularies)
       refer to adobo-style dishes as adobo de los naturales. And over time, soy sauce
       was introduced, blending both local and foreign flavors

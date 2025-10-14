@@ -16,10 +16,8 @@ MonoBehaviour:
   hDialogLines:
   - text: Hello in this level the dish we will cook is Dinuguan from Nueva Ejica.
   - text: but first a lets have a short history about Dinuguan
-  - text: 'According to Gilbuena, Y. (2021, November 2) Dinuguan (Filipino pork blood
-      stew). Serious Eats.
-
-      from https://www.seriouseats.com/dinuguan-filipino-pork-blood-stew-5196555'
+  - text: According to Gilbuena, Y. (2021, November 2) Dinuguan (Filipino pork blood
+      stew).
   - text: "Dinuguan (\u201Cto be stewed with blood\u201D) is a long-standing Filipino
       stew of pork (often offal) simmered in pig\u2019s blood, vinegar, garlic, and
       chiles."

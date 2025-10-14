@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sisig
   m_EditorClassIdentifier: 
   recipeID: Sisig001
-  recipeName: SIsig
+  recipeName: Sisig
   recipeImage: {fileID: -6115229438838554286, guid: c1be1d78f572e2b4bb1718edb067370b, type: 3}
   targetScore: 42
   steps:
