@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0025024414}
+  m_AnchoredPosition: {x: 0, y: 0.0024414062}
   m_SizeDelta: {x: 0, y: -0.0050049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1245741
@@ -12041,7 +12041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -343, y: -0.000061035156}
+  m_AnchoredPosition: {x: -343, y: 0}
   m_SizeDelta: {x: -686, y: 0.000061035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237976829
@@ -16962,7 +16962,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogLines:
-  - dialogText: Click Ref
+  - dialogText: "Click the refrigerator to start and get all the ingredients you\u2019ll
+      need. Items you should interact with will glow one-by-one to guide you through
+      each step."
     dialogPosition: {x: 11.26, y: -196}
     waitForClickOnUI: 1
     uiElementName: RefButton
@@ -16970,7 +16972,7 @@ MonoBehaviour:
     waitForResumeButton: 0
     resumeButton: {fileID: 0}
     resumeButtonName: 
-  - dialogText: Click Garlic
+  - dialogText: Now click the garlic to pick it up.
     dialogPosition: {x: 295, y: -153}
     waitForClickOnUI: 1
     uiElementName: GarlicBtn
@@ -16978,7 +16980,7 @@ MonoBehaviour:
     waitForResumeButton: 0
     resumeButton: {fileID: 0}
     resumeButtonName: 
-  - dialogText: Click Peppercorn
+  - dialogText: Great! Next, click the peppercorn to prepare it.
     dialogPosition: {x: 295, y: -153}
     waitForClickOnUI: 1
     uiElementName: PepperCornBowl
@@ -16986,7 +16988,7 @@ MonoBehaviour:
     waitForResumeButton: 0
     resumeButton: {fileID: 0}
     resumeButtonName: 
-  - dialogText: Click Pork
+  - dialogText: Now click the pork to take it out for chopping.
     dialogPosition: {x: 295, y: -153}
     waitForClickOnUI: 1
     uiElementName: PorkBtn
@@ -16994,7 +16996,7 @@ MonoBehaviour:
     waitForResumeButton: 0
     resumeButton: {fileID: 0}
     resumeButtonName: 
-  - dialogText: Click the back button
+  - dialogText: Click the back button to return to the kitchen counter.
     dialogPosition: {x: 295, y: -153}
     waitForClickOnUI: 1
     uiElementName: CloseBtnRef
@@ -17014,10 +17016,8 @@ MonoBehaviour:
     waitForResumeButton: 0
     resumeButton: {fileID: 0}
     resumeButtonName: 
-  - dialogText: 'EXPLAIN THE CHOPPING MECHANIC
-
-
-      tap to continue'
+  - dialogText: Chop the ingredients by following the on-screen pattern. Try to be
+      precise! .......... TAP TO CONTINUE
     dialogPosition: {x: 11.26, y: -196}
     waitForClickOnUI: 0
     uiElementName: 
@@ -17033,7 +17033,8 @@ MonoBehaviour:
     waitForResumeButton: 1
     resumeButton: {fileID: 1141735592}
     resumeButtonName: 
-  - dialogText: chopped the pork
+  - dialogText: Also click the pork to chop it.                                 ............CLICK
+      TO CONTINUE............
     dialogPosition: {x: 130, y: 163.96}
     waitForClickOnUI: 0
     uiElementName: 
@@ -17049,8 +17050,7 @@ MonoBehaviour:
     waitForResumeButton: 1
     resumeButton: {fileID: 1141735592}
     resumeButtonName: 
-  - dialogText: NOW OPEN THE CABINET TO GET THE PAN AND SPATULA FOR MIXING LATER
-      PATI NADIN YUNG TAKIP
+  - dialogText: Open the cabinet and grab the pan and spatula for cooking.
     dialogPosition: {x: 11.26, y: -196}
     waitForClickOnUI: 1
     uiElementName: CabinetButton
@@ -17066,7 +17066,7 @@ MonoBehaviour:
     waitForResumeButton: 1
     resumeButton: {fileID: 27110758}
     resumeButtonName: 
-  - dialogText: NOW OPEN THE STOVE
+  - dialogText: Turn on the stove to start heating the pan.
     dialogPosition: {x: 130, y: 163.96}
     waitForClickOnUI: 1
     uiElementName: StoveBtnFire
@@ -17074,7 +17074,8 @@ MonoBehaviour:
     waitForResumeButton: 0
     resumeButton: {fileID: 0}
     resumeButtonName: 
-  - dialogText: DRAG THE PAN PAPUNTANG STOVE
+  - dialogText: Drag the pan onto the stove to place it.              ........TAP
+      TO CONTINUE........
     dialogPosition: {x: 130, y: 163.96}
     waitForClickOnUI: 0
     uiElementName: 
@@ -17082,7 +17083,7 @@ MonoBehaviour:
     waitForResumeButton: 0
     resumeButton: {fileID: 0}
     resumeButtonName: 
-  - dialogText: NOW OPEN THE COOKBOOK TO SEE ALL THE COOKING PROCEDURE
+  - dialogText: Open the cookbook to review all the cooking steps.
     dialogPosition: {x: 1.9073, y: -153}
     waitForClickOnUI: 1
     uiElementName: CookBookButton
@@ -17098,7 +17099,7 @@ MonoBehaviour:
     waitForResumeButton: 1
     resumeButton: {fileID: 374907199}
     resumeButtonName: 
-  - dialogText: NOW LETS BEGIN
+  - dialogText: "Everything\u2019s ready! Let\u2019s begin cooking!"
     dialogPosition: {x: 130, y: 163.96}
     waitForClickOnUI: 0
     uiElementName: 
