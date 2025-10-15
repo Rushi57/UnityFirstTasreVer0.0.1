@@ -19,4 +19,9 @@ public class GameData : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void ResetData()
+    {
+        lastScore = 0;
+        lasStars = 0;
+    }
 }

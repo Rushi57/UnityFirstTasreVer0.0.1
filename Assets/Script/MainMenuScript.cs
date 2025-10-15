@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
@@ -50,9 +51,16 @@ public class MainMenuScript : MonoBehaviour
     //newGame
     public void NewGame()
     {
+        float savedVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("TutorialDone", 0);
+        PlayerPrefs.SetFloat("MusicVolume", savedVolume);
         PlayerPrefs.Save();
+        if (GameData.Instance != null )
+        {
+            GameData.Instance.ResetData();
+        }
 
         SceneManager.LoadScene(firstGameScene);
     }
