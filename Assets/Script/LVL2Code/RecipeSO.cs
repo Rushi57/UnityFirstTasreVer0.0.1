@@ -25,7 +25,7 @@ public class RecipeSO : ScriptableObject
     public string recipeName;
     public Sprite recipeImage;
     [Header("Scoring")]
-    public int targetScore = 100;
+    public int targetScore;
     [Header("Steps")]
     public List<RecipeStep> steps = new List<RecipeStep>();
 
