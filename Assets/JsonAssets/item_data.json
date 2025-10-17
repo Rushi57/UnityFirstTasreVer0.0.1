@@ -1,0 +1,364 @@
+{
+    "items": [
+        {
+            "itemID": "PorkBlood001",
+            "itemName": "PorkBlood",
+            "itemType": "Action",
+            "spritePath": "Assets/Sisig/Dinuguan/pigs_blood.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "DinuguanPork001",
+            "itemName": "Pork",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Sisig/pork.png",
+            "choppedSpritePath": "Assets/Sisig/Dinuguan/pork_and_fat.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "ChikenLiver001",
+            "itemName": "Chiken Liver",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Items/chicken liver.png",
+            "choppedSpritePath": "Assets/Sisig/minced chicken liver.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "PorkBoil001",
+            "itemName": "PorkBoil",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Scenes/Level3/Boilded.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "BayLeavesAsado001",
+            "itemName": "BayLeavesAsado",
+            "itemType": "Utility",
+            "spritePath": "Assets/Scenes/Level5/ArtAsado/laurel_leaf.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "ButterAsado001",
+            "itemName": "ButterAsado",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/NewAssetsPerLevel/ButterPack.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "CalamansiAsado001",
+            "itemName": "CalamansiAsado",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Scenes/Level5/ArtAsado/WholeCalamansi.png",
+            "choppedSpritePath": "Assets/Scenes/Level5/ArtAsado/CutCalamansi.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "ChickenAsado001",
+            "itemName": "ChickenAsado",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Scenes/Level5/ArtAsado/chicken_marinated_in_calamansi_and_soy_sauce.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "CoockingOilAsado001",
+            "itemName": "CoockingOilAsado",
+            "itemType": "Action",
+            "spritePath": "Assets/TETSASSETS/cooking oil.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "GarlicAsado001",
+            "itemName": "GarlicAsado",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Sisig/garlic.png",
+            "choppedSpritePath": "Assets/Scenes/Level5/ArtAsado/garlic.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "PanAsado001",
+            "itemName": "PanAsado",
+            "itemType": "Utility",
+            "spritePath": "Assets/AssetsFinal/Complete/Adobo/Hot pan withgarlic.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "PanLidAsado001",
+            "itemName": "PanLidAsado",
+            "itemType": "Action",
+            "spritePath": "Assets/TETSASSETS/pan lid.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "PeppercornsAsado001",
+            "itemName": "PeppercornsAsado",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/AssetsFinal/Complete/pepper corn in small bowl.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "SaltAsado001",
+            "itemName": "SaltAsado",
+            "itemType": "Action",
+            "spritePath": "Assets/Sisig/salt.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "SoyAsado001",
+            "itemName": "SoyAsado",
+            "itemType": "Action",
+            "spritePath": "Assets/Items/soy sauce.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Spatula001",
+            "itemName": "Spatula",
+            "itemType": "Action",
+            "spritePath": "Assets/TETSASSETS/spatula.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "SugarAsado001",
+            "itemName": "SugarAsado",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Scenes/Level5/ArtAsado/brown_sugar.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "TomatoesAsado001",
+            "itemName": "TomatoesAsado",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Scenes/Level5/ArtAsado/tomato.png",
+            "choppedSpritePath": "Assets/Scenes/Level5/ArtAsado/diced_tomatoes.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "VinegarAsado001",
+            "itemName": "VinegarAsado",
+            "itemType": "Action",
+            "spritePath": "Assets/Items/vinegar.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "WaterAsado001",
+            "itemName": "WaterAsado",
+            "itemType": "Action",
+            "spritePath": "Assets/Items/1 cup water.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "WhiteOnionAsado001",
+            "itemName": "WhiteOnionAsado",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Scenes/Level5/ArtAsado/WhiteOnion.png",
+            "choppedSpritePath": "Assets/Scenes/Level5/ArtAsado/WhiteOnionSliced.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Cabinet001",
+            "itemName": "Cabinet",
+            "itemType": "Action",
+            "spritePath": "Assets/Assets/cabinet_icon.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Garlic001",
+            "itemName": "Garlic",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Items/garlic.png",
+            "choppedSpritePath": "Assets/Items/minced garlic.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Oil001",
+            "itemName": "Oil",
+            "itemType": "Action",
+            "spritePath": "Assets/TETSASSETS/cooking oil.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Onion01",
+            "itemName": "Onion",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Assets/onion_whole.png",
+            "choppedSpritePath": "Assets/Script/LVL2Code/ScriptableObj/onion_cut.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Pan001",
+            "itemName": "Pan",
+            "itemType": "Utility",
+            "spritePath": "Assets/Items/pan.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "PanLid001",
+            "itemName": "PanLid",
+            "itemType": "Action",
+            "spritePath": "Assets/TETSASSETS/pan lid.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "PanLid001",
+            "itemName": "PanLid",
+            "itemType": "Action",
+            "spritePath": "Assets/TETSASSETS/pan lid.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "PepperBottle001",
+            "itemName": "PepperBottle",
+            "itemType": "Utility",
+            "spritePath": "Assets/Sisig/black_pepper.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "PepperCornBits001",
+            "itemName": "PepperCornBits",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/AssetsFinal/Complete/pepper corn bits.png",
+            "choppedSpritePath": "",
+            "prefabPath": "Assets/Preafab/PepperCornBitsPrefab.prefab"
+        },
+        {
+            "itemID": "PepperCornBowl001",
+            "itemName": "PepperCornBowl",
+            "itemType": "Utility",
+            "spritePath": "Assets/AssetsFinal/Complete/pepper corn in small bowl.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Porkbelly001",
+            "itemName": "Porkbelly",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Sisig/pork.png",
+            "choppedSpritePath": "Assets/Items/cut pork.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "PotCover001",
+            "itemName": "PotCover",
+            "itemType": "Utility",
+            "spritePath": "Assets/NewAssetsPerLevel/PotCover.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Ref001",
+            "itemName": "Ref",
+            "itemType": "Utility",
+            "spritePath": "Assets/Assets/ref_icon.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "GreenChillies001 ",
+            "itemName": "Green Chillies",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Items/siling berde.png",
+            "choppedSpritePath": "Assets/Sisig/Dinuguan/birds_eye_chili.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Ginger001 ",
+            "itemName": "Ginger",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Items/ginger.png",
+            "choppedSpritePath": "Assets/Items/minced ginger.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Grill001",
+            "itemName": "Grill",
+            "itemType": "Utility",
+            "spritePath": "Assets/Sisig/grill.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Pot001 ",
+            "itemName": "Pot",
+            "itemType": "Utility",
+            "spritePath": "Assets/Sisig/empty_pot.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "PorkJowl001",
+            "itemName": "Pork Jowl",
+            "itemType": "Ingredient",
+            "spritePath": "Assets/Items/pork jowl.png",
+            "choppedSpritePath": "Assets/Items/cut pork jowl.png",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Salt001",
+            "itemName": "Salt",
+            "itemType": "Action",
+            "spritePath": "Assets/Sisig/salt.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Soy001",
+            "itemName": "Soy",
+            "itemType": "Action",
+            "spritePath": "Assets/Items/soy sauce.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Spatula001",
+            "itemName": "Spatula",
+            "itemType": "Action",
+            "spritePath": "Assets/TETSASSETS/spatula.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Stove001",
+            "itemName": "Stove",
+            "itemType": "Action",
+            "spritePath": "Assets/TETSASSETS/stove.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Vinegar001",
+            "itemName": "Vinegar",
+            "itemType": "Action",
+            "spritePath": "Assets/Items/vinegar.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        },
+        {
+            "itemID": "Water001",
+            "itemName": "Water",
+            "itemType": "Action",
+            "spritePath": "Assets/Items/1 cup water.png",
+            "choppedSpritePath": "",
+            "prefabPath": ""
+        }
+    ]
+}

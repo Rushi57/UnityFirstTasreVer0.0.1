@@ -24,6 +24,9 @@ public class NeedleTimer : MonoBehaviour
     public TextMeshProUGUI resultText;
     public Button closeButton;
 
+    [Header("Audio")]
+    public AudioSource ticKAudio;
+
     private int pendingScore = 0;
     private string pendingResult = "Bad";
 
@@ -33,6 +36,13 @@ public class NeedleTimer : MonoBehaviour
             closeButton.onClick.AddListener(ClosePanels);
 
         fullRotationTime = 360f / speed;
+
+        //Play the Sound
+        if(rotating && ticKAudio != null)
+        {
+            ticKAudio.loop = true;
+            ticKAudio.Play();
+        }
     }
 
     void Update()
@@ -52,6 +62,11 @@ public class NeedleTimer : MonoBehaviour
         if (!rotating) return;
 
         rotating = false;
+
+        //Stop the ticking sound Btn'
+        if (ticKAudio != null && ticKAudio.isPlaying)
+            ticKAudio.Stop();
+
 
         float angle = needle.eulerAngles.z;
         angle = (360f - angle + 90f) % 360f;
@@ -94,6 +109,12 @@ public class NeedleTimer : MonoBehaviour
         rotationTime = 0f;
         pendingScore = 3;
         pendingResult = "Bad";
+
+        //Stop in auto fail
+        if (ticKAudio != null && ticKAudio.isPlaying)
+        { 
+            ticKAudio.Stop();
+        }
 
         if (completeShowPanel != null)
         {
@@ -146,6 +167,13 @@ public class NeedleTimer : MonoBehaviour
 
         pendingScore = 0;
         pendingResult = "Bad";
+
+        //Restart the Sound 
+        if(ticKAudio != null)
+        {
+            ticKAudio.loop = true;
+            ticKAudio.Play();
+        }
 
         Debug.Log("[NeedleTimer] Simmer reset complete.");
     }

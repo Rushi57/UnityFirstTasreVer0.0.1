@@ -5272,6 +5272,7 @@ MonoBehaviour:
   completeShowPanel: {fileID: 344296219}
   resultText: {fileID: 214106139}
   closeButton: {fileID: 1017313439}
+  ticKAudio: {fileID: 0}
 --- !u!1 &390971048
 GameObject:
   m_ObjectHideFlags: 0
@@ -8303,10 +8304,10 @@ RectTransform:
   - {fileID: 1559552746}
   m_Father: {fileID: 1014349502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -343, y: 0}
-  m_SizeDelta: {x: -686, y: 0.000061035}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 297, y: 0}
+  m_SizeDelta: {x: 594, y: 720.00006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673418178
 MonoBehaviour:
@@ -16173,10 +16174,10 @@ RectTransform:
   - {fileID: 27110757}
   m_Father: {fileID: 206047139}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -343, y: -0.000061035156}
-  m_SizeDelta: {x: -686, y: 0.000061035}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 297, y: -0.000061035156}
+  m_SizeDelta: {x: 594, y: 720.00006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237976829
 MonoBehaviour:
