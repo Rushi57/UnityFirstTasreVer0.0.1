@@ -93,7 +93,7 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: 567eae9f841f60c448fc2f53f80f8991, type: 2}
     actionName: salt
     Action: salt
-  - stepType: 0
+  - stepType: 1
     ingredient: {fileID: 11400000, guid: d4c6d1fc87552b5489f00f2bb221f2e5, type: 2}
     actionName: pepper
     Action: pepper

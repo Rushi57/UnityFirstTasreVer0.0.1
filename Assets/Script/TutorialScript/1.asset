@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68064927c6f472e4f9d407a16b51f842, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  dialogText: "My name\u2019s Kris! I grew up in a family where cooking Filipino
-    dishes was a way of bringing everyone together."
+  dialogText: I grew up in a family where cooking Filipino dishes was our way of
+    bringing everyone together.
   uiElementName: 
   waitForClickOnUI: 0

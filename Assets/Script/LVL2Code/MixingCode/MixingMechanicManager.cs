@@ -135,14 +135,26 @@ public class MixingMechanicManager : MonoBehaviour
 
     private (string label, int score)? GetCurrentZone()
     {
-        Vector2 localPoint = indicator.localPosition;
+        float indicatorY = indicator.anchoredPosition.y;
 
-        if (IsInside(localPoint, zoneGreen)) return ("Very Good", 6);
-        if (IsInside(localPoint, zoneYellow)) return ("Good", 4);
-        if (IsInside(localPoint, zoneRed)) return ("Bad", 2);
+        float greenMin = zoneGreen.anchoredPosition.y - zoneGreen.rect.height / 2f;
+        float greenMax = zoneGreen.anchoredPosition.y + zoneGreen.rect.height / 2f;
+        if (indicatorY >= greenMin && indicatorY <= greenMax)
+            return ("Very Good", 6);
+
+        float yellowMin = zoneYellow.anchoredPosition.y - zoneYellow.rect.height / 2f;
+        float yellowMax = zoneYellow.anchoredPosition.y + zoneYellow.rect.height / 2f;
+        if (indicatorY >= yellowMin && indicatorY <= yellowMax)
+            return ("Good", 4);
+
+        float redMin = zoneRed.anchoredPosition.y - zoneRed.rect.height / 2f;
+        float redMax = zoneRed.anchoredPosition.y + zoneRed.rect.height / 2f;
+        if (indicatorY >= redMin && indicatorY <= redMax)
+            return ("Bad", 2);
 
         return null;
     }
+
 
     private bool IsInside(Vector2 point, RectTransform zone)
     {
@@ -167,31 +179,37 @@ public class MixingMechanicManager : MonoBehaviour
 
         float totalHeight = cachedBarHeight > 0 ? cachedBarHeight : colorBar.rect.height;
 
+        // Normalize ratios if they exceed 1
+        float totalRatio = redHeightRatio + greenHeightRatio + yellowHeightRatio;
+        if (totalRatio > 1f)
+        {
+            redHeightRatio /= totalRatio;
+            greenHeightRatio /= totalRatio;
+            yellowHeightRatio /= totalRatio;
+        }
+
+        // Calculate zone heights
         float redHeight = totalHeight * redHeightRatio;
         float greenHeight = totalHeight * greenHeightRatio;
         float yellowHeight = totalHeight * yellowHeightRatio;
 
-        // Normalize if ratios exceed total 1
-        float totalRatio = redHeightRatio + greenHeightRatio + yellowHeightRatio;
-        if (totalRatio > 1f)
-        {
-            redHeight /= totalRatio;
-            greenHeight /= totalRatio;
-            yellowHeight /= totalRatio;
-        }
+        float currentY = -totalHeight / 2f;
 
-        // Red (Bottom)
+        // Red Zone (bottom)
         zoneRed.sizeDelta = new Vector2(zoneRed.sizeDelta.x, redHeight);
-        zoneRed.anchoredPosition = new Vector2(0, -totalHeight / 2f + redHeight / 2f);
+        zoneRed.anchoredPosition = new Vector2(0, currentY + redHeight / 2f);
+        currentY += redHeight;
 
-        // Green (Middle)
+        // Green Zone (middle)
         zoneGreen.sizeDelta = new Vector2(zoneGreen.sizeDelta.x, greenHeight);
-        zoneGreen.anchoredPosition = new Vector2(0, zoneRed.anchoredPosition.y + redHeight / 2f + greenHeight / 2f);
+        zoneGreen.anchoredPosition = new Vector2(0, currentY + greenHeight / 2f);
+        currentY += greenHeight;
 
-        // Yellow (Top)
+        // Yellow Zone (top)
         zoneYellow.sizeDelta = new Vector2(zoneYellow.sizeDelta.x, yellowHeight);
-        zoneYellow.anchoredPosition = new Vector2(0, zoneGreen.anchoredPosition.y + greenHeight / 2f + yellowHeight / 2f);
+        zoneYellow.anchoredPosition = new Vector2(0, currentY + yellowHeight / 2f);
     }
+
 
     private void CloseAllPanels()
     {

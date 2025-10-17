@@ -14,7 +14,20 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
     public GameObject boilClockPanel;
     public GameObject sautePanel;
 
+    [Header("AudioSetting")]
+    [Range(0f, 1f)] private float sfxVolume = 1f;
+    private AudioSource audioSource;    
+
     private GameObject currentCookware;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if(audioSource == null )
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioSource.playOnAwake = false;
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -79,6 +92,8 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             handler.sauteMechPanel = sautePanel;
         }
 
+        PlaySFX(item.dropSFX);
+
         Debug.Log($"✅ {item.itemName} placed on stove");
         Destroy(eventData.pointerDrag);
         CookingStepManager.Instance.NextStep();
@@ -120,5 +135,16 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             currentCookware = null;
             Debug.Log("[StoveDropZone] Stove reset.");
         }
+    }
+    private void PlaySFX(AudioClip clip)
+    {
+        if(clip == null)
+        {
+            Debug.LogWarning("[StoveDropZone] No SFX clip assigned!");
+            return;
+        }
+        Debug.Log($"[StoveDropZone] Playing sound: {clip.name}");
+        audioSource.PlayOneShot(clip, sfxVolume);
+
     }
 }
