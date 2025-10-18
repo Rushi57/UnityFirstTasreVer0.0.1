@@ -30,6 +30,10 @@ MonoBehaviour:
     actionName: water
     Action: water
   - stepType: 1
+    ingredient: {fileID: 11400000, guid: 770e42b7a24ebb04daa315403a781a84, type: 2}
+    actionName: water
+    Action: water
+  - stepType: 1
     ingredient: {fileID: 11400000, guid: a8b107d2228e5a54c810ac90b8914061, type: 2}
     actionName: simmer
     Action: simmer

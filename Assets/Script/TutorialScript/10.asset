@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68064927c6f472e4f9d407a16b51f842, type: 3}
   m_Name: 10
   m_EditorClassIdentifier: 
-  dialogText: "And if you do well, you\u2019ll unlock even more recipes and learn
-    the cultural stories behind them!"
+  dialogText: "Ready to start your first taste of Filipino cooking? Let\u2019s go!"
   uiElementName: 
   waitForClickOnUI: 0

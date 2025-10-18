@@ -22,7 +22,5 @@ public class ItemSO : ScriptableObject
     [Header("Spawn Chain (Optional)")]
     public GameObject spawnPrefab;     // prefab to spawn (e.g., PepperCornBitsPrefab)
     public ItemSO spawnItemSO;         // item data for that spawned prefab    
-
-    [Header("Audio")]
-    public AudioClip dropSFX;
+    
 }

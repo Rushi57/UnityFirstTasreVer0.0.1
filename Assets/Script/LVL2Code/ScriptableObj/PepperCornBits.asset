@@ -19,4 +19,3 @@ MonoBehaviour:
   choppedSprite: {fileID: 0}
   spawnPrefab: {fileID: 3918062914182680560, guid: 8d5e1a9982e94c048a3d123eba0b6830, type: 3}
   spawnItemSO: {fileID: 11400000, guid: 9c772f95bb148a6458d8c900b8d4c102, type: 2}
-  dropSFX: {fileID: 0}

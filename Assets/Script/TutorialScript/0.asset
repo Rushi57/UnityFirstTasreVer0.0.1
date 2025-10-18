@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68064927c6f472e4f9d407a16b51f842, type: 3}
   m_Name: 0
   m_EditorClassIdentifier: 
-  dialogText: "Welcome to First Taste! My name\u2019s Kris!"
-  uiElementName: 
+  dialogText: Hi there! You look ready to cook! Welcome to First Taste
+  uiToHighlight: {fileID: 0}
   waitForClickOnUI: 0

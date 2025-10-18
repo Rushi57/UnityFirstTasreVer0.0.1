@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7784218375341863298}
   - component: {fileID: 3746174351771385765}
   - component: {fileID: 5008684055091494386}
-  - component: {fileID: 7278811500477832854}
   - component: {fileID: 5047260513302926892}
   - component: {fileID: -3115189118060908955}
   m_Layer: 5
@@ -66,7 +65,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -108,18 +107,6 @@ MonoBehaviour:
   originalParent: {fileID: 0}
   originalAnchoredPosition: {x: 0, y: 0}
   canDrag: 1
---- !u!114 &7278811500477832854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3918062914182680560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc8b2fee279feb74fb367d8fa22eb829, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &5047260513302926892
 CanvasGroup:
   m_ObjectHideFlags: 0

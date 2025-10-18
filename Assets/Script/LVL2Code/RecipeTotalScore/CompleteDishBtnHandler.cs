@@ -2,17 +2,18 @@ using UnityEngine;
 
 public class CompleteDishBtnHandler : MonoBehaviour
 {
-    public CongratsDishPanel congratsPanel; // Drag your panel here
+    public RecipeSO recipeToShow;               // Assign in Inspector
+    public CongratsDishPanel congratsPanel;     // Drag your panel here
 
     public void OnButtonClick()
     {
-        if (congratsPanel != null)
+        if (congratsPanel != null && recipeToShow != null)
         {
-            congratsPanel.gameObject.SetActive(true);
+            congratsPanel.ShowCongrats(recipeToShow);
         }
         else
         {
-            Debug.LogWarning("CongratsDishPanel not assigned!");
+            Debug.LogWarning("CongratsDishPanel or RecipeSO not assigned!");
         }
     }
 }

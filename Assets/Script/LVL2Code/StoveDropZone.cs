@@ -14,20 +14,7 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
     public GameObject boilClockPanel;
     public GameObject sautePanel;
 
-    [Header("AudioSetting")]
-    [Range(0f, 1f)] private float sfxVolume = 1f;
-    private AudioSource audioSource;    
-
     private GameObject currentCookware;
-
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-        if(audioSource == null )
-            audioSource = gameObject.AddComponent<AudioSource>();
-
-        audioSource.playOnAwake = false;
-    }
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -92,10 +79,13 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             handler.sauteMechPanel = sautePanel;
         }
 
+<<<<<<< HEAD
         
 
         PlaySFX(item.dropSFX);
 
+=======
+>>>>>>> parent of 9fb5aa9 (BgMusiscAndSomeSfx)
         Debug.Log($"✅ {item.itemName} placed on stove");
 
         //Check Stove
@@ -151,6 +141,7 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             Debug.Log("[StoveDropZone] Stove reset.");
         }
     }
+<<<<<<< HEAD
     private void PlaySFX(AudioClip clip)
     {
         if(clip == null)
@@ -188,4 +179,6 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             }
         }
     }
+=======
+>>>>>>> parent of 9fb5aa9 (BgMusiscAndSomeSfx)
 }

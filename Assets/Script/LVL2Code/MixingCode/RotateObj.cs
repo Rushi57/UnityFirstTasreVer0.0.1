@@ -16,21 +16,9 @@ public class RotateUIObj : MonoBehaviour, IPointerDownHandler, IDragHandler
     [Header("References")]
     public MixingMechanicManager mixingManager;
 
-    [Header("Audio Setting")]
-    [Tooltip("Sound effect play")]
-    public AudioClip rotationSfx;
-    private AudioSource audioSource;
-
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-
-        //Prepare the Audio Source
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.loop = true;
-        audioSource.playOnAwake = false;
-        audioSource.volume = SFXManager.Instance != null ? SFXManager.Instance.GetVolume() : 1f;
-
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -39,14 +27,6 @@ public class RotateUIObj : MonoBehaviour, IPointerDownHandler, IDragHandler
         {
             isTouching = true;
             SetCenter(eventData);
-
-            //Audio rotation SFX
-            if(rotationSfx != null)
-            {
-                audioSource.clip = rotationSfx;
-                audioSource.volume = SFXManager.Instance != null ? SFXManager.Instance.GetVolume() : 1f;
-                audioSource.Play();
-            }
         }
     }
 
@@ -80,8 +60,6 @@ public class RotateUIObj : MonoBehaviour, IPointerDownHandler, IDragHandler
         if (isTouching && Input.touchCount == 0 && !Input.GetMouseButton(0))
         {
             isTouching = false;
-            if(audioSource.isPlaying)
-                audioSource.Stop();
         }
     }
 

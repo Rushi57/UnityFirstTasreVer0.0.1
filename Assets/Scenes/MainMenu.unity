@@ -1604,8 +1604,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 654235584}
+  - component: {fileID: 654235585}
   - component: {fileID: 654235587}
-  - component: {fileID: 654235588}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -1628,6 +1628,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654235585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654235581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0e0af51334a1f4694c9daed489f2b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 8300000, guid: 8510eb888948f8f428346544a6c70699, type: 3}
+  musicSlider: {fileID: 880156023}
 --- !u!82 &654235587
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1725,32 +1739,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &654235588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654235581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0e0af51334a1f4694c9daed489f2b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 8300000, guid: 8510eb888948f8f428346544a6c70699, type: 3}
-  levelMusicList:
-  - sceneName: Level1
-    musicClip: {fileID: 8300000, guid: ea69b01e4a319824ca0dfc8f1c6418c9, type: 3}
-  - sceneName: Level2
-    musicClip: {fileID: 8300000, guid: ea69b01e4a319824ca0dfc8f1c6418c9, type: 3}
-  - sceneName: Level3
-    musicClip: {fileID: 8300000, guid: ea69b01e4a319824ca0dfc8f1c6418c9, type: 3}
-  - sceneName: Level4
-    musicClip: {fileID: 8300000, guid: ea69b01e4a319824ca0dfc8f1c6418c9, type: 3}
-  musicSlider: {fileID: 880156023}
-  allowedScenes:
-  - Map
-  - MainMenu
 --- !u!1 &749473222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,7 +2163,7 @@ GameObject:
   - component: {fileID: 880156023}
   m_Layer: 5
   m_Name: musicSlider
-  m_TagString: MusicSlider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

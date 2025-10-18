@@ -1,36 +1,29 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Linq;
 
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance;
 
-    [Header("Default Audio (Main Menu / Map)")]
+    [Header("Audio Settings")]
     [SerializeField] private AudioClip backgroundMusic;
-
-    [Header("Level Music Settings")]
-    [Tooltip("Assign background music per level scene name.")]
-    [SerializeField] private LevelMusic[] levelMusicList;
-
     private AudioSource audioSource;
 
     [Header("UI Reference")]
-    [SerializeField] private Slider musicSlider;
-
-    [Header("Scenes where default music plays")]
-    [SerializeField] private string[] allowedScenes;
+    [SerializeField] private Slider musicSlider; // Drag manually (optional)
 
     private const string VolumeKey = "MusicVolume";
 
     private void Awake()
     {
+        // Singleton setup: keep one instance across all scenes
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
+            // Ensure we have an AudioSource
             audioSource = GetComponent<AudioSource>();
             if (audioSource == null)
                 audioSource = gameObject.AddComponent<AudioSource>();
@@ -38,9 +31,11 @@ public class MusicManager : MonoBehaviour
             audioSource.loop = true;
             audioSource.playOnAwake = false;
 
+            // Load saved volume
             float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 1f);
             audioSource.volume = savedVolume;
 
+            // Rebind slider on scene load
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
@@ -51,6 +46,7 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
+        // Start background music
         if (backgroundMusic != null)
             PlayBackgroundMusic(false, backgroundMusic);
 
@@ -59,70 +55,25 @@ public class MusicManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
-        AudioClip newClip = GetMusicForScene(scene.name);
-
-        if (newClip != null)
-        {
-            PlayBackgroundMusic(true, newClip);
-        }
-        else if (allowedScenes != null && allowedScenes.Contains(scene.name))
-        {
-            PlayBackgroundMusic(false, backgroundMusic);
-        }
-        else
-        {
-            audioSource.Stop();
-        }
-
-        // Delay slider binding to ensure UI is loaded
-        StartCoroutine(DelayedBindSlider());
+        // Try to rebind new scene's slider
+        BindSlider();
     }
 
-    private AudioClip GetMusicForScene(string sceneName)
+    private void BindSlider()
     {
-        foreach (var entry in levelMusicList)
+        if (musicSlider != null)
         {
-            if (entry.sceneName == sceneName)
-                return entry.musicClip;
-        }
-        return null;
-    }
-
-    public void BindSlider()
-    {
-        StartCoroutine(FindSliderWhenReady());
-    }
-
-    private System.Collections.IEnumerator FindSliderWhenReady()
-    {
-        Slider found = null;
-
-        // Wait until slider object becomes active in the hierarchy
-        for (int i = 0; i < 30; i++) // up to ~3 seconds
-        {
-            found = GameObject.FindGameObjectWithTag("MusicSlider")?.GetComponent<Slider>();
-            if (found != null && found.gameObject.activeInHierarchy)
-                break;
-
-            yield return new WaitForSeconds(0.1f);
-        }
-
-        if (found != null)
-        {
-            musicSlider = found;
-            Debug.Log($"✅ Music Slider finally found: {musicSlider.gameObject.name}");
             musicSlider.onValueChanged.RemoveAllListeners();
             musicSlider.onValueChanged.AddListener(SetMusicVolume);
             musicSlider.value = audioSource.volume;
         }
         else
         {
-            Debug.LogWarning("⚠️ Music Slider could not be found after waiting!");
+            Debug.Log("[MusicManager] No music slider assigned in this scene.");
         }
     }
 
-
+    // Called from external scripts (e.g., MusicSliderAssigner)
     public void AssignSlider(Slider newSlider)
     {
         musicSlider = newSlider;
@@ -153,20 +104,4 @@ public class MusicManager : MonoBehaviour
                 audioSource.Play();
         }
     }
-    private System.Collections.IEnumerator DelayedBindSlider()
-    {
-        // Wait a bit to make sure scene UI (like MusicSlider) is loaded and active
-        yield return null; // wait 1 frame
-        yield return null; // optional extra frame for safety
-
-        BindSlider();
-    }
-
-}
-
-[System.Serializable]
-public class LevelMusic
-{
-    public string sceneName;
-    public AudioClip musicClip;
 }

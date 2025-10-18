@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68064927c6f472e4f9d407a16b51f842, type: 3}
   m_Name: 6
   m_EditorClassIdentifier: 
-  dialogText: "Don\u2019t worry if you\u2019re new to cooking\u2014I\u2019ll be right
+  dialogText: "Don\u2019t worry if you\u2019re new to cooking. I\u2019ll be right
     here to guide you!"
   uiElementName: 
   waitForClickOnUI: 0

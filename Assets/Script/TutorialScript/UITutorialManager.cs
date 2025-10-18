@@ -16,7 +16,7 @@ public class UITutorialManager : MonoBehaviour
     [Header("UI Elements")]
     public TextMeshProUGUI dialogText;
     public Button dialogBoxButton;
-    public GameObject dialogPanel;
+
     private int currentLine = 0;
     private bool waitingForClick = false;
     private bool readyToAdvance = false;
@@ -48,8 +48,8 @@ public class UITutorialManager : MonoBehaviour
             yield return StartCoroutine(TypeText(line.dialogText));
             readyToAdvance = false;
 
-            // 🔍 Find the UI element to interact with
             Button buttonToHighlight = null;
+
             if (!string.IsNullOrEmpty(line.uiElementName))
             {
                 GameObject uiObj = GameObject.Find(line.uiElementName);
@@ -60,29 +60,15 @@ public class UITutorialManager : MonoBehaviour
                 }
             }
 
-            // 🟧 If this line asks to click something
+            // Wait for user to click the highlighted UI
             if (line.waitForClickOnUI && buttonToHighlight != null)
             {
-                // Disable blocking panel so player can click
-                if (dialogPanel != null)
-                    dialogPanel.SetActive(false);
-
                 waitingForClick = true;
                 buttonToHighlight.onClick.AddListener(() => OnUIElementClicked(buttonToHighlight));
-
-                // Wait until player clicks
                 yield return new WaitUntil(() => !waitingForClick);
-
-                // Re-enable blocking panel afterward
-                if (dialogPanel != null)
-                    dialogPanel.SetActive(true);
             }
             else
             {
-                // Keep dialog panel blocking while reading
-                if (dialogPanel != null)
-                    dialogPanel.SetActive(true);
-
                 yield return new WaitUntil(() => readyToAdvance);
             }
 
@@ -94,7 +80,6 @@ public class UITutorialManager : MonoBehaviour
         PlayerPrefs.SetInt("TutorialDone", 1);
         PlayerPrefs.Save();
     }
-
 
     void HighlightUI(GameObject ui)
     {
@@ -111,12 +96,11 @@ public class UITutorialManager : MonoBehaviour
         // ✅ Close the dialog box
         if (dialogCanvas != null)
             dialogCanvas.SetActive(false);
-        
+
         // ✅ Open the settings panel when SettingButton is clicked
         if (button.name == "SettingButton" && settingCanvas != null)
             settingCanvas.SetActive(true);
-        if(dialogPanel == null)
-            dialogPanel.SetActive(false);
+
         // Wait a short moment, then show the next dialog (after settings open)
         StartCoroutine(ShowNextDialogAfterDelay(1f));
     }

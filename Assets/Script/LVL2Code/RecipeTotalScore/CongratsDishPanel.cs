@@ -30,7 +30,7 @@ public class CongratsDishPanel : MonoBehaviour
         recipeToDisplay = recipe;
 
         if (congratsText != null)
-            congratsText.text = $" Congratulations! You completed: <b>{recipe.recipeName}</b>";
+            congratsText.text = $"🎉 Congratulations! You completed: <b>{recipe.recipeName}</b> 🎉";
 
         if (recipeImageDisplay != null && recipe.recipeImage != null)
             recipeImageDisplay.sprite = recipe.recipeImage;
