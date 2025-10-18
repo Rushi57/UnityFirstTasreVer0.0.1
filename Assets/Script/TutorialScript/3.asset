@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68064927c6f472e4f9d407a16b51f842, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: 
-  dialogText: "Now, I\u2019m here to share everything I\u2019ve learned with you
-    from the little kitchen secrets my lola taught me, to the heart and soul that
-    goes into every Filipino dish."
+  dialogText: "Now, I\u2019m here to share everything I\u2019ve learned with you\u2014from
+    the little kitchen secrets my lola taught me to the heart and soul that go into
+    every Filipino dish"
   uiElementName: 
   waitForClickOnUI: 0

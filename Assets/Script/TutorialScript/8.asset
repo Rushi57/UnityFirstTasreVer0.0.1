@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68064927c6f472e4f9d407a16b51f842, type: 3}
   m_Name: 8
   m_EditorClassIdentifier: 
-  dialogText: "You\u2019ll see prompts appear while you cook. Just follow the instructions
-    to chop, stir, fry, and learn an insigth of the origin of the dish!"
+  dialogText: "Pay attention to the timing and order\u2014cooking is all about patience
+    and love!"
   uiElementName: 
   waitForClickOnUI: 0

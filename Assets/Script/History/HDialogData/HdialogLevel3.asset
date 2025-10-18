@@ -16,4 +16,14 @@ MonoBehaviour:
   hDialogLines:
   - text: Hello in this level the dish we will cook is Sisig form  Pampanga.
   - text: but first a lets have a short history about Sisig
-  - text: but first a lets have a short history about Sisig
+  - text: "According Serna Estrella Sisig began as a sour Kapampangan salad (from
+      the Tagalog verb sisigan, \u201Cto make sour\u201D) mentioned as early as the
+      18th century"
+  - text: "the modern sizzling sisig which is chopped, grilled/-fried pork (often
+      jowl/ears) served on a hot plate and was popularized in Angeles City by Lucia
+      \u201CAling Lucing\u201D Cunanan in the 20th century."
+  - text: "when locals repurposed pig-head scraps from U.S. military commissaries
+      into a beloved pulutan (bar snack). \r\nrized in Angeles City by Lucia \u201CAling
+      Lucing\u201D Cunanan in the 20th century."
+  - text: greate now lets start click the CookBook Icon to set the recipe step and
+      the Ingredients.

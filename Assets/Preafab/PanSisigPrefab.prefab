@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4876548452708841811}
   - component: {fileID: 629374931456249342}
   - component: {fileID: 5161996367577680798}
+  - component: {fileID: 7086251328836222827}
   m_Layer: 5
   m_Name: PanSisigPrefab
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -100,9 +101,27 @@ MonoBehaviour:
   - {fileID: -2633020204176452439, guid: 480d3bc632fb025469cc548cae0fb39c, type: 3}
   - {fileID: 6401837849971128691, guid: 133b550f437cbf2439fc148d3da93ef6, type: 3}
   - {fileID: 6401837849971128691, guid: 133b550f437cbf2439fc148d3da93ef6, type: 3}
+  - {fileID: 6401837849971128691, guid: 133b550f437cbf2439fc148d3da93ef6, type: 3}
+  - {fileID: 3583924326220831623, guid: 8335d85563a91e04597b87ad48244a78, type: 3}
+  - {fileID: 6401837849971128691, guid: 133b550f437cbf2439fc148d3da93ef6, type: 3}
   - {fileID: 3583924326220831623, guid: 8335d85563a91e04597b87ad48244a78, type: 3}
   - {fileID: 3583924326220831623, guid: 8335d85563a91e04597b87ad48244a78, type: 3}
-  - {fileID: 3583924326220831623, guid: 8335d85563a91e04597b87ad48244a78, type: 3}
-  - {fileID: 3583924326220831623, guid: 8335d85563a91e04597b87ad48244a78, type: 3}
-  uncheckedImage1: {fileID: 6962404223520504196}
+  uncheckedImage1: {fileID: 0}
   uncheckedImage2: {fileID: 0}
+--- !u!114 &7086251328836222827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6962404223520504196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f5998696e2db4fb554143d259c027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panImage: {fileID: 629374931456249342}
+  sizzleAudio: {fileID: 0}
+  heatedColor: {r: 0.9528302, g: 0.84046817, b: 0.84046817, a: 1}
+  heatUpSpeed: 1
+  coolDownSpeed: 1

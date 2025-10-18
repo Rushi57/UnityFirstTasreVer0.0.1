@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68064927c6f472e4f9d407a16b51f842, type: 3}
   m_Name: 7
   m_EditorClassIdentifier: 
-  dialogText: "Here, you'll pick a recipe for each level, gather ingredients, and
-    follow simple steps to prepare each dish. Pay attention to the timing and order
-    cooking\u2019s all about patience and love!"
+  dialogText: "In this game, you\u2019ll pick a recipe for each level, gather ingredients,
+    and follow simple steps to prepare every dish."
   uiElementName: 
   waitForClickOnUI: 0
