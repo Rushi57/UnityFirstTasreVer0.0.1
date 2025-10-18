@@ -25,10 +25,6 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: 503d7d5550d83704ab789a72a88fc440, type: 2}
     actionName: Oil
     Action: Oil
-  - stepType: 1
-    ingredient: {fileID: 11400000, guid: af392c2ef0582224d9c39407b28c795c, type: 2}
-    actionName: saute
-    Action: saute
   - stepType: 0
     ingredient: {fileID: 11400000, guid: 2c84b2f41bb7b3f469cd2497dd26d1e9, type: 2}
     actionName: Butter
@@ -39,5 +35,41 @@ MonoBehaviour:
     Action: Chicken
   - stepType: 1
     ingredient: {fileID: 11400000, guid: af392c2ef0582224d9c39407b28c795c, type: 2}
+    actionName: Mix
+    Action: Mix
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: cf4532f0f236b2f40afdefafae5793d7, type: 2}
+    actionName: Pan
+    Action: Pan
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: e5a5ad4d7af1e63448860478876d4875, type: 2}
+    actionName: Onion
+    Action: Onion
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: 810866334c50b7447974a9fffb9903c8, type: 2}
+    actionName: Onion
+    Action: Onion
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: c2e9025c8baf24a43a3fe1aa832edc45, type: 2}
+    actionName: Onion
+    Action: Onion
+  - stepType: 0
+    ingredient: {fileID: 11400000, guid: a838719bddd0b0e48bfb1af5402065cf, type: 2}
+    actionName: Onion
+    Action: Onion
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
+    actionName: Mix
+    Action: Mix
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 56779b3cf1131274e8a2eb594ebea91e, type: 2}
+    actionName: Mix
+    Action: Mix
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: 96d40c77a521abb46880170b346585e3, type: 2}
+    actionName: Sugar
+    Action: Sugar
+  - stepType: 1
+    ingredient: {fileID: 11400000, guid: c0b066a923688704085194ce4e59ffbf, type: 2}
     actionName: Mix
     Action: Mix

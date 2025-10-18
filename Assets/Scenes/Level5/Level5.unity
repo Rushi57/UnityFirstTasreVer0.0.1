@@ -7521,7 +7521,7 @@ GameObject:
   - component: {fileID: 718731431}
   - component: {fileID: 718731430}
   m_Layer: 5
-  m_Name: ChickenLiver
+  m_Name: SugarBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7560,7 +7560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
-  itemSO: {fileID: 11400000, guid: 5666afa5fc41b1846890ca25bc6d7625, type: 2}
+  itemSO: {fileID: 11400000, guid: 96d40c77a521abb46880170b346585e3, type: 2}
 --- !u!114 &718731431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7637,7 +7637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1035947260946846135, guid: 6700a81540c640943b404e8d75542aeb, type: 3}
+  m_Sprite: {fileID: -2536234304717872273, guid: de26a9b5a87738e47a11577872b01c58, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10229,7 +10229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e1f582794a4064aa5bede08a343cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRecipe: {fileID: 11400000, guid: 619bd4f56f05f864595329d2b4535dad, type: 2}
+  currentRecipe: {fileID: 11400000, guid: 3b6c9891239cac148a3b74636890ce35, type: 2}
   currentStepIndex: 0
 --- !u!1 &971822115
 GameObject:
@@ -10804,7 +10804,7 @@ MonoBehaviour:
   congratsText: {fileID: 2119698688}
   recipeImageDisplay: {fileID: 684867039}
   scoreDashBoardPanel: {fileID: 1794898585}
-  recipeToDisplay: {fileID: 11400000, guid: 619bd4f56f05f864595329d2b4535dad, type: 2}
+  recipeToDisplay: {fileID: 11400000, guid: 3b6c9891239cac148a3b74636890ce35, type: 2}
 --- !u!114 &1015954699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14326,7 +14326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapSceneName: Map
-  currentRecipe: {fileID: 11400000, guid: 619bd4f56f05f864595329d2b4535dad, type: 2}
+  currentRecipe: {fileID: 11400000, guid: 3b6c9891239cac148a3b74636890ce35, type: 2}
 --- !u!1 &1434047998
 GameObject:
   m_ObjectHideFlags: 0
@@ -15272,7 +15272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
-  itemSO: {fileID: 11400000, guid: 5e32e1335bf5caa4a84e2993d38d3b90, type: 2}
+  itemSO: {fileID: 11400000, guid: c2e9025c8baf24a43a3fe1aa832edc45, type: 2}
 --- !u!114 &1499333006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15349,7 +15349,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4956963896366311441, guid: bbdbe2b40b7ff91409dd0b382d00e8d3, type: 3}
+  m_Sprite: {fileID: -539067805126908547, guid: 0fec1b4b0818dce41915f0102dbc20ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17250,7 +17250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
-  itemSO: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
+  itemSO: {fileID: 11400000, guid: c552a689f0801f144b1dee18e73fc3c1, type: 2}
 --- !u!114 &1711897664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17327,7 +17327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3708099114757368068, guid: d3490a95e09cadc47b2defbda666da8f, type: 3}
+  m_Sprite: {fileID: 3486725313433281740, guid: b7a055de392e3fa47b3d5d57cc568100, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18355,7 +18355,7 @@ GameObject:
   - component: {fileID: 1813042510}
   - component: {fileID: 1813042509}
   m_Layer: 5
-  m_Name: ChiliesBtn
+  m_Name: ButterBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18394,7 +18394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
-  itemSO: {fileID: 11400000, guid: 1fc235732398e8c43b25f703eb2966ce, type: 2}
+  itemSO: {fileID: 11400000, guid: 2c84b2f41bb7b3f469cd2497dd26d1e9, type: 2}
 --- !u!114 &1813042510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18471,7 +18471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8698163947868029849, guid: a0ebfad733cd99248a48c23d093b4945, type: 3}
+  m_Sprite: {fileID: -7161970024020529175, guid: 72aa7ec4ed6247b4ea0e4e11b055c151, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20383,12 +20383,12 @@ GameObject:
   - component: {fileID: 1989851495}
   - component: {fileID: 1989851494}
   m_Layer: 5
-  m_Name: PorkBtn (1)
+  m_Name: TomatoeBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1989851493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20403,10 +20403,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1977958860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -80}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989851494
 MonoBehaviour:
@@ -20422,7 +20422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
-  itemSO: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
+  itemSO: {fileID: 11400000, guid: a838719bddd0b0e48bfb1af5402065cf, type: 2}
 --- !u!114 &1989851495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20499,7 +20499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3708099114757368068, guid: d3490a95e09cadc47b2defbda666da8f, type: 3}
+  m_Sprite: {fileID: -3962807554240710951, guid: 46a4d2c2726788a46b60179411269bcc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21343,11 +21343,11 @@ PrefabInstance:
     - target: {fileID: 3008398612500453644, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: panPrefab
       value: 
-      objectReference: {fileID: 6962404223520504196, guid: a10e31e160b54da4e8b86459952863d9, type: 3}
+      objectReference: {fileID: 6962404223520504196, guid: 6cb7441b247d37140af03e8d0abcd19e, type: 3}
     - target: {fileID: 3008398612500453644, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: potPrefab
       value: 
-      objectReference: {fileID: 6962404223520504196, guid: 82b44dc949f4e4c43b2a65d7b8d334e8, type: 3}
+      objectReference: {fileID: 6962404223520504196, guid: 1e6155f763aa53a4badbba0090bc8ff2, type: 3}
     - target: {fileID: 3008398612500453644, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: mixingPanel
       value: 
