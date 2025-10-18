@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   dialogText: "Here, you\u2019ll learn how to make delicious Filipino dishes step
-    by step, just like how our families pass recipes down through generations!"
+    by step, just like how our families pass recipes down through generations."
   uiElementName: 
   waitForClickOnUI: 0

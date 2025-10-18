@@ -14,7 +14,20 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
     public GameObject boilClockPanel;
     public GameObject sautePanel;
 
+    [Header("AudioSetting")]
+    [Range(0f, 1f)] private float sfxVolume = 1f;
+    private AudioSource audioSource;    
+
     private GameObject currentCookware;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if(audioSource == null )
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioSource.playOnAwake = false;
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -79,7 +92,24 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             handler.sauteMechPanel = sautePanel;
         }
 
+        
+
+        PlaySFX(item.dropSFX);
+
         Debug.Log($"✅ {item.itemName} placed on stove");
+
+        //Check Stove
+        ChangeImage stoveFire = FindAnyObjectByType<ChangeImage>();
+        if(stoveFire != null && stoveFire.IsOnFire)
+        {
+            PanHeatEffect heatEffect = currentCookware.GetComponent<PanHeatEffect>();
+            if(heatEffect != null)
+            {
+                heatEffect.StartHeating();
+                Debug.Log("Pan heating");
+            }
+        }
+
         Destroy(eventData.pointerDrag);
         CookingStepManager.Instance.NextStep();
     }
@@ -119,6 +149,43 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             Destroy(currentCookware);
             currentCookware = null;
             Debug.Log("[StoveDropZone] Stove reset.");
+        }
+    }
+    private void PlaySFX(AudioClip clip)
+    {
+        if(clip == null)
+        {
+            Debug.LogWarning("[StoveDropZone] No SFX clip assigned!");
+            return;
+        }
+        Debug.Log($"[StoveDropZone] Playing sound: {clip.name}");
+        audioSource.PlayOneShot(clip, sfxVolume);
+
+    }
+
+    private void OnEnable()
+    {
+        ChangeImage.OnFireToggle += HandleFireToggle; 
+    }
+    private void OnDisable()
+    {
+        ChangeImage.OnFireToggle -= HandleFireToggle;
+    }
+
+    private void HandleFireToggle(bool isOnfire)
+    {
+        if (currentCookware == null) return;
+
+
+        PanHeatEffect heatEffect = currentCookware.GetComponent<PanHeatEffect>();
+        if(heatEffect != null)
+        {
+            if (isOnfire)
+                heatEffect.StartHeating();
+            else
+            {
+                heatEffect.StopHeating();
+            }
         }
     }
 }

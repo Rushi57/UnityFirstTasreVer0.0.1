@@ -52,6 +52,11 @@ public class ItemData : MonoBehaviour, IPointerClickHandler
     // 👆 This makes prefab clickable
     public void OnPointerClick(PointerEventData eventData)
     {
+        if(canDrag)
+        {
+            return;
+        }
+
         // 🚫 if already cut, don’t open cutting mechanic again
         if (hasBeenCut)
         {
