@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
+  m_Name: GreenOnion
+  m_EditorClassIdentifier: 
+  itemID: GreenOnion001
+  itemName: GreenOnion
+  itemType: 1
+  itemSprite: {fileID: -7083693051081931334, guid: 3bab541c372808c4d9259d098f46dca6, type: 3}
+  choppedSprite: {fileID: -1400638161398476316, guid: 4681464943671f9429a001eb75b8129d, type: 3}
+  spawnPrefab: {fileID: 0}
+  spawnItemSO: {fileID: 0}
