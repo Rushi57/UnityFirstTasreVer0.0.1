@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: Noodles001
   itemName: Noodles
-  itemType: 0
+  itemType: 1
   itemSprite: {fileID: 6529947320853705352, guid: 143e4b0cf82e06b408347eb9191d57b6, type: 3}
   choppedSprite: {fileID: 0}
   spawnPrefab: {fileID: 0}

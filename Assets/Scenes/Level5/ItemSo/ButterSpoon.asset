@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2e8d237a90540848a51d498835ec600, type: 3}
-  m_Name: ButterAsado
+  m_Name: ButterSpoon
   m_EditorClassIdentifier: 
-  itemID: ButterAsado001
-  itemName: ButterAsado
+  itemID: ButterSpoon001
+  itemName: ButterSpoon
   itemType: 1
   itemSprite: {fileID: -2657492848283155972, guid: 6a6300b999ee2744197faf4075ddd4d3, type: 3}
   choppedSprite: {fileID: 0}
-  spawnPrefab: {fileID: 0}
-  spawnItemSO: {fileID: 0}
+  spawnPrefab: {fileID: 3918062914182680560, guid: 8d5e1a9982e94c048a3d123eba0b6830, type: 3}
+  spawnItemSO: {fileID: 11400000, guid: 8eef13da5ad484c42aa4ca2f3f9c3f6f, type: 2}

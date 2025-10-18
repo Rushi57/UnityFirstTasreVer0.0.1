@@ -699,7 +699,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1729965583}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
         m_MethodName: OnButtonClicked
         m_Mode: 3
@@ -1850,22 +1850,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149247665}
   m_CullTransparentMesh: 1
---- !u!1 &152198388 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3443565483546008351, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
-  m_PrefabInstance: {fileID: 4177604141100169845}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &152198389 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7403214107860120469, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
-  m_PrefabInstance: {fileID: 4177604141100169845}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152198388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &152198392 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 587270359772405348, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
@@ -1885,12 +1869,12 @@ GameObject:
   - component: {fileID: 184524345}
   - component: {fileID: 184524344}
   m_Layer: 5
-  m_Name: PorkBtn (2)
+  m_Name: PusitBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &184524343
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1905,10 +1889,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1489417691}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -80}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &184524344
 MonoBehaviour:
@@ -1924,7 +1908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
-  itemSO: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
+  itemSO: {fileID: 11400000, guid: 394e9d04b495a3441a160eb4d35091d1, type: 2}
 --- !u!114 &184524345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2001,7 +1985,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3708099114757368068, guid: d3490a95e09cadc47b2defbda666da8f, type: 3}
+  m_Sprite: {fileID: 2973778087609415118, guid: 205ee869ad5d33d498dc79bc632c0e8c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4463,6 +4447,7 @@ MonoBehaviour:
   completeShowPanel: {fileID: 344296219}
   resultText: {fileID: 214106139}
   closeButton: {fileID: 1017313439}
+  ticKAudio: {fileID: 0}
 --- !u!1 &390971048
 GameObject:
   m_ObjectHideFlags: 0
@@ -5264,6 +5249,7 @@ RectTransform:
   - {fileID: 1779669172}
   - {fileID: 398497245}
   - {fileID: 924727717}
+  - {fileID: 1073024939}
   - {fileID: 41178624}
   m_Father: {fileID: 1763766071}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6465,7 +6451,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1729965583}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
         m_MethodName: OnButtonClicked
         m_Mode: 3
@@ -6786,7 +6772,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1729965583}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
         m_MethodName: OnButtonClicked
         m_Mode: 3
@@ -8495,7 +8481,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1729965583}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
         m_MethodName: OnButtonClicked
         m_Mode: 3
@@ -10658,6 +10644,138 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050379664}
   m_CullTransparentMesh: 1
+--- !u!1 &1073024938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1073024939}
+  - component: {fileID: 1073024942}
+  - component: {fileID: 1073024941}
+  - component: {fileID: 1073024940}
+  m_Layer: 5
+  m_Name: FishSauceBtn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1073024939
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073024938}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 528497270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 75, y: -60.998}
+  m_SizeDelta: {x: 94.9607, y: 175.71}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1073024940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073024938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1073024941}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 961411584}
+        m_TargetAssemblyTypeName: ShelfManager, Assembly-CSharp
+        m_MethodName: OnCondimentSelected
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FishSauce
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1073024941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073024938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -4761573502420445991, guid: 809dff4ccf2917047a734e124306af22, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1073024942
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073024938}
+  m_CullTransparentMesh: 1
 --- !u!1 &1090745791
 GameObject:
   m_ObjectHideFlags: 0
@@ -11288,7 +11406,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1729965583}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
         m_MethodName: OnButtonClicked
         m_Mode: 3
@@ -13030,7 +13148,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1729965583}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
         m_MethodName: OnButtonClicked
         m_Mode: 3
@@ -14393,17 +14511,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482058926}
   m_CullTransparentMesh: 1
---- !u!114 &1485980008 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 340740732053897268, guid: 87a0a68d383ffba4880d00798dcee67d, type: 3}
-  m_PrefabInstance: {fileID: 4177604141100169845}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1489417690
 GameObject:
   m_ObjectHideFlags: 0
@@ -16048,7 +16155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1638109623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16318,7 +16425,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1729965583}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
         m_MethodName: OnButtonClicked
         m_Mode: 3
@@ -16609,12 +16716,12 @@ GameObject:
   - component: {fileID: 1711897664}
   - component: {fileID: 1711897663}
   m_Layer: 5
-  m_Name: PorkBtn
+  m_Name: NoodlesBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1711897662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16629,10 +16736,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1977958860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -80}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1711897663
 MonoBehaviour:
@@ -16648,7 +16755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
-  itemSO: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
+  itemSO: {fileID: 11400000, guid: 53478b81b9476c640b8d746a73f55228, type: 2}
 --- !u!114 &1711897664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16725,7 +16832,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3708099114757368068, guid: d3490a95e09cadc47b2defbda666da8f, type: 3}
+  m_Sprite: {fileID: 6529947320853705352, guid: 143e4b0cf82e06b408347eb9191d57b6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16903,8 +17010,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1729965584}
-  - component: {fileID: 1729965583}
-  - component: {fileID: 1729965585}
   m_Layer: 0
   m_Name: TutorialController
   m_TagString: Untagged
@@ -16912,28 +17017,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1729965583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729965581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8655f356010f58a4ba6432e2a9aecf42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 860817089}
-  - {fileID: 1340215354}
-  - {fileID: 1646753127}
-  - {fileID: 2114940022}
-  - {fileID: 589919946}
-  - {fileID: 1156531552}
-  - {fileID: 27110761}
-  - {fileID: 2035283575}
-  - {fileID: 649786142}
 --- !u!4 &1729965584
 Transform:
   m_ObjectHideFlags: 0
@@ -16949,168 +17032,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1729965585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729965581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f69bed542167d4f86742b08ea3a835, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogLines:
-  - dialogText: "Click the refrigerator to start and get all the ingredients you\u2019ll
-      need. Items you should interact with will glow one-by-one to guide you through
-      each step."
-    dialogPosition: {x: 11.26, y: -196}
-    waitForClickOnUI: 1
-    uiElementName: RefButton
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: Now click the garlic to pick it up.
-    dialogPosition: {x: 295, y: -153}
-    waitForClickOnUI: 1
-    uiElementName: GarlicBtn
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: Great! Next, click the peppercorn to prepare it.
-    dialogPosition: {x: 295, y: -153}
-    waitForClickOnUI: 1
-    uiElementName: PepperCornBowl
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: Now click the pork to take it out for chopping.
-    dialogPosition: {x: 295, y: -153}
-    waitForClickOnUI: 1
-    uiElementName: PorkBtn
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: Click the back button to return to the kitchen counter.
-    dialogPosition: {x: 295, y: -153}
-    waitForClickOnUI: 1
-    uiElementName: CloseBtnRef
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: 'Click the garlic to trigger the chopping mechanic
-
-
-      CLICK
-      TO CONTINUE'
-    dialogPosition: {x: 29, y: 163.96}
-    waitForClickOnUI: 1
-    uiElementName: 
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: Chop the ingredients by following the on-screen pattern. Try to be
-      precise! .......... TAP TO CONTINUE
-    dialogPosition: {x: 11.26, y: -196}
-    waitForClickOnUI: 0
-    uiElementName: 
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: 
-    dialogPosition: {x: 11.26, y: -196}
-    waitForClickOnUI: 0
-    uiElementName: 
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 1
-    resumeButton: {fileID: 1141735592}
-    resumeButtonName: 
-  - dialogText: Also click the pork to chop it.                                 ............CLICK
-      TO CONTINUE............
-    dialogPosition: {x: 130, y: 163.96}
-    waitForClickOnUI: 0
-    uiElementName: 
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: 
-    dialogPosition: {x: 130, y: 163.96}
-    waitForClickOnUI: 0
-    uiElementName: 
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 1
-    resumeButton: {fileID: 1141735592}
-    resumeButtonName: 
-  - dialogText: Open the cabinet and grab the pan and spatula for cooking.
-    dialogPosition: {x: 11.26, y: -196}
-    waitForClickOnUI: 1
-    uiElementName: CabinetButton
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: 
-    dialogPosition: {x: 11.26, y: -196}
-    waitForClickOnUI: 0
-    uiElementName: 
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 1
-    resumeButton: {fileID: 27110758}
-    resumeButtonName: 
-  - dialogText: Turn on the stove to start heating the pan.
-    dialogPosition: {x: 130, y: 163.96}
-    waitForClickOnUI: 1
-    uiElementName: StoveBtnFire
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: Drag the pan onto the stove to place it.              ........TAP
-      TO CONTINUE........
-    dialogPosition: {x: 130, y: 163.96}
-    waitForClickOnUI: 0
-    uiElementName: 
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: Open the cookbook to review all the cooking steps.
-    dialogPosition: {x: 1.9073, y: -153}
-    waitForClickOnUI: 1
-    uiElementName: CookBookButton
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  - dialogText: 
-    dialogPosition: {x: 130, y: 163.96}
-    waitForClickOnUI: 0
-    uiElementName: 
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 1
-    resumeButton: {fileID: 374907199}
-    resumeButtonName: 
-  - dialogText: "Everything\u2019s ready! Let\u2019s begin cooking!"
-    dialogPosition: {x: 130, y: 163.96}
-    waitForClickOnUI: 0
-    uiElementName: 
-    dialogImage: {fileID: 0}
-    waitForResumeButton: 0
-    resumeButton: {fileID: 0}
-    resumeButtonName: 
-  dialogCanvasAdobo: {fileID: 152198388}
-  mapMainCanvasAdobo: {fileID: 1416921948}
-  dialogText: {fileID: 1485980008}
-  dialogBoxButton: {fileID: 152198389}
 --- !u!1 &1736486716
 GameObject:
   m_ObjectHideFlags: 0
@@ -17966,12 +17887,12 @@ GameObject:
   - component: {fileID: 1813042510}
   - component: {fileID: 1813042509}
   m_Layer: 5
-  m_Name: PorkBtn (1)
+  m_Name: CeleryBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1813042508
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17986,10 +17907,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1489417691}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 229.6, y: -80}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1813042509
 MonoBehaviour:
@@ -18005,7 +17926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
-  itemSO: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
+  itemSO: {fileID: 11400000, guid: 0fbfea162fc743d4ab3fd8e8804db2f8, type: 2}
 --- !u!114 &1813042510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18082,7 +18003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3708099114757368068, guid: d3490a95e09cadc47b2defbda666da8f, type: 3}
+  m_Sprite: {fileID: 3186358714405954835, guid: 6561e21edcf74eb479e9a64eba5cc4ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20080,7 +20001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1989851493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20095,10 +20016,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1977958860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -80}
-  m_SizeDelta: {x: 120, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989851494
 MonoBehaviour:
@@ -20114,7 +20035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
-  itemSO: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
+  itemSO: {fileID: 11400000, guid: 4ae234d712d020345a1215dae7330078, type: 2}
 --- !u!114 &1989851495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20191,7 +20112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3708099114757368068, guid: d3490a95e09cadc47b2defbda666da8f, type: 3}
+  m_Sprite: {fileID: 159068718711766808, guid: 9ae9461580e9cfc4aa159bc701f8c3b5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21059,9 +20980,8 @@ GameObject:
   - component: {fileID: 2114940020}
   - component: {fileID: 2114940019}
   - component: {fileID: 2114940018}
-  - component: {fileID: 2114940022}
   m_Layer: 5
-  m_Name: PorkBtn
+  m_Name: CarrotBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21100,7 +21020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tableArea: {fileID: 920786470}
   slotPrefab: {fileID: 6528799815589156294, guid: deaa1d8d65b0be54b931525cb326c86c, type: 3}
-  itemSO: {fileID: 11400000, guid: eba295fe5769775478479f4de32c02fc, type: 2}
+  itemSO: {fileID: 11400000, guid: 7e5dc6b191c5834449ae641a31d45f17, type: 2}
 --- !u!114 &2114940019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21157,7 +21077,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2114940022}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GlowButton, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -21169,7 +21089,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1729965583}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TutorialSteps, Assembly-CSharp
         m_MethodName: OnButtonClicked
         m_Mode: 3
@@ -21201,7 +21121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3708099114757368068, guid: d3490a95e09cadc47b2defbda666da8f, type: 3}
+  m_Sprite: {fileID: -1780262432563957068, guid: 86f05ad16dd33a04c9ef84dc4dcb228c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21219,20 +21139,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114940016}
   m_CullTransparentMesh: 1
---- !u!114 &2114940022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114940016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79d9efc571b9e34db18d4a652580402, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  pulseSpeed: 2
 --- !u!1 &2119698686
 GameObject:
   m_ObjectHideFlags: 0
@@ -21539,7 +21445,7 @@ PrefabInstance:
     - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1729965583}
+      objectReference: {fileID: 0}
     - target: {fileID: 2067339314206816865, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -21580,6 +21486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoveBtnFire
       objectReference: {fileID: 0}
+    - target: {fileID: 3008398612500453644, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
+      propertyPath: panPrefab
+      value: 
+      objectReference: {fileID: 6962404223520504196, guid: e012be7b7b5f74745aa1ddceda2f89c4, type: 3}
     - target: {fileID: 3008398612500453644, guid: f460f4ce4079f3d4ca93c253131c8b01, type: 3}
       propertyPath: mixingPanel
       value: 
