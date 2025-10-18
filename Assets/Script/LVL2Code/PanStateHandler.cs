@@ -61,15 +61,6 @@ public class PanStateHandler : MonoBehaviour, IDropHandler
                     mixingMechPanel.GetComponent<MixingMechanicManager>()?.RestartMixing();
                 }
 
-<<<<<<< Updated upstream
-               
-                CookingStepManager.Instance.NextStep();
-
-
-=======
-                CookingStepManager.Instance.TryMix();
-                CookingStepManager.Instance.NextStep();
->>>>>>> Stashed changes
             }
             // Handle Saute
             else if (CookingStepManager.Instance.IsCorrectAction("Saute"))
