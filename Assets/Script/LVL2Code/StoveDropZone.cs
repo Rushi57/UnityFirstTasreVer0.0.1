@@ -92,9 +92,24 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
             handler.sauteMechPanel = sautePanel;
         }
 
+        
+
         PlaySFX(item.dropSFX);
 
         Debug.Log($"✅ {item.itemName} placed on stove");
+
+        //Check Stove
+        ChangeImage stoveFire = FindAnyObjectByType<ChangeImage>();
+        if(stoveFire != null && stoveFire.IsOnFire)
+        {
+            PanHeatEffect heatEffect = currentCookware.GetComponent<PanHeatEffect>();
+            if(heatEffect != null)
+            {
+                heatEffect.StartHeating();
+                Debug.Log("Pan heating");
+            }
+        }
+
         Destroy(eventData.pointerDrag);
         CookingStepManager.Instance.NextStep();
     }
@@ -146,5 +161,31 @@ public class StoveDropZone : MonoBehaviour, IDropHandler
         Debug.Log($"[StoveDropZone] Playing sound: {clip.name}");
         audioSource.PlayOneShot(clip, sfxVolume);
 
+    }
+
+    private void OnEnable()
+    {
+        ChangeImage.OnFireToggle += HandleFireToggle; 
+    }
+    private void OnDisable()
+    {
+        ChangeImage.OnFireToggle -= HandleFireToggle;
+    }
+
+    private void HandleFireToggle(bool isOnfire)
+    {
+        if (currentCookware == null) return;
+
+
+        PanHeatEffect heatEffect = currentCookware.GetComponent<PanHeatEffect>();
+        if(heatEffect != null)
+        {
+            if (isOnfire)
+                heatEffect.StartHeating();
+            else
+            {
+                heatEffect.StopHeating();
+            }
+        }
     }
 }

@@ -977,10 +977,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 528497270}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 492.8286, y: 292.57812}
-  m_SizeDelta: {x: 178.3429, y: 68.8438}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -27.067322, y: -63.102783}
+  m_SizeDelta: {x: 136.1346, y: 126.2056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41178625
 MonoBehaviour:
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1416921948}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6852783527517564815, guid: 2b865df21cccd944098f30b83ece5065, type: 3}
+  m_Sprite: {fileID: 7932931936594614109, guid: 6d63577eface9be46bb2c1d92487de21, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2705,7 +2705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -947749556987461895, guid: e459ac6a5bed0a644aab25263a8d51db, type: 3}
+  m_Sprite: {fileID: 7757726638850166071, guid: be9bed08a64df7d43bdfe0359c2435d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13430,7 +13430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 312855514268800688, guid: 8845af9206368b94a97eacc9cc141a6a, type: 3}
+  m_Sprite: {fileID: -2585232964507743361, guid: a3fa25705525b704bb4f04cab07f95e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17294,7 +17294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1638109623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17329,7 +17329,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -18780,7 +18780,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6126183905695377157, guid: 9a83cb9002b33544ea6432eaecd68260, type: 3}
+  m_Sprite: {fileID: -8762393237372410606, guid: 7c30533baa2fbfa49b2cdd0fcf486ebd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

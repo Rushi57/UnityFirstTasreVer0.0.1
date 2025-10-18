@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 4876548452708841811}
   - component: {fileID: 629374931456249342}
   - component: {fileID: 5161996367577680798}
+  - component: {fileID: 1587501100937374994}
   m_Layer: 5
   m_Name: PotSisigPrefab
   m_TagString: Untagged
@@ -167,6 +168,7 @@ MonoBehaviour:
   mixingMechPanel: {fileID: 0}
   simmerClockPanel: {fileID: 0}
   boilClockPanel: {fileID: 0}
+  sauteMechPanel: {fileID: 0}
   panImage: {fileID: 629374931456249342}
   defaultPanSprite: {fileID: -1380315134905807815, guid: c102f73d1bded10439b61478e20270a6, type: 3}
   stepSprites:
@@ -176,3 +178,20 @@ MonoBehaviour:
   - {fileID: -1511155633075670039, guid: c330e76b11b2ef7479630a03f2a32afe, type: 3}
   uncheckedImage1: {fileID: 0}
   uncheckedImage2: {fileID: 0}
+--- !u!114 &1587501100937374994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6962404223520504196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f5998696e2db4fb554143d259c027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panImage: {fileID: 629374931456249342}
+  sizzleAudio: {fileID: 0}
+  heatedColor: {r: 0.8207547, g: 0.6465379, b: 0.6465379, a: 1}
+  heatUpSpeed: 1.5
+  coolDownSpeed: 1
